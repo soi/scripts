@@ -1,5 +1,5 @@
 # uni
-alias hu='cd ~/git/misc/HU\ Berlin'
+alias hu='cd ~/git/hu'
 alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
 alias mkha='ha; pdflatex hausarbeit.tex; pdflatex hausarbeit.tex; go hausarbeit.pdf'
