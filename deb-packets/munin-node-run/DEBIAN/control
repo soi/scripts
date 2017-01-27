@@ -1,0 +1,9 @@
+Package: munin-node-run
+Version: 0.1
+Architecture: all
+Maintainer: Felix Stiehler <mail@felix-stiehler.de>
+Pre-Depends: munin-node (= 1.4.5-3), openssl
+Installed-Size: 40
+Section: web
+Priority: extra
+Description: My custom munin-node package

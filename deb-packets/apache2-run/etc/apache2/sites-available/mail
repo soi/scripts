@@ -1,0 +1,5 @@
+<VirtualHost *:443 >
+  DocumentRoot /usr/share/squirrelmail
+  ServerName mail.felix-stiehler.de
+</VirtualHost>
+

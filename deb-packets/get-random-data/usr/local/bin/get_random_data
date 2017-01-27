@@ -1,0 +1,33 @@
+#! /bin/bash
+
+if [ ! $(id -u) -eq 0 ]; then
+    echo "Must be run a root" >&2
+    exit 1
+fi
+
+PID_FILE="/var/run/get_random_data.pid"
+RANDOM_DATA_FILE="/etc/random_data"
+
+if [ -f $PID_FILE ]; then   
+    ps -p $(cat $PID_FILE) > /dev/null
+    if [ $? -eq 0 ]; then
+        echo "Process already running."
+        exit 0
+    fi
+fi
+
+touch $RANDOM_DATA_FILE
+chmod 600 $RANDOM_DATA_FILE
+
+cat /dev/random >> $RANDOM_DATA_FILE&
+RANDOM_DATA_PID=$!
+
+if [ ! $? -eq 0 ]; then
+    echo "Script could not be restarted." >&2
+    exit 1
+fi
+
+echo -n $RANDOM_DATA_PID > $PID_FILE
+chmod 644 $PID_FILE
+
+exit 0

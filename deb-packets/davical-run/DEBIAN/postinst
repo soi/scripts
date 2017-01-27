@@ -1,0 +1,62 @@
+#!/bin/bash
+
+[ -n "${DEBUG}" ] && set -o xtrace
+PACKAGE=::package::
+[ -n "${DEBUG}" ] && echo "PostInst Parameters: $@"
+
+case $1 in
+	configure)
+	TMP_FOLDER="/tmp/davical"
+	VHOST_FILE_NAME="davical"
+
+	if [ -d $TMP_FOLDER ]; then
+		echo "Temporary folder already exists."
+	else
+		mkdir $TMP_FOLDER
+		echo "Creating temporary folder for the installation at $TMP_FOLDER."
+	fi
+
+	find /etc/postgresql/ -name "pg_hba.conf" > $TMP_FOLDER/find_result
+
+	if [ $(wc -l $TMP_FOLDER/find_result | cut -d " " -f 1) -eq 0 ]; then
+		echo "No pg_hba.conf found in /etc/postgresql/. Must be edited manually."
+	else
+		if [ $(wc -l $TMP_FOLDER/find_result | cut -d " " -f 1) -gt 1 ]; then
+			echo "More than one pg_hba.conf found in /etc/postgresql/. Must be edited manually."
+		else
+			grep "davical" $(cat $TMP_FOLDER/find_result)
+			if [ $? -eq 0 ]; then
+				echo "The pg_hba.conf seems to contain davical configurations already. Skipping all database actions now. FAILED."
+			else
+				cp $(cat $TMP_FOLDER/find_result) $TMP_FOLDER/pg_hba.conf.old
+				printf "# Davical configuration\nlocal\tdavical\tdavical_app\ttrust\nlocal\tdavical\tdavical_dba\ttrust\n\n" > $TMP_FOLDER/pg_hba.conf.addition
+				cat $TMP_FOLDER/pg_hba.conf.addition $TMP_FOLDER/pg_hba.conf.old > $(cat $TMP_FOLDER/find_result)
+				echo "The pg_hba.conf at "$(cat $TMP_FOLDER/find_result)" has been updated to accept connection from localhost for the davical databse. Reloading postgresql config now."
+				find /etc/init.d/ -name "postgresql*" > $TMP_FOLDER/postgres_find_result
+				if [ ! -s $TMP_FOLDER/postgres_find_result ]; then 
+					echo "No postgres init.d script found."
+				else
+					# we assume i have only one postgres installation
+					 $(cat $TMP_FOLDER/postgres_find_result) reload
+				fi
+				echo "Running the script to create the database."
+				su postgres -c /usr/share/davical/dba/create-database.sh
+				if [ ! $? -eq 0 ]; then
+					echo "An error occured when installing the database. FAILED."
+				fi
+			fi
+		fi
+	fi
+	read -p "Please enter the domain for the server. Leave blank for the current hostname \""$(hostname --fqdn)"\" " hostname
+	if [ -z "$hostname" ]; then
+		hostname=$(hostname --fqdn)
+	fi
+	
+	mv "/etc/apache2/sites-available/$VHOST_FILE_NAME" "$TMP_FOLDER/davical_vh.tmp"
+	cat "$TMP_FOLDER/davical_vh.tmp" | sed -e 's/%%DOMAIN%%/'"$hostname"'/g' > "/etc/apache2/sites-available/$VHOST_FILE_NAME"
+	a2ensite $VHOST_FILE_NAME
+	/etc/init.d/apache2 reload
+	;;
+esac
+
+

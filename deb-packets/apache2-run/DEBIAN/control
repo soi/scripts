@@ -1,0 +1,9 @@
+Package: apache2-run
+Version: 0.1
+Architecture: all
+Maintainer: Felix Stiehler <mail@felix-stiehler.de>
+Installed-Size: 98
+Pre-Depends: apache2
+Section: web
+Priority: extra
+Description: This package is made to make apache2 run out of the box with my own enviroment.

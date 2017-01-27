@@ -1,0 +1,53 @@
+#!/bin/bash
+
+[ -n "${DEBUG}" ] && set -o xtrace
+PACKAGE=::package::
+[ -n "${DEBUG}" ] && echo "PostInst Parameters: $@"
+
+case $1 in
+	configure)
+		SSL_FOLDER="/etc/munin/ssl"
+
+		read -p "Please enter the Common Name for the certificate on the node or leave it blank for the current host name \"$(hostname)\" " common_name
+		if [[ -z "$common_name" ]]; then
+			common_name=$(hostname)
+		fi
+
+		echo "Generating the server key for the slave"
+		openssl genrsa -out $SSL_FOLDER/server-key.pem 2048
+		openssl req -new -key $SSL_FOLDER/server-key.pem -out $SSL_FOLDER/server-csr.pem -subj '/C=DE/L=Berlin/O=Felix Stiehler/CN='"$common_name"
+		openssl x509 -in $SSL_FOLDER/server-csr.pem -out $SSL_FOLDER/server-cert.pem -req -signkey $SSL_FOLDER/root-key.pem -days 3650
+
+		echo "Removing the csr and the root key"
+		rm $SSL_FOLDER/server-csr.pem $SSL_FOLDER/root-key.pem
+
+		read -p $'\n'"Do you want to enable encryption on the node (like when the node is not on the master)? [y/n] " ok
+		if [[ $ok != "n" || $ok != "N" ]]; then
+			cp /etc/munin/munin-node.conf /etc/munin/munin-node.conf.old
+			cat <<-'EOF' >> /etc/munin/munin-node.conf
+				tls paranoid
+				tls_verify_certificate yes 
+				tls_private_key /etc/munin/ssl/server-key-ea.pem
+				tls_certificate /etc/munin/ssl/server-cert-ea.pem
+				tls_ca_certificate /etc/munin/ssl/root-cert.pem
+				tls_verify_depth 5
+
+				EOF
+			echo "Encryption enabled and old config save at munin-node.conf.old"
+
+			read -p $'\n'"The munin-node.conf will now be opened in vi. Please press enter."
+			vi /etc/munin/munin-node.conf
+		fi
+		if [[ -e "/etc/munin/plugins/apache_processes" ]]; then
+			read -p $'\n'"Do you want to enable the extended apache monitoring? This requires \"ExtendedStatus On\" in the apache2.conf. [y/n] " ok
+			if [[ $ok == "y" || $ok == "Y" ]]; then
+				ln -s /usr/share/munin/plugins/apache_accesses /etc/munin/plugins
+				ln -s /usr/share/munin/plugins/apache_volume /etc/munin/plugins
+				echo "Enabled."
+			fi
+		fi
+		echo "Restarting munin-node"
+		/etc/init.d/munin-node restart
+	;;
+esac
+

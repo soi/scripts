@@ -1,0 +1,55 @@
+#!/bin/bash
+
+[ -n "${DEBUG}" ] && set -o xtrace
+PACKAGE=::package::
+[ -n "${DEBUG}" ] && echo "PostInst Parameters: $@"
+
+case $1 in
+	configure)
+		SSL_FOLDER="/etc/munin/ssl"
+
+        read -p "Please enter the Common Name for the certificate on the master or leave it blank for the current host name \"$(hostname)\" " common_name
+		if [[ -z "$common_name" ]]; then
+			common_name=$(hostname)
+		fi
+
+		echo "Generating the server key for the master"
+		mv $SSL_FOLDER/root-key.pem.tmp $SSL_FOLDER/root-key.pem
+		openssl genrsa -out $SSL_FOLDER/server-key.pem 2048
+		openssl req -new -key $SSL_FOLDER/server-key.pem -out $SSL_FOLDER/server-csr.pem -subj '/C=DE/L=Berlin/O=Felix Stiehler/CN='"$common_name"
+		openssl x509 -in $SSL_FOLDER/server-csr.pem -out $SSL_FOLDER/server-cert.pem -req -signkey $SSL_FOLDER/root-key.pem -days 3650
+
+		echo "Removing the csr and the root key"
+		rm $SSL_FOLDER/server-csr.pem $SSL_FOLDER/root-key.pem
+
+		echo "Changing the permissions of the keys"
+		chmod 400 $SSL_FOLDER/*
+		chown munin:munin $SSL_FOLDER/*
+		chown root:root $SSL_FOLDER
+
+		tmp=$(mktemp)
+		tmp2=$(mktemp)
+
+		cat <<-'EOF' > $tmp
+			tls paranoid
+			tls_verify_certificate yes
+			tls_private_key /etc/munin/ssl/server-key-fs.pem
+			tls_certificate /etc/munin/ssl/server-cert-fs.pem
+			tls_ca_certificate /etc/munin/ssl/root-cert.pem
+			tls_verify_depth 5
+			
+			EOF
+
+		cp /etc/munin/munin.conf /etc/munin/munin.conf.old	
+		cat $tmp /etc/munin/munin.conf > $tmp2
+		mv $tmp2 /etc/munin/munin.conf
+		rm $tmp
+
+		echo "Encryption enabled and old config save at munin-node.conf.old"
+
+		read -p $'\n'"The munin.conf will now be opened in vi. Please press enter."
+		vi /etc/munin/munin.conf
+
+	;;
+esac
+

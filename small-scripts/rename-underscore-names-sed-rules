@@ -1,0 +1,5 @@
+for d in $(find $PWD -type f -name "*.html") 
+do 
+	echo "s/$(basename $d)/$(echo $(basename $d) | tr _ -)/g"
+done
+

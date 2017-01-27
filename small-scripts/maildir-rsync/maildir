@@ -1,0 +1,1 @@
+35 */1  * * *   felix   rsync -a --log-file=/home/felix/Maildir/log/rsync.log --exclude-from=/home/felix/Maildir/log/.rsync_maildir_exclude soi@178.77.100.105:/home/soi/Maildir/ /home/felix/Maildir/

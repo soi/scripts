@@ -1,0 +1,29 @@
+[$Version]
+update_info=yakuake.upd:2.9.9-startupnotification
+
+[Animation]
+Frames=15
+
+[Desktop Entry]
+DefaultProfile=Shell.profile
+
+[Dialogs]
+FirstRun=false
+
+[Favorite Profiles]
+Favorites=Shell.profile
+
+[Notification Messages]
+ShowPasteHugeTextWarning=false
+
+[Shortcuts]
+move-session-left=none
+move-session-right=none
+next-terminal=Ctrl+Shift+Right
+previous-terminal=Ctrl+Shift+Left
+split-left-right=Ctrl+9
+split-top-bottom=Ctrl+8
+view-full-screen=F11
+
+[Window]
+Height=90

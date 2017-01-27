@@ -1,0 +1,15 @@
+<VirtualHost *:443 >
+  DocumentRoot /var/www
+  DirectoryIndex index.php index.html
+  ServerName *.felix-stiehler.de
+  <Directory /var/www>
+  	AllowOverride AuthConfig
+  </Directory>
+  SSLEngine on
+  SSLCertificateKeyFile /etc/apache2/ssl/server.cert.key
+  SSLCertificateFile /etc/apache2/ssl/server.cert.crt
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^felix-stiehler\.de
+  RewriteRule ^/(.*) https://www.%{HTTP_HOST}/$1 [R=301]
+</VirtualHost>
+

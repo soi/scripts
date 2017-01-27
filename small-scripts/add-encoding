@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [[ $# -lt 1 ]]
+then
+	echo "Need folder."
+	exit 1
+fi
+
+if [[ ! -d $1 ]]
+then
+	echo "Given path is no folder."
+	exit 1
+fi
+
+tmp=$(mktemp)
+tmp2=$(mktemp)
+tmp3=$(mktemp)
+printf '#-*- coding:utf-8 -*-\n' > $tmp3
+
+find $1 -name "*.py" > $tmp
+
+for file in $(cat $tmp)
+do
+	head -1 $file | egrep "#!|coding" > /dev/null
+	if [ "$?" -eq 1 ]; then
+		cat $tmp3 $file > $tmp2
+		cp $tmp2 $file
+		echo "Encoding added for $file"
+	fi
+done
+
+echo "Done."
+

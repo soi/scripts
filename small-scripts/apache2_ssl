@@ -1,0 +1,38 @@
+#! /bin/bash
+
+if [ ! $(id -u) -eq 0 ]; then
+    echo "Must be run as root." >&2
+    exit 1
+fi
+
+SSL_DIR="/etc/apache2/ssl"
+
+if [ -e $SSL_DIR ]; then
+    echo "SSL directory already eyisting. Aborting."
+    exit 1
+fi
+
+mkdir $SSL_DIR
+cd $SSL_DIR
+
+openssl genrsa -des3 -out server-key.pem 2048
+openssl req -new -key server-key.pem -out server-csr.pem
+openssl x509 -in server-csr.pem -out server-cert.pem -req -signkey server-key.pem -days 3650
+
+# create RootCA: 
+# openssl req -x509 -newkey rsa:2048 -keyout key.pem -out req.pem
+
+# show info of cert
+# openssl x509 -in server-cert.pem -noout -text
+
+# sign with root key
+# openssl x509 -req -days 3650 -in server-csr.pem -CA root-cert.pem -CAkey root-key.pem -set_serial 01 -out server-cert.pem
+
+# remove passphrase
+# openssl rsa -in /etc/apache2/ssl/server.cert.key -out /etc/apache2/ssl/server.cert.key
+
+a2enmod ssl
+
+echo "SSL should now be ready to be enabled in Virtualhosts."
+
+exit 0

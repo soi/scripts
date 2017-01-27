@@ -1,0 +1,9 @@
+<VirtualHost *:443 >
+  DocumentRoot /var/www/munin
+  DirectoryIndex index.php index.html
+  ServerName munin.felix-stiehler.de
+  <Directory /var/www/munin>
+      AllowOverride AuthConfig
+  </Directory>
+</VirtualHost>
+

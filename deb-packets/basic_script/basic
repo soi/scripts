@@ -1,0 +1,89 @@
+#! /bin/bash
+
+if [[ ! $(id -u) -eq 0 ]]; then
+    echo "Must be run as root." >&2
+	exit 1
+fi
+
+echo "Disabling root aliases for this session"
+unalias -a
+
+# This script should be run in the current enviroment
+if [[ $BASH_LINENO -eq 0 ]]; then
+	read -p "It looks like the script has not been run via \"source\". Continue? [y/n] " uSXrCsZ
+	if [[ $uSXrCsZ == "n" || $uSXrCsZ == "N" ]]; then
+		exit 1
+	fi
+fi
+
+_PACKAGES_FILE_NAME="packages-server"
+_MAKE_DNS_FILE_NAME="make_dns_servers"
+_MAKE_SOURCES_FILE_NAME="make_sources"
+_MAKE_USER_FILE_NAME="make_user"
+_INSTALL_PACKAGES_FILE_NAME="install_packages"
+_BASHRC_FILE_NAME=".bashrc.raw"
+_BASH_ALIASES_FILE_NAME=".bash_aliases.some"
+
+if [[ ! -x $_INSTALL_PACKAGES_FILE_NAME || ! -e $_PACKAGES_FILE_NAME || ! -x $_MAKE_DNS_FILE_NAME || ! -x $_MAKE_SOURCES_FILE_NAME || ! -x $_MAKE_USER_FILE_NAME || ! -e $_BASHRC_FILE_NAME || ! -e $_BASH_ALIASES_FILE_NAME ]]; then
+	read -p $'\n'"One of those files are either not found in the same directory or not executable as they should be: $_PACKAGES_FILE_NAME, $_MAKE_DNS_FILE_NAME, $_MAKE_SOURCES_FILE_NAME, $_INSTALL_PACKAGES_FILE_NAME, $_BASHRC_FILE_NAME, $_BASH_ALIASES_FILE_NAME. Continue? [y/n] " uSXrCsZ
+	if [[ $uSXrCsZ == "n" || $uSXrCsZ == "N" ]]; then
+		exit 1
+	fi
+fi
+
+if [[ ! -e motd ]]; then
+	echo "No motd file found. Stupid standard message is kept :-("
+else
+	cp motd /var/run/motd
+	cat /etc/motd
+fi
+
+_DEFAULT_LANG="en_US.UTF-8"
+
+echo "Making sure locales are set properly"
+
+# removing the en_US line if present
+if [[ -e /etc/locale.gen ]]; then
+	sed -i "/$_DEFAULT_LANG/ d" /etc/locale.gen
+fi
+printf "\n$_DEFAULT_LANG UTF-8\n" >> /etc/locale.gen
+locale-gen
+
+printf "LANG=$_DEFAULT_LANG\n" > /etc/default/locale
+LANG="$_DEFAULT_LANG"
+unset LANGUAGE
+
+rm /etc/environment
+
+export _BASHRC_FILE_NAME _BASH_ALIASES_FILE_NAME
+./$_MAKE_USER_FILE_NAME
+export -n _BASHRC_FILE_NAME _BASH_ALIASES_FILE_NAME
+
+# setting the hostname
+read -p $'\n'"Please enter the new hostname for the server. Leave blank for the current hostname. \"$(hostname)\" " uSXrCsZ_new_hostname
+if [[ ! -z "$uSXrCsZ_new_hostname" ]]; then
+	printf "$uSXrCsZ_new_hostname" > /etc/hostname
+	hostname "$uSXrCsZ_new_hostname"
+fi
+
+# setting up the dns
+printf "\n"
+cat /etc/resolv.conf
+read -p $'\n\n'"This is the current resolv.conf. Do you want to change it? [y/n] " uSXrCsZ
+if [[ $uSXrCsZ == "y" || $uSXrCsZ == "Y" ]]; then
+	./$_MAKE_DNS_FILE_NAME
+	printf "\n"
+	cat /etc/resolv.conf
+	read -p $'\n'"Here is the new resolve.conf. Press enter to continue. " uSXrCsZ
+fi
+
+# setting up the sources
+./$_MAKE_SOURCES_FILE_NAME
+
+# echo "Doing a source update"
+# apt-get update
+
+unset uSXrCsZ
+unset uSXrCsZ_new_hostname
+
+./$_INSTALL_PACKAGES_FILE_NAME $_PACKAGES_FILE_NAME 

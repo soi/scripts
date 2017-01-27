@@ -1,0 +1,7 @@
+sudo apt-get install libssl-dev ncurses-dev mercurial ruby ruby-dev
+mkdir -p ~/src
+hg clone https://vim.googlecode.com/hg/ ~/src/vim
+cd ~/src/vim
+./configure --with-features=huge --enable-rubyinterp --enable-gui=no
+sudo make install
+

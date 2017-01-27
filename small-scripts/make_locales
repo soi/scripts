@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ ! $(id -u) -eq 0 ]; then
+    echo "Must be run as root." >&2
+	exit 1
+fi
+
+printf "en_US.UTF-8 UTF-8\n" > /etc/locale.gen
+locale-gen
+
+printf "LANG=en_US.UTF-8\n" > /etc/default/locale
+
+rm /etc/environment
+
+echo "done."
+exit

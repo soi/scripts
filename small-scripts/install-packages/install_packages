@@ -1,0 +1,42 @@
+#! /bin/bash
+
+if [ ! $(id -u) -eq 0 ]
+then
+	echo "Script needs to be run as root."
+	exit
+fi
+
+if [ $# -lt 1 -o ! -f $(dirname $0)/$1 ]
+then
+	echo "Please specify a valid file with the list of packages to install. The list must be in the same directory."
+	exit
+fi
+
+if [ $(wc -w $(dirname $0)/$1 | cut -f1 -d ' ') -gt 100 ]
+then
+	read -p "The file contains more than 100 entries. Continue? [Y|n]" input
+	[ $input != "Y" ] && exit 0
+fi	
+
+read -p $'\n'"Do you want to update your sources? [y/n] " update 
+[[ $update == "n" || $update == "N" ]] || apt-get update 
+
+
+for package in $(cat $(dirname $0)/$1)
+do
+	read -p $'\n\n'"Install the package \"$package\"? [y/n] " ok
+	
+	if [ -z $ok ]; then
+		echo "Skipped."
+	else
+		if [ $ok == "y" -o $ok == "Y" ]; then
+			apt-get -q install $package 
+		else
+			echo "Skipped."
+		fi
+	fi
+done
+
+echo "Done. Have fun with the new maschine :-)"
+
+exit 

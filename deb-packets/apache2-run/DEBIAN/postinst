@@ -1,0 +1,33 @@
+#!/bin/bash
+
+[ -n "${DEBUG}" ] && set -o xtrace
+PACKAGE=::package::
+[ -n "${DEBUG}" ] && echo "PostInst Parameters: $@"
+
+case $1 in
+	configure)
+
+	a2enmod ssl
+	a2enmod rewrite
+	
+	# removing the passphrase from the private key
+	cp /etc/apache2/ssl/server.cert.key /etc/apache2/ssl/server.cert.key.orig
+	openssl rsa -in /etc/apache2/ssl/server.cert.key -out /etc/apache2/ssl/server.cert.key
+
+	chmod -R 600 /etc/apache2/ssl/
+
+	a2dissite "000-default"
+	a2ensite "080-default"
+	a2ensite "443-default"
+
+	mv /etc/apache2/ports.conf /etc/apache2/ports.conf.old
+	mv /etc/apache2/ports.conf.new /etc/apache2/ports.conf
+
+	read -p "Enable ExtendedStatus in Apache? [y/n]" ok
+	[ $ok == "y" -o $ok == "Y" ] && ( printf "\nExtendedStatus On" >> /etc/apache2/apache2.conf )
+
+	/etc/init.d/apache2 reload
+	;;
+esac
+
+

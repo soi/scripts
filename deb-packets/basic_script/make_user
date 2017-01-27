@@ -1,0 +1,29 @@
+#! /bin/bash
+
+# setting default values if not given
+if [[ -z "$_BASHRC_FILE_NAME" ]]; then
+	_BASHRC_FILE_NAME=".bashrc"
+	echo "No .bashrc file name give. Trying \".bashrc\" now."
+fi
+
+if [[ -z "$_BASH_ALIASES_FILE_NAME" ]]; then
+	_BASH_ALIASES_NAME=".bashrc"
+	echo "No .bash_aliases file name give. Trying \".bash_aliases\" now."
+fi
+
+read -p $'\n'"Please enter the name for the first user or leave blank to skip user creation: " name
+if [[ ! -z "$name" ]]; then
+	useradd --shell /bin/bash $name
+	if [[ $? -eq 0 ]]; then
+		read -p $'\n'"Please enter the primary IP address of the server or leave blank to skip .bashrc edit: " ip
+		if [[ ! -z "$ip" ]]; then
+			sed -i 's/NEW_IP/'"$ip"'/; s/NEW_NAME/'"$name"'/' $_BASHRC_FILE_NAME
+		fi
+		mkdir -v /home/$name
+		cp $(ls -A /etc/skel | sed 's/^/\/etc\/skel\//') /home/$name/.
+		cp $_BASHRC_FILE_NAME /home/$name/.bashrc
+		cp $_BASH_ALIASES_FILE_NAME /home/$name/.bash_aliases
+	else
+		echo "User creation returned an error. FAILED."
+	fi
+fi

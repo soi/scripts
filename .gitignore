@@ -1,0 +1,4 @@
+*.deb
+deb-packets/*.tar.gz
+*.swp
+small-scripts/gitpullall.log

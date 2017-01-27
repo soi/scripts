@@ -1,0 +1,14 @@
+#! /bin/bash
+
+if [ $# -lt 1 ]
+then
+    echo 'Usage: mdcd [dirname]'
+else
+    if [ -d $1 ]
+    then
+        echo 'Directory already existing.'
+    else
+        mkdir -v -p $1
+        cd $1
+    fi
+fi

@@ -1,0 +1,93 @@
+#!/bin/bash
+#-*- coding:utf-8 -*-
+
+# copy all relative stuff to /tmp/deploy/$PROJECT
+
+MINIFY=0
+
+if [[ $1 == "-m" ]]
+then
+	MINIFY=1
+	shift
+fi
+
+if [[ $# -lt 3 ]]
+then
+	echo "Usage: django-deploy [-m] user ip project"
+	exit 1
+fi
+
+SERVER_USER=$1
+IP=$2
+PROJECT=$3
+PROJECT_ROOT="/home/felix/git/$PROJECT/"
+TMP_ROOT="/tmp/deploy/$PROJECT"
+
+cd $PROJECT_ROOT
+
+if [[ ! -s "deploy/deploy-files" ]]
+then
+	echo "No 'deploy/deploy-files' file found in the repo root"
+	exit 1
+fi
+
+IGNORE=$(mktemp)
+if [[ $MINIFY -eq 1 ]]
+then 
+	if [[ ! -s "minify-files" ]]; then
+		echo "-m option choosen but no 'minify-files' file found in the repo root" 
+		exit 1
+	fi
+
+	# minify the files and add the big ones to the ignore list
+	for line in $(cat 'minify-files')
+	do
+		input=$(echo -n $line | cut -d "|" -f1)
+		output=$(echo -n $line | cut -d "|" -f2)
+		java -jar /home/felix/git/scripts/small-scripts/yuicompressor-2.4.6.jar $input -o $output
+		echo $input" minified to $output"
+		echo $input >> $IGNORE
+	done
+else
+	# if no -m option still ignore the to be minifies files
+	if [[ -s "minify-files" ]]; then
+		for line in $(cat 'minify-files')
+		do
+			echo -n $line | cut -d "|" -f1 >> $IGNORE
+		done
+	fi	
+fi
+
+if [[ -d $TMP_ROOT ]]; then
+	rm -r $TMP_ROOT
+fi
+
+mkdir -p $TMP_ROOT
+
+# clear out .pyc files
+find . -name "*.pyc" -exec rm {} \;
+
+# copy to /tmp dir
+for file in $(cat deploy/deploy-files)
+do
+	cp -r $file $TMP_ROOT
+done
+
+# delete the files which have been minified
+for line in $(cat $IGNORE)
+do
+	rm $TMP_ROOT/$line	
+done
+rm $IGNORE
+
+# copy production settings.py if available
+if [[ -s "$PROJECT/settings.py.production" ]]
+then
+	cp "$PROJECT/settings.py.production" "$TMP_ROOT/$PROJECT/settings.py"
+fi
+rm "$TMP_ROOT/$PROJECT/settings.py.production"
+
+# where work is done
+rsync -rhP  $TMP_ROOT $SERVER_USER"@"$IP":/home/"$SERVER_USER
+
+echo "Done."

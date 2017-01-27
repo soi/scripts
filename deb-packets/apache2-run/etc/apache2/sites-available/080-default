@@ -1,0 +1,12 @@
+NameVirtualHost felix-stiehler.de:80 
+
+<VirtualHost felix-stiehler.de:80>
+  DocumentRoot /var/www
+  ServerName felix-stiehler.de
+#  RewriteEngine On
+#  RewriteCond %{HTTP_HOST} !^127.0.0.1
+#  RewriteCond %{HTTP_HOST} !^localhost
+#  RewriteCond %{REQUEST_URI} !^/apt.*
+#  RewriteRule ^/(.*) https://%{HTTP_HOST}/$1 [R=301]
+</VirtualHost>
+

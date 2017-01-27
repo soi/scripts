@@ -1,0 +1,5 @@
+<VirtualHost everydayartist.de:80 >
+  DocumentRoot /var/www/wordpress
+  ServerName everydayartist.de
+  ServerAlias www.everydayartist.de
+</VirtualHost>

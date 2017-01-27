@@ -1,0 +1,61 @@
+#! /bin/bash
+
+DNS_STATUS_FILE="/tmp/dns-status"
+
+# get the current status: beuth / home / other
+if [[ -f $DNS_STATUS_FILE ]]; then
+	# should be beuth or home
+	dns_status=$(cat $DNS_STATUS_FILE)
+else
+	dns_status="other"
+fi 
+
+echo "Current status is '$dns_status'."
+		
+chattr -i /etc/resolv.conf;
+
+ifconfig | grep "192.168." > /dev/null
+ret=$?
+
+changed="no"
+
+if [[ ($ret -eq 1) && ( "$dns_status" != "beuth" ) ]]; then
+
+	cat <<-'EOF' > /etc/resolv.conf 
+	options attempts:1 timeout:1 
+
+	nameserver 141.64.3.55
+	nameserver 141.64.3.40 
+	EOF
+
+	printf "beuth" > $DNS_STATUS_FILE
+	changed="yes"
+
+	echo "Switched to Beuth DNS"
+fi
+
+# this is also the default configuration
+if [[ ($ret -eq 0) && ( "$dns_status" != "home" ) ]]; then
+	cat <<-'EOF' > /etc/resolv.conf
+	options attempts:1 timeout:1 rotate 
+
+	nameserver 85.214.73.63
+	nameserver 194.150.168.168 
+	nameserver 213.73.91.35
+	nameserver 80.237.196.2
+	nameserver 194.95.202.198
+	EOF
+
+	printf "home" > $DNS_STATUS_FILE
+	changed="yes"
+
+	echo "Switched to Home DNS"
+fi
+
+chattr +i /etc/resolv.conf;
+
+if [[ $changed == "no" ]]; then
+	echo "Nothing to change, DNS still seems to be OK."
+fi
+
+exit 0

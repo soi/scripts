@@ -1,0 +1,18 @@
+#! /bin/bash
+if [[ -s "admin.py" ]]; then
+	echo "admin.py already existing"
+	exit 1
+fi
+
+cat <<'END' > admin.py
+#-*- coding:utf-8 -*-
+from .models import
+from django.contrib import admin
+
+#class Admin(admin.ModelAdmin):
+#	field = 
+
+admin.site.register()
+END
+
+vim admin.py

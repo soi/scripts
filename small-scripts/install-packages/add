@@ -1,0 +1,13 @@
+#! /bin/bash
+
+if [[ -z $1 ]]; then
+	echo "No argument."
+	exit 1
+fi
+
+echo "$1" >> packages-desktop
+echo "$1" >> packages-server
+
+echo "Added."
+
+exit 0

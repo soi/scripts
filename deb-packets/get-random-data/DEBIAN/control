@@ -1,0 +1,8 @@
+Package: get-random-data
+Version: 0.1
+Architecture: all
+Maintainer: Felix Stiehler <mail@felix-stiehler.de>
+Installed-Size: 40
+Section: web
+Priority: extra
+Description: Collection of random data

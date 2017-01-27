@@ -1,0 +1,71 @@
+#! /bin/bash
+
+if [[ -z $1 ]]  
+then
+    echo 'Usage: slice_random_data [[bytes]] [[-b]]'
+    exit 1
+fi
+
+if [[ ! $(id -u) -eq 0 ]]; then
+    echo "Must be run as root." >&2
+    exit 1
+fi
+
+if [[ ! $1 =~ ^[0-9]+$ ]]; then
+    echo 'Usage: slice_random_data [[bytes]] [[-b]]'
+	exit 1
+fi
+
+RANDOM_DATA_FILE=/etc/random_data
+PID_FILE=/var/run/get_random_data.pid
+PROC_NAME="cat\0/dev/random\0"
+
+umask 0066
+
+# stop the get_random_data script for the moment
+[[ -f $PID_FILE ]] && [[ -f "/proc/$(cat $PID_FILE)/cmdline" ]] && [[ $(cat /proc/$(cat $PID_FILE)/cmdline) = $(echo -n -e $PROC_NAME) ]] && kill -9 $(cat $PID_FILE) 
+
+# get random data with base64 encoding if desired
+if [[ -z $2 ]]; then
+    dd if=$RANDOM_DATA_FILE bs=1 count="$1" 2> /dev/null 
+else
+	set -o pipefail
+    dd if=$RANDOM_DATA_FILE bs=1 count="$1" 2> /dev/null | base64
+fi
+
+if [[ ! $? -eq 0 ]]; then
+    echo "The data could not be sliced. FAILED." >&2
+    exit 1
+fi
+
+set +o pipefail
+
+# remove selected random data from the random data file
+mv $RANDOM_DATA_FILE `dirname $RANDOM_DATA_FILE`/random_data.old
+dd if=`dirname $RANDOM_DATA_FILE`/random_data.old of=$RANDOM_DATA_FILE bs=1 skip="$1" &> /dev/null
+
+if [[ ! $? -eq 0 ]]; then
+    echo "The new random data file could not be created. The random data block will not be altered and all sliced random data will be kept included. FAILED." >&2
+	mv `dirname $RANDOM_DATA_FILE`/random_data.old $RANDOM_DATA_FILE
+	exit 1
+fi
+
+# when we have srm use it otherwise not
+which srm &> /dev/null
+if [[ $? -eq 0 ]]; then
+    srm -l `dirname $RANDOM_DATA_FILE`/random_data.old
+else
+    rm `dirname $RANDOM_DATA_FILE`/random_data.old
+fi
+
+cat /dev/random >> $RANDOM_DATA_FILE&
+RANDOM_DATA_PID=$!
+
+if [[ ! $? -eq 0 ]]; then
+    echo "Script could not be restarted." >&2
+    exit 1
+fi
+echo -n $RANDOM_DATA_PID > $PID_FILE
+chmod 644 $PID_FILE
+
+exit 0

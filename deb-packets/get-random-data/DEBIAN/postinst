@@ -1,0 +1,20 @@
+#!/bin/bash
+
+[ -n "${DEBUG}" ] && set -o xtrace
+PACKAGE=::package::
+[ -n "${DEBUG}" ] && echo "PostInst Parameters: $@"
+
+case $1 in
+	configure)
+
+	# start collecting random data
+	chmod 700 "/usr/local/bin/get_random_data" "/usr/local/bin/slice_random_data"
+	chown root:root "/usr/local/bin/get_random_data" "/usr/local/bin/slice_random_data"
+	read -p "Do you want to start the collection of random data? [y/n]" ok
+	if [ $ok == "y" -o $ok == "Y" ]; then
+		/usr/local/bin/get_random_data
+		echo "The start of the random data collection at system startup must be configured manually in rc.local"
+	fi
+	;;
+esac
+

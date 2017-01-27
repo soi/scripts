@@ -1,0 +1,9 @@
+Package: munin-run 
+Version: 0.1
+Architecture: all
+Maintainer: Felix Stiehler <mail@felix-stiehler.de>
+Pre-Depends: apache2-run, coreutils, munin (= 1.4.5-3), munin-node-run
+Installed-Size: 40
+Section: web
+Priority: extra
+Description: My custom munin package

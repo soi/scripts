@@ -1,0 +1,30 @@
+#! /bin/bash
+
+log_folder="/var/log/bigprocesses"
+
+if [ ! $(id -u) -eq 0 ]; then
+    echo "Must be run as root." >2
+    exit 1
+fi
+
+if [ ! -d $log_folder ]; then
+    echo "Logging directory $log_folder does not exist."
+    
+    mkdir $log_folder
+    if [ ! $? -eq 0 ]; then
+        echo "Directory $log_folder could not be created. FAILED." >2
+        exit 1
+    fi
+
+    echo "Created."
+fi
+
+#logging the 5 biggest cpu processes
+echo $(date) >> $log_folder/cpu
+ps auxwww | tail -n +2 | sort -k 4 -n -r | head -5 >> $log_folder/cpu
+
+#logging the 5 biggest mem processes
+echo $(date) >> $log_folder/mem
+ps auxwww | tail -n +2 | sort -k 3 -n -r | head -5 >> $log_folder/mem
+
+chmod -R 600 $log_folder

@@ -1,0 +1,30 @@
+#! /bin/bash
+
+if [[ $# -lt 1 ]]; then
+	echo "Need file name(s)"
+	exit 1
+fi
+
+COMMAND_FILE=$(mktemp)
+
+# compose the command batch file
+for file in "$@"
+do
+	echo "put $file /home/soi/web/" >> $COMMAND_FILE
+done
+
+# upload
+sftp -b $COMMAND_FILE soi@178.77.100.105
+
+# newline
+echo "" 
+
+# print the corresponding links
+for file in "$@"
+do
+	echo "http://felix-stiehler.de/web/$(basename $file)"
+done
+
+echo -e "\nDone." 
+
+rm $COMMAND_FILE

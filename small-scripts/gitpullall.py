@@ -1,0 +1,35 @@
+#! /usr/bin/env python
+
+from subprocess import Popen
+import os
+import sys
+import getpass
+import shlex
+import logging
+
+# get username from parameters or the user running this
+if len(sys.argv) < 2:
+    USER = getpass.getuser()
+else:
+    USER = sys.argv[1]
+
+GIT_HOME_DIR = '/home/' + USER + '/git/'
+GIT_LIST = [
+                (GIT_HOME_DIR + 'scripts', 'ssh://soi@felix-stiehler.de/home/git/scripts'),
+                (GIT_HOME_DIR + 'misc', 'ssh://soi@felix-stiehler.de/home/git/misc'),
+           ]
+LOG_FILE = '/home/' + USER + '/.gitpullall.log'
+
+logging.basicConfig(filename=LOG_FILE, format='%(asctime)s - %(message)s', level=logging.DEBUG)
+logging.debug('*** New run *** - checking ' + str(len(GIT_LIST)) + ' repositories')
+for git in GIT_LIST:
+
+    print 'Checking ' + git[0]
+    if os.path.exists( git[0] ):
+        logging.debug("Pulling into " + git[0])
+        Popen(['git', 'pull'], cwd=( git[0] )).communicate()
+    else:
+        logging.debug(git[0] + ' not existing. cloning now from ' + git[1])
+
+        args = shlex.split('git clone ' + git[1] + ' ' + git[0])
+        Popen(args).communicate()

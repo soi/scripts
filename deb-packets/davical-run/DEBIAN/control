@@ -1,0 +1,11 @@
+Package: davical-run
+Version: 0.1
+Architecture: all
+Maintainer: Felix Stiehler <davical@felix-stiehler.de>
+Installed-Size: 60
+Pre-Depends: apache2-run, libapache2-mod-php5, postgresql (>= 8.1), sed
+Depends: davical
+Section: web
+Priority: extra
+Homepage: http://davical.org/
+Description: This package is made to make davical run out of the box with my own enviroment.

@@ -1,0 +1,16 @@
+#! /bin/bash
+
+cur_pwd=$PWD
+cd /home/felix/git/scripts/deb-packets
+
+tar czvf basic.tar.gz basic_script/
+dpkg -b apache2-run
+dpkg -b davical-run
+dpkg -b get-random-data
+dpkg -b munin-run
+dpkg -b munin-node-run
+
+su felix -c "rsync -aPh *.deb soi@178.77.100.105:/home/soi/."
+su felix -c "rsync -aPh basic.tar.gz soi@178.77.100.105:/home/soi/Scripts/."
+
+cd $cur_pwd
