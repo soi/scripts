@@ -1,4 +1,5 @@
 # uni
+alias pr='hu; ./predict.py'
 alias hu='cd ~/git/hu'
 alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
@@ -13,6 +14,11 @@ alias gi='cd ~/git'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias huv='hu; vim predict_neural.py'
+alias pudb='python -m pudb.run'
+alias pdb='hu; pudb predict_neural.py'
+alias ipy='ipython --TerminalInteractiveShell.editing_mode=vi'
+alias ipyrc='vim ~/.ipython/profile_default/startup/ipython_startup.py'
 alias doch='sudo $(history -p !-1)'
 alias bitc='~/bitcoin-qt/bitcoin-qt --datadir=/media/felix/Volume/Bitcoin'
 alias ll='ls -lAh --color=auto'
