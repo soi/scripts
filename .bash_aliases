@@ -44,7 +44,6 @@ alias mvscr='cp -v ~/git/scripts/.vimrc ~/.vimrc; cp -v ~/git/scripts/.bash_alia
 alias clswp='sudo rm -v /home/felix/.vim/swap/*.sw? /var/tmp/*.sw?'
 alias whereami='echo "$( hostname --fqdn ) ($(hostname -i))"'
 alias mountc='mount | column -t'
-alias gom='~/GOMstreamer/linux/play.sh'
 alias wgethtml='wget -E -H -k -K -p -nd'
 
 manopt() { 
