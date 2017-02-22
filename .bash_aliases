@@ -14,6 +14,8 @@ alias gi='cd ~/git'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias togit='~/git/scripts/small-scripts/cp_scripts -m to-git'
+alias fromgit='~/git/scripts/small-scripts/cp_scripts -m from-git'
 alias huv='hu; vim predict_neural.py'
 alias pudb='python -m pudb.run'
 alias pdb='hu; pudb predict_neural.py'

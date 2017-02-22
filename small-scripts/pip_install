@@ -1,4 +1,4 @@
 #!/bin/bash
 
 pip install --upgrade pip 
-pip install numpy scipy matplotlib ipython jupyter pandas sympy nose sklearn
+pip install numpy scipy matplotlib ipython jupyter pandas sympy nose sklearn keras tensorflow
