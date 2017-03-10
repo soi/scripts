@@ -14,6 +14,8 @@ alias gi='cd ~/git'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias togit='~/git/scripts/small-scripts/cp_scripts -m to-git'
+alias fromgit='~/git/scripts/small-scripts/cp_scripts -m from-git'
 alias huv='hu; vim predict_neural.py'
 alias pudb='python -m pudb.run'
 alias pdb='hu; pudb predict_neural.py'
@@ -44,7 +46,6 @@ alias mvscr='cp -v ~/git/scripts/.vimrc ~/.vimrc; cp -v ~/git/scripts/.bash_alia
 alias clswp='sudo rm -v /home/felix/.vim/swap/*.sw? /var/tmp/*.sw?'
 alias whereami='echo "$( hostname --fqdn ) ($(hostname -i))"'
 alias mountc='mount | column -t'
-alias gom='~/GOMstreamer/linux/play.sh'
 alias wgethtml='wget -E -H -k -K -p -nd'
 
 manopt() { 
