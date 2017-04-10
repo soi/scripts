@@ -13,15 +13,18 @@ files = [["/home/felix/.bash_aliases", git_scripts_home + ".bash_aliases"],
          ["/home/felix/.ipython/profile_default/startup/ipython_startup.py", git_scripts_home + "ipython_startup.py"]]
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-m", "--mode", default="from-git")
+parser.add_argument("-m", "--mode", default="invalid")
 # parser.add_argument("-c", "--commit", action="store_true")
 args = parser.parse_args()
 
-for file in files:
-    if not filecmp.cmp(file[0], file[1]):
-        if args.mode == "to-git":
-            shutil.copyfile(file[0], file[1])
-            print "copied", file[0], "to", file[1]
-        if args.mode == "from-git":
-            shutil.copyfile(file[1], file[0])
-            print "copied", file[1], "to", file[0]
+if args.mode == 'invalid':
+    print 'use -m to-git or -m from-git'
+else:
+    for file in files:
+        if not filecmp.cmp(file[0], file[1]):
+            if args.mode == "to-git":
+                shutil.copyfile(file[0], file[1])
+                print "copied", file[0], "to", file[1]
+            if args.mode == "from-git":
+                shutil.copyfile(file[1], file[0])
+                print "copied", file[1], "to", file[0]
