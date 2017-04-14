@@ -1,7 +1,9 @@
 # uni
-alias pr='python3 ./predict_seq.py'
+alias pr='./predict_seq.py'
+alias pr3='python3 ./predict_seq.py'
 alias vip='vim ~/git/hu/touch/predict_seq.py'
 alias hu='cd ~/git/hu'
+alias hut='cd ~/git/hu/touch'
 alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
 alias mkha='ha; pdflatex hausarbeit.tex; pdflatex hausarbeit.tex; go hausarbeit.pdf'
