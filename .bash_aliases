@@ -1,5 +1,6 @@
 # uni
-alias pr='hu; ./predict.py'
+alias pr='python3 ./predict_seq.py'
+alias vip='vim ~/git/hu/touch/predict_seq.py'
 alias hu='cd ~/git/hu'
 alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
@@ -11,9 +12,11 @@ alias scr='cd ~/git/scripts'
 alias sma='cd ~/git/scripts/small-scripts'
 alias tmp='cd /tmp/'
 alias gi='cd ~/git'
+alias ke='cd ~/git/keras'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias python=python3
 alias togit='~/git/scripts/small-scripts/cp_scripts -m to-git'
 alias fromgit='~/git/scripts/small-scripts/cp_scripts -m from-git'
 alias huv='hu; vim predict_neural.py'
@@ -28,6 +31,7 @@ alias llg='ll | egrep '
 alias cp='cp -v'
 alias findg='find . | egrep '
 alias brc='vim ~/.bash_aliases'
+alias barc='vim ~/.bashrc'
 alias vrc='vim ~/.vimrc'
 alias brst='. ~/.bashrc'
 alias cl='clear'

@@ -94,6 +94,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# cuda env
+export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cudnn/lib64:$LD_LIBRARY_PATH
+export CUDA_HOME=/usr/local/cuda
 
 # standard editor
 export EDITOR=vim

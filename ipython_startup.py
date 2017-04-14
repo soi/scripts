@@ -1,11 +1,11 @@
 import sys, os
 import numpy as np
-import cv2
+# import cv2
 import matplotlib.pyplot as plt
-import Tkinter
+# import Tkinter
 from pprint import pprint
 import sklearn
-import cPickle as pickle
+import _pickle as pickle
 
 plt.interactive(True)
 
