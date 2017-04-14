@@ -17,6 +17,7 @@ alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
 alias python=python3
+alias his='history | tail -50'
 alias togit='~/git/scripts/small-scripts/cp_scripts -m to-git'
 alias fromgit='~/git/scripts/small-scripts/cp_scripts -m from-git'
 alias huv='hu; vim predict_neural.py'
