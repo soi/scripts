@@ -16,7 +16,8 @@ alias ke='cd ~/git/keras'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
-alias python=python3
+alias to-git='~/git/scripts/small-scripts/cp_scripts.py -m to-git'
+alias from-git='~/git/scripts/small-scripts/cp_scripts.py -m from-git'
 alias his='history | tail -50'
 alias togit='~/git/scripts/small-scripts/cp_scripts -m to-git'
 alias fromgit='~/git/scripts/small-scripts/cp_scripts -m from-git'
