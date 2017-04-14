@@ -18,7 +18,7 @@ parser.add_argument("-m", "--mode", default="invalid")
 args = parser.parse_args()
 
 if args.mode == 'invalid':
-    print 'use -m to-git or -m from-git'
+    print 'Usage: -m [to-git, from-git]'
 else:
     for file in files:
         if not filecmp.cmp(file[0], file[1]):
