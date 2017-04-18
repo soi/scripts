@@ -5,7 +5,10 @@ import matplotlib.pyplot as plt
 # import Tkinter
 from pprint import pprint
 import sklearn
-import _pickle as pickle
+try:
+    import _pickle as pickle #python2
+except ImportError:
+    import pickle
 
 plt.interactive(True)
 
