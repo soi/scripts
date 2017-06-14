@@ -14,5 +14,5 @@ plt.interactive(True)
 
 np.set_printoptions(linewidth = 75)
 
-a = range(10)
-b = range(100)
+a = np.arange(10)
+b = np.arange(100)
