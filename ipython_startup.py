@@ -13,3 +13,6 @@ except ImportError:
 plt.interactive(True)
 
 np.set_printoptions(linewidth = 75)
+
+a = range(10)
+b = range(100)
