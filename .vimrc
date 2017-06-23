@@ -20,9 +20,8 @@ set encoding=utf8
 set number
 set backspace=indent,eol,start
 " set nofoldenable
-set foldmethod=indent
+set foldmethod=syntax
 set foldnestmax=1
-nnoremap <space> za
 
 " store the swap and undo files in extra folders, with the full path
 " to avoid problems with identical names
@@ -76,6 +75,7 @@ nnoremap > >>
 nnoremap < <<
 nnoremap <leader>b q:
 nnoremap <leader>: @:
+nmap <space> /
 nmap <C-j> <C-d>
 nmap <C-k> <C-u>
 nmap <F10> :call CommentLine()<CR>
