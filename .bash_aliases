@@ -20,7 +20,7 @@ alias misc='cd ~/git/misc'
 # program shortcuts/enhancements
 alias to-git='~/git/scripts/small-scripts/cp_scripts.py -m to-git'
 alias from-git='~/git/scripts/small-scripts/cp_scripts.py -m from-git'
-alias commit-scr='scr; git pull; to-git; gitacp "automated commit"; cd - > /dev/null'
+alias commit-scr='to-git; scr; gitacp "automated commit"; cd - > /dev/null'
 alias pull-scr='scr; git pull; from-git; cd - > /dev/null'
 alias his='history | tail -50'
 alias togit='~/git/scripts/small-scripts/cp_scripts -m to-git'
