@@ -1,4 +1,4 @@
 #!/bin/bash
 
 pip install --upgrade pip
-sudo pip3 install numpy scipy matplotlib ipython jupyter pandas sympy nose sklearn line-profiler keras tensorflow h5py
+sudo pip3 install numpy scipy matplotlib ipython jupyter pandas sympy nose sklearn line-profiler keras tensorflow h5py terminaltables
