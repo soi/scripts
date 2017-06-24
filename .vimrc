@@ -22,7 +22,7 @@ set backspace=indent,eol,start
 " set nofoldenable
 " set foldmethod=indent
 " set foldnestmax=1
-nnoremap <space> za
+" nnoremap <space> za
 
 " store the swap and undo files in extra folders, with the full path
 " to avoid problems with identical names
