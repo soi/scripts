@@ -1,5 +1,6 @@
 set nocompatible
 
+
 syntax on
 filetype plugin indent on
 
@@ -20,8 +21,8 @@ set encoding=utf8
 set number
 set backspace=indent,eol,start
 " set nofoldenable
-set foldmethod=indent
-set foldnestmax=1
+" set foldmethod=indent
+" set foldnestmax=1
 nnoremap <space> za
 
 " store the swap and undo files in extra folders, with the full path

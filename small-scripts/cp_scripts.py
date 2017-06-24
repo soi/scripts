@@ -24,7 +24,7 @@ else:
         if not filecmp.cmp(file[0], file[1]):
             if args.mode == "to-git":
                 shutil.copyfile(file[0], file[1])
-                print "copied", file[0], "to", file[1]
+                print file[0].split("/")[-1]
             if args.mode == "from-git":
                 shutil.copyfile(file[1], file[0])
-                print "copied", file[1], "to", file[0]
+                print file[0].split("/")[-1]
