@@ -24,15 +24,20 @@ read -p $'\n'"Do you want to update your sources? [y/n] " update
 
 for package in $(cat $(dirname $0)/$1)
 do
-	read -p $'\n\n'"Install the package \"$package\"? [y/n] " ok
-	
-	if [ -z $ok ]; then
-		echo "Skipped."
+	if [ $# -gt 1 -a "$2" = "--all" ]
+	then
+		apt-get -q install --yes $package 
 	else
-		if [ $ok == "y" -o $ok == "Y" ]; then
-			apt-get -q install $package 
-		else
+		read -p $'\n\n'"Install the package \"$package\"? [y/n] " ok
+		
+		if [ -z $ok ]; then
 			echo "Skipped."
+		else
+			if [ $ok == "y" -o $ok == "Y" ]; then
+				apt-get -q install $package 
+			else
+				echo "Skipped."
+			fi
 		fi
 	fi
 done
