@@ -4,9 +4,11 @@ alias pr3='python3 ./predict_seq.py'
 alias vip='vim ~/git/hu/touch/predict_seq.py'
 alias hu='cd ~/git/hu'
 alias hut='cd ~/git/hu/touch'
+alias hutt='cd ~/git/hu/touch/text'
 alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
-alias mkha='ha; pdflatex hausarbeit.tex; pdflatex hausarbeit.tex; go hausarbeit.pdf'
+alias mkt='hut; cd text; pdflatex arbeit.tex; pdflatex arbeit.tex; go arbeit.pdf'
+alias te='hut; cd text; vim arbeit.tex'
 
 # dir shortcuts
 alias drop='cd ~/Dropbox'
