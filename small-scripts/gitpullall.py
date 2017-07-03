@@ -15,8 +15,9 @@ else:
 
 GIT_HOME_DIR = '/home/' + USER + '/git/'
 GIT_LIST = [
-                (GIT_HOME_DIR + 'scripts', 'ssh://soi@felix-stiehler.de/home/git/scripts'),
-                (GIT_HOME_DIR + 'misc', 'ssh://soi@felix-stiehler.de/home/git/misc'),
+                (GIT_HOME_DIR + 'hu', 'ssh://git@github.com:soi/hu.git'),
+                (GIT_HOME_DIR + 'scripts', 'ssh://git@github.com:soi/scripts.git'),
+                (GIT_HOME_DIR + 'misc', 'ssh://git@github.com:soi/misc.git'),
            ]
 LOG_FILE = '/home/' + USER + '/.gitpullall.log'
 
