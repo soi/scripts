@@ -21,6 +21,7 @@ alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
 
+alias sdown='sudo shutdown now'
 alias to-git='~/git/scripts/small-scripts/cp_scripts.py -m to-git'
 alias from-git='~/git/scripts/small-scripts/cp_scripts.py -m from-git'
 alias commit-scr='cp_scr_out=$(to-git); scr; gitacp "$cp_scr_out"; cd - > /dev/null'
