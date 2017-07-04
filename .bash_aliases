@@ -7,7 +7,19 @@ alias hut='cd ~/git/hu/touch'
 alias hutt='cd ~/git/hu/touch/text'
 alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
-alias mkt='hut; cd text; pdflatex arbeit.tex; pdflatex arbeit.tex; go arbeit.pdf'
+
+mkt() {
+	name="arbeit"
+	hut 
+	cd text 
+	pdflatex "$name".tex 
+	bibtex "$name".tex 
+	bibtex "$name".tex 
+	pdflatex "$name".tex 
+	pdflatex "$name".tex
+	go "$name".pdf
+}
+
 alias te='hut; cd text; vim arbeit.tex'
 
 # dir shortcuts
