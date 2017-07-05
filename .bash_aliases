@@ -13,11 +13,10 @@ mkt() {
 	hut 
 	cd text 
 	pdflatex "$name".tex 
-	bibtex "$name".tex 
-	bibtex "$name".tex 
+	bibtex "$name" 
 	pdflatex "$name".tex 
-	pdflatex "$name".tex
-	go "$name".pdf
+	pdflatex "$name".tex 
+	gnome-open "$name".pdf
 }
 
 alias te='hut; cd text; vim arbeit.tex'
