@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 # import Tkinter
 from pprint import pprint
 import sklearn
-import keras
 
 try:
     import _pickle as pickle #python2
