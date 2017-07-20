@@ -8,6 +8,13 @@ alias hutt='cd ~/git/hu/touch/text'
 alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
 
+mkdata() {
+	hut 
+	cd data/fixed
+	../coordinates2.py $1/raw > $1/coordinates2 
+	./fixed.py $1/coordinates2 > $1/fixed_coordinates
+}
+
 mkt() {
 	name="arbeit"
 	hut 
