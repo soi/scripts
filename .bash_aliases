@@ -5,6 +5,7 @@ alias vip='vim ~/git/hu/touch/predict_seq.py'
 alias hu='cd ~/git/hu'
 alias hut='cd ~/git/hu/touch'
 alias hutt='cd ~/git/hu/touch/text'
+alias epi='cd ~/git/epirob-2017-self-workshop/abstract'
 alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
 
@@ -15,10 +16,12 @@ mkdata() {
 	./fixed.py $1/coordinates2 > $1/fixed_coordinates
 }
 
-mkt() {
-	name="arbeit"
-	hut 
-	cd text 
+alias mkt='mklatex ~/git/hu/touch/text arbeit'
+alias mke='mklatex ~/git/epirob-2017-self-workshop/abstract abstract'
+
+mklatex() {
+	name="$2"
+	cd "$1"
 	pdflatex "$name".tex 
 	bibtex "$name" 
 	pdflatex "$name".tex 
@@ -27,6 +30,7 @@ mkt() {
 }
 
 alias te='hut; cd text; vim arbeit.tex'
+alias tepi='epi; vim abstract.tex'
 
 # dir shortcuts
 alias drop='cd ~/Dropbox'
