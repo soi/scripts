@@ -102,6 +102,7 @@ alias aremove='sudo apt-get remove'
 alias dpkgg='dpkg -l | g'
 
 # git
+alias gitpua='sma; ./gitpullall.py'
 alias gitl='git log --pretty=format:"%h - %an - %ar --- %s" --graph --color --branches -w'
 alias gitlong='git log --stat --color '
 alias gitd='git difftool -y'
