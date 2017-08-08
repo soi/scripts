@@ -51,7 +51,7 @@ sdown() {
 	}
 
 	to-git-dry
-	if [ $flag -eq 1 ]; then
+	if [ $? -eq 1 ]; then
 		read -p $'\n'"Commit the scripts git? [y/N]" ok	
 		if [ -z $ok ]; then
 			echo "Not commited."
