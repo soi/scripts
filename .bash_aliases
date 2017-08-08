@@ -4,7 +4,7 @@ alias pr3='python3 ./predict_seq.py'
 alias vip='vim ~/git/hu/touch/predict_seq.py'
 alias hu='cd ~/git/hu'
 alias hut='cd ~/git/hu/touch'
-alias hutt='cd ~/git/hu/touch/text'
+alias ar='cd ~/git/hu/text'
 alias epi='cd ~/git/epirob-2017-self-workshop/abstract'
 alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
@@ -16,7 +16,7 @@ mkdata() {
 	./fixed.py $1/coordinates2 > $1/fixed_coordinates
 }
 
-alias mkt='mklatex ~/git/hu/touch/text arbeit'
+alias mkt='mklatex ~/git/hu/text arbeit'
 alias mke='mklatex ~/git/epirob-2017-self-workshop/abstract abstract'
 
 mklatex() {
@@ -29,7 +29,7 @@ mklatex() {
 	gnome-open "$name".pdf
 }
 
-alias te='hut; cd text; vim arbeit.tex'
+alias te='ar; vim arbeit.tex'
 alias tepi='epi; vim abstract.tex'
 
 # dir shortcuts

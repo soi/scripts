@@ -17,6 +17,7 @@ GIT_HOME_DIR = '/home/' + USER + '/git/'
 GIT_LIST = [
                 (GIT_HOME_DIR + 'hu', 'git@github.com:soi/hu.git'),
                 (GIT_HOME_DIR + 'epirob-2017-self-workshop', 'git@github.com:soi/epirob-2017-self-workshop.git'),
+                (GIT_HOME_DIR + 'keras-mdn', 'git@github.com:soi/keras-mdn.git'),
                 (GIT_HOME_DIR + 'scripts', 'git@github.com:soi/scripts.git'),
                 (GIT_HOME_DIR + 'misc', 'git@github.com:soi/misc.git'),
            ]
