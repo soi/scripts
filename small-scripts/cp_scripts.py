@@ -20,10 +20,12 @@ args = parser.parse_args()
 if args.mode == 'invalid':
     print 'Usage: -m [to-git, from-git] [--dry-run]'
 else:
+    changed_flag = False
     if args.dry_run:
         print "dry run"
     for file in files:
         if not filecmp.cmp(file[0], file[1]):
+            changed_flag = True
             if args.mode == "to-git":
                 if not args.dry_run:
                     shutil.copyfile(file[0], file[1])
@@ -32,3 +34,8 @@ else:
                 if not args.dry_run:
                     shutil.copyfile(file[1], file[0])
                 print file[0].split("/")[-1]
+
+    if changed_flag:
+        exit(1)
+    else:
+        exit(0)

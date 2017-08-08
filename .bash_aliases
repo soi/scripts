@@ -50,7 +50,22 @@ sdown() {
 		sudo shutdown now
 	}
 
-	to-git
+	to-git-dry
+	if [ $flag -eq 1 ]; then
+		read -p $'\n'"Commit the scripts git? [y/N]" ok	
+		if [ -z $ok ]; then
+			echo "Not commited."
+		else
+			if [ $ok == "y" -o $ok == "Y" ]; then
+				commit-scr
+			else
+				echo "Not commited."
+			fi
+		fi
+	else
+		commit-scr
+	fi
+
 	flag=0
 	for git_dir in "/home/felix/git"/*
 	do
@@ -78,6 +93,7 @@ sdown() {
 }
 
 alias to-git='~/git/scripts/small-scripts/cp_scripts.py -m to-git'
+alias to-git-dry='~/git/scripts/small-scripts/cp_scripts.py -m to-git --dry-run'
 alias from-git='~/git/scripts/small-scripts/cp_scripts.py -m from-git'
 alias commit-scr='cp_scr_out=$(to-git); scr; gitacp "$cp_scr_out"; cd - > /dev/null'
 alias pull-scr='scr; git pull; from-git; cd - > /dev/null; source ~/.bash_aliases'
