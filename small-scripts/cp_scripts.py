@@ -14,17 +14,21 @@ files = [["/home/felix/.bash_aliases", git_scripts_home + ".bash_aliases"],
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-m", "--mode", default="invalid")
-# parser.add_argument("-c", "--commit", action="store_true")
+parser.add_argument("-dr", "--dry-run", action="store_true")
 args = parser.parse_args()
 
 if args.mode == 'invalid':
-    print 'Usage: -m [to-git, from-git]'
+    print 'Usage: -m [to-git, from-git] [--dry-run]'
 else:
+    if args.dry_run:
+        print "dry run"
     for file in files:
         if not filecmp.cmp(file[0], file[1]):
             if args.mode == "to-git":
-                shutil.copyfile(file[0], file[1])
+                if not args.dry_run:
+                    shutil.copyfile(file[0], file[1])
                 print file[0].split("/")[-1]
             if args.mode == "from-git":
-                shutil.copyfile(file[1], file[0])
+                if not args.dry_run:
+                    shutil.copyfile(file[1], file[0])
                 print file[0].split("/")[-1]
