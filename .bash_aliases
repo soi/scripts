@@ -84,6 +84,8 @@ alias wgethtml='wget -E -H -k -K -p -nd'
 
 sdown() {
 	shutdown_sequence() {
+		echo ''
+		echo 'will shut down'
 		pkill chrome 
 		sudo shutdown now
 	}
