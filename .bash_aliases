@@ -1,4 +1,5 @@
 # uni
+
 alias pr='./predict_seq.py'
 alias pr3='python3 ./predict_seq.py'
 alias vip='vim ~/git/hu/touch/predict_seq.py'
@@ -43,14 +44,44 @@ alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
 
-alias sdown='pkill chrome & sudo shutdown now'
+sdown() {
+	shutdown_sequence() {
+		echo "shut down"
+		# pkill chrome 
+		# sudo shutdown now
+	}
+
+	flag=0
+	for git_dir in "/home/felix/git"/*
+	do
+		git -C "$git_dir" diff-index --quiet HEAD --
+		if [ $? -ne 0 ]; then
+			echo "Uncommited stuff in $git_dir"
+			flag=1
+		fi
+	done
+
+	if [ $flag -eq 1 ]; then
+		read -p $'\n'"The are still things to commit. Still shut down? [y/N]" ok	
+		if [ -z $ok ]; then
+			echo "Aborted."
+		else
+			if [ $ok == "y" -o $ok == "Y" ]; then
+				shutdown_sequence
+			else
+				echo "Aborted."
+			fi
+		fi
+	else
+		shutdown_sequence
+	fi
+}
+
 alias to-git='~/git/scripts/small-scripts/cp_scripts.py -m to-git'
 alias from-git='~/git/scripts/small-scripts/cp_scripts.py -m from-git'
 alias commit-scr='cp_scr_out=$(to-git); scr; gitacp "$cp_scr_out"; cd - > /dev/null'
 alias pull-scr='scr; git pull; from-git; cd - > /dev/null; source ~/.bash_aliases'
 alias his='history | tail -50'
-alias togit='~/git/scripts/small-scripts/cp_scripts -m to-git'
-alias fromgit='~/git/scripts/small-scripts/cp_scripts -m from-git'
 alias huv='hu; vim predict_neural.py'
 alias pudb='python -m pudb.run'
 alias pdb='hu; pudb predict_neural.py'
