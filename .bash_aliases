@@ -102,8 +102,6 @@ sdown() {
 				echo "Not commited."
 			fi
 		fi
-	else
-		commit-scr
 	fi
 
 	flag=0
