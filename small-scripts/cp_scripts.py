@@ -38,4 +38,5 @@ else:
     if changed_flag:
         exit(1)
     else:
+        print "all up-to-date"
         exit(0)
