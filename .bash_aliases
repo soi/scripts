@@ -90,16 +90,16 @@ sdown() {
 		sudo shutdown now
 	}
 
-	to-git-dry
+	to-git-dry > /dev/null
 	if [ $? -eq 1 ]; then
-		read -p $'\n'"Commit the scripts git? [y/N]" ok	
+		read -p $'\n'"Changes inside some scripts. Commit the scripts git? [y/N]" ok	
 		if [ -z $ok ]; then
-			echo "Not commited."
+			echo -e "Not commited.\n"
 		else
 			if [ $ok == "y" -o $ok == "Y" ]; then
 				commit-scr
 			else
-				echo "Not commited."
+				echo -e "Not commited.\n"
 			fi
 		fi
 	fi
