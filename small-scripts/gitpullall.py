@@ -31,6 +31,7 @@ for git in GIT_LIST:
     if os.path.exists( git[0] ):
         logging.debug("Pulling into " + git[0])
         Popen(['git', 'pull'], cwd=( git[0] )).communicate()
+        print ''
     else:
         logging.debug(git[0] + ' not existing. cloning now from ' + git[1])
 
