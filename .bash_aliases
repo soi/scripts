@@ -85,8 +85,6 @@ sdown() {
 	shutdown_sequence() {
 		echo ''
 		echo 'will shut down'
-		hamster-cli stop
-		sleep 2s
 		pkill chrome 
 		sudo shutdown now
 	}
