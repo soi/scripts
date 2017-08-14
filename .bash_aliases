@@ -1,4 +1,5 @@
 # uni
+
 alias pr='./predict_seq.py'
 alias pr3='python3 ./predict_seq.py'
 alias vip='vim ~/git/hu/touch/predict_seq.py'
@@ -47,8 +48,8 @@ alias to-git-dry='~/git/scripts/small-scripts/cp_scripts.py -m to-git --dry-run'
 alias from-git='~/git/scripts/small-scripts/cp_scripts.py -m from-git'
 alias commit-scr='cp_scr_out=$(to-git); scr; gitacp "$cp_scr_out"; cd - > /dev/null'
 alias pull-scr='scr; git pull; from-git; cd - > /dev/null; source ~/.bash_aliases'
-alias killham='sudo killall hamster-time-tracker; sudo killall hamster-service'
 alias his='history | tail -50'
+alias huv='hu; vim predict_neural.py'
 alias pudb='python -m pudb.run'
 alias pdb='hu; pudb predict_neural.py'
 alias ipy='ipython --TerminalInteractiveShell.editing_mode=vi'
@@ -85,6 +86,8 @@ sdown() {
 	shutdown_sequence() {
 		echo ''
 		echo 'will shut down'
+		hamster-cli stop
+		sleep 2s
 		pkill chrome 
 		sudo shutdown now
 	}
