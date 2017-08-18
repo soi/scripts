@@ -20,6 +20,7 @@ GIT_LIST = [
                 (GIT_HOME_DIR + 'keras-mdn', 'git@github.com:soi/keras-mdn.git'),
                 (GIT_HOME_DIR + 'scripts', 'git@github.com:soi/scripts.git'),
                 (GIT_HOME_DIR + 'misc', 'git@github.com:soi/misc.git'),
+                (GIT_HOME_DIR + 'write-rnn-tensorflow', 'git@github.com:soi/write-rnn-tensorflow.git'),
            ]
 LOG_FILE = '/home/' + USER + '/.gitpullall.log'
 
