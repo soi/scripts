@@ -45,6 +45,7 @@ alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
 alias cdl='cd $(ls -t | head -1)'
+alias cdlr='hut; cd hyperopt/$(ls -t hyperopt | head -1)'
 alias to-git='~/git/scripts/small-scripts/cp_scripts.py -m to-git'
 alias to-git-dry='~/git/scripts/small-scripts/cp_scripts.py -m to-git --dry-run'
 alias from-git='~/git/scripts/small-scripts/cp_scripts.py -m from-git'
