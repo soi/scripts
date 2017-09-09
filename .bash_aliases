@@ -6,11 +6,16 @@ alias vip='vim ~/git/hu/touch/predict_seq.py'
 alias hu='cd ~/git/hu'
 alias hut='cd ~/git/hu/touch'
 alias hur='cd ~/git/hu/touch/results'
+alias hud='cd ~/git/hu/touch/data'
 alias ar='cd ~/git/hu/text'
 alias kem='cd ~/git/keras-mdn'
 alias epi='cd ~/git/epirob-2017-self-workshop/abstract'
 alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
+
+mvs() {
+	mv -v saved_image* ~/git/hu/text/images/traj/$1.png
+}
 
 mkdata() {
 	hut 
