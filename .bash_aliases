@@ -27,6 +27,7 @@ mkdata() {
 
 alias mkt='mklatex ~/git/hu/text arbeit'
 alias mke='mklatex ~/git/epirob-2017-self-workshop/abstract abstract'
+alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps'
 
 mklatex() {
 	name="$2"
