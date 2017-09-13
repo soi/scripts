@@ -15,7 +15,7 @@ alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
 
 mvs() {
-	mv -v saved_image* ~/git/hu/text/images/traj/$1.png
+	mv -v saved_image* ~/git/hu/text/images/traj/$1.ps
 }
 
 mkdata() {
@@ -27,7 +27,7 @@ mkdata() {
 
 alias mkt='mklatex ~/git/hu/text arbeit'
 alias mke='mklatex ~/git/epirob-2017-self-workshop/abstract abstract'
-alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps'
+alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
 mklatex() {
 	name="$2"
@@ -40,6 +40,7 @@ mklatex() {
 }
 
 alias te='ar; vim arbeit.tex'
+alias pe='hup; vim poster.tex'
 alias tepi='epi; vim abstract.tex'
 
 # dir shortcuts
