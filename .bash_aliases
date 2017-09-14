@@ -15,7 +15,8 @@ alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
 
 mvs() {
-	mv -v saved_image* ~/git/hu/text/poster/figures/traj/$1.ps
+	mv -v saved_canvas* ~/git/hu/text/poster/figures/$1_pred.ps
+	mv -v saved_plot* ~/git/hu/text/poster/figures/$1_model.ps
 }
 
 mkdata() {
