@@ -39,7 +39,7 @@ mklatex() {
 	gnome-open "$name".pdf
 }
 
-alias te='ar; vim arbeit.tex'
+alias te='hue; vim arbeit.tex'
 alias pe='hup; vim poster.tex'
 alias tepi='epi; vim abstract.tex'
 
