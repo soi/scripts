@@ -15,7 +15,15 @@ alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
 
 mvs() {
-	mv -v saved_image* ~/git/hu/text/poster/figures/traj/$1.ps
+	ps2pdf -dEPSCrop saved_canvas*
+
+	mv -v saved_canvas*.pdf ~/git/hu/text/images/$1_canvas.pdf
+	epstool --copy --bbox saved_plot* ~/git/hu/text/images/$1_plot.eps
+	epstool --copy --bbox saved_contour* ~/git/hu/text/images/$1_contour.eps
+
+	rm -v saved_canvas*
+	rm -v saved_plot*
+	rm -v saved_contour*
 }
 
 mkdata() {
