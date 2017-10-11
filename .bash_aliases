@@ -9,6 +9,7 @@ alias hur='cd ~/git/hu/touch/results'
 alias hud='cd ~/git/hu/touch/data'
 alias hup='cd ~/git/hu/text/poster'
 alias hue='cd ~/git/hu/text'
+alias hui='cd ~/git/hu/text/images'
 alias kem='cd ~/git/keras-mdn'
 alias epi='cd ~/git/epirob-2017-self-workshop/abstract'
 alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
@@ -18,8 +19,8 @@ mvs() {
 	ps2pdf -dEPSCrop saved_canvas*
 
 	mv -v saved_canvas*.pdf ~/git/hu/text/images/$1_canvas.pdf
-	epstool --copy --bbox saved_plot* ~/git/hu/text/images/$1_plot.eps
-	epstool --copy --bbox saved_contour* ~/git/hu/text/images/$1_contour.eps
+	# epstool --copy --bbox saved_plot* ~/git/hu/text/images/$1_plot.eps
+	mv -v saved_contour* ~/git/hu/text/images/$1_contour.png
 
 	rm -v saved_canvas*
 	rm -v saved_plot*
