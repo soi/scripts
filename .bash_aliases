@@ -26,13 +26,13 @@ mdn() {
 }
 
 mvs() {
-	ps2pdf -dEPSCrop saved_canvas*
+	# ps2pdf -dEPSCrop saved_canvas*
 
-	mv -v saved_canvas*.pdf ~/git/hu/text/images/$1_canvas.pdf
-	epstool --copy --bbox saved_plot* ~/git/hu/text/images/$1_plot.eps
+	# mv -v saved_canvas*.pdf ~/git/hu/text/images/$1_canvas.pdf
+	epstool --copy --bbox saved_plot* ~/git/hu/text/images/mse_overall_$1.eps
 	# mv -v saved_contour* ~/git/hu/text/images/$1_contour.png
 
-	rm -v saved_canvas*
+	# rm -v saved_canvas*
 	rm -v saved_plot*
 	# rm -v saved_contour*
 }
