@@ -15,16 +15,26 @@ alias epi='cd ~/git/epirob-2017-self-workshop/abstract'
 alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
 alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
 
+sim() {
+	hut
+	./lstm_simple.py -d data/$1*/coordinates2 -lm results/models/lstm_simple/5_point/$1*.h5 -ts $2
+}
+
+mdn() {
+	hut
+	./lstm_mdn2d.py -d data/$1*/coordinates2 -lm results/models/lstm_mdn2d/$1*.h5 -ts $2
+}
+
 mvs() {
 	ps2pdf -dEPSCrop saved_canvas*
 
 	mv -v saved_canvas*.pdf ~/git/hu/text/images/$1_canvas.pdf
 	epstool --copy --bbox saved_plot* ~/git/hu/text/images/$1_plot.eps
-	mv -v saved_contour* ~/git/hu/text/images/$1_contour.png
+	# mv -v saved_contour* ~/git/hu/text/images/$1_contour.png
 
 	rm -v saved_canvas*
 	rm -v saved_plot*
-	rm -v saved_contour*
+	# rm -v saved_contour*
 }
 
 mkdata() {
