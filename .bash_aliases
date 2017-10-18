@@ -55,7 +55,6 @@ mklatex() {
 	bibtex "$name" 
 	pdflatex "$name".tex 
 	pdflatex "$name".tex 
-	gnome-open "$name".pdf
 }
 
 alias te='hue; vim arbeit.tex'
