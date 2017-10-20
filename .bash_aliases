@@ -12,8 +12,6 @@ alias hue='cd ~/git/hu/text'
 alias hui='cd ~/git/hu/text/images'
 alias kem='cd ~/git/keras-mdn'
 alias epi='cd ~/git/epirob-2017-self-workshop/abstract'
-alias vpnstart='~/.juniper_networks/network_connect/jnc hu-berlin'
-alias vpnstop='~/.juniper_networks/network_connect/jnc stop'
 
 sim() {
 	hut
@@ -45,6 +43,7 @@ mkdata() {
 }
 
 alias mkt='mklatex ~/git/hu/text arbeit'
+alias mkto='mklatex ~/git/hu/text arbeit; okular arbeit.pdf&'
 alias mke='mklatex ~/git/epirob-2017-self-workshop/abstract abstract'
 alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
