@@ -13,6 +13,16 @@ alias hui='cd ~/git/hu/text/images'
 alias kem='cd ~/git/keras-mdn'
 alias epi='cd ~/git/epirob-2017-self-workshop/abstract'
 
+uncom() {
+	hue
+	sed -i 's/^\(\\\w*{comment}\)/%\1/' arbeit.tex
+}
+
+com() {
+	hue
+	sed -i 's/^%\(\\\w*{comment}\)/\1/' arbeit.tex
+}
+
 sim() {
 	hut
 	./lstm_simple.py -d data/$1*/coordinates2 -lm results/models/lstm_simple/5_point/$1*.h5 -ts $2
