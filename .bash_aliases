@@ -25,13 +25,13 @@ com() {
 }
 
 sim() {
-	hut
-	./lstm_simple.py -d data/$1*/coordinates2 -lm results/models/lstm_simple/5_point/$1*.h5 -ts $2
+	ma
+	./lstm_simple.py -d data/$1*/coordinates2 -lm results/lstm_simple/5_point/$1*.h5 -ts $2
 }
 
 mdn() {
-	hut
-	./lstm_mdn2d.py -d data/$1*/coordinates2 -lm results/models/lstm_mdn2d/$1*.h5 -ts $2
+	ma
+	./lstm_mdn2d.py -d data/$1*/coordinates2 -lm results/lstm_mdn2d/$1*.h5 -ts $2
 }
 
 mvs() {
