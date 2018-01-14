@@ -11,3 +11,5 @@ build-essential
 ipython
 pip
 p7zip-full
+gnome-tweak-tool
+libgnome2-bin
