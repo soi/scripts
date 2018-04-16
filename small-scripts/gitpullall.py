@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 from subprocess import Popen
 import os
@@ -16,7 +16,6 @@ else:
 GIT_HOME_DIR = '/home/' + USER + '/git/'
 GIT_LIST = [
                 (GIT_HOME_DIR + 'hu', 'git@github.com:soi/hu.git'),
-                (GIT_HOME_DIR + 'master_thesis', 'git@github.com:soi/master_thesis.git'),
                 # (GIT_HOME_DIR + 'epirob-2017-self-workshop', 'git@github.com:soi/epirob-2017-self-workshop.git'),
                 # (GIT_HOME_DIR + 'keras-mdn', 'git@github.com:soi/keras-mdn.git'),
                 (GIT_HOME_DIR + 'scripts', 'git@github.com:soi/scripts.git'),
@@ -29,11 +28,11 @@ logging.basicConfig(filename=LOG_FILE, format='%(asctime)s - %(message)s', level
 logging.debug('*** New run *** - checking ' + str(len(GIT_LIST)) + ' repositories')
 for git in GIT_LIST:
 
-    print 'Checking ' + git[0]
+    print('Checking ' + git[0])
     if os.path.exists( git[0] ):
         logging.debug("Pulling into " + git[0])
         Popen(['git', 'pull'], cwd=( git[0] )).communicate()
-        print ''
+        print('')
     else:
         logging.debug(git[0] + ' not existing. cloning now from ' + git[1])
 
