@@ -1,57 +1,5 @@
 # uni
-
-alias pr='./predict_seq.py'
-alias pr3='python3 ./predict_seq.py'
-alias vip='vim ~/git/hu/touch/predict_seq.py'
-alias hu='cd ~/git/hu'
-alias hut='cd ~/git/hu/touch'
-alias ma='cd ~/git/master_thesis'
-alias hur='cd ~/git/hu/touch/results'
-alias hud='cd ~/git/hu/touch/data'
-alias hup='cd ~/git/hu/text/poster'
-alias hue='cd ~/git/hu/text'
-alias hui='cd ~/git/hu/text/images'
-alias kem='cd ~/git/keras-mdn'
-alias epi='cd ~/git/epirob-2017-self-workshop/abstract'
-
-uncom() {
-	hue
-	sed -i 's/^\(\\\w*{comment}\)/%\1/' arbeit.tex
-}
-
-com() {
-	hue
-	sed -i 's/^%\(\\\w*{comment}\)/\1/' arbeit.tex
-}
-
-sim() {
-	ma
-	./lstm_simple.py -d data/$1*/coordinates2 -lm results/lstm_simple/5_point/$1*.h5 -ts $2
-}
-
-mdn() {
-	ma
-	./lstm_mdn2d.py -d data/$1*/coordinates2 -lm results/lstm_mdn2d/$1*.h5 -ts $2
-}
-
-mvs() {
-	ps2pdf -dEPSCrop saved_canvas*
-
-	mv -v saved_canvas*.pdf ~/git/hu/text/images/$1_canvas.pdf
-	epstool --copy --bbox saved_plot* ~/git/hu/text/images/$1_plot.eps
-	# mv -v saved_contour* ~/git/hu/text/images/$1_contour.png
-
-	rm -v saved_canvas*
-	rm -v saved_plot*
-	# rm -v saved_contour*
-}
-
-mkdata() {
-	hut 
-	cd data/fixed
-	../coordinates2.py $1/raw > $1/coordinates2 
-	./fixed.py $1/coordinates2 > $1/fixed_coordinates
-}
+alias ph='cd ~/git/phd'
 
 alias mkt='mklatex ~/git/hu/text arbeit'
 alias mkto='mklatex ~/git/hu/text arbeit; okular arbeit.pdf&'
