@@ -29,6 +29,7 @@ alias ke='cd ~/git/keras'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias pdfe='/usr/share/playonlinux/playonlinux --run "PDFXEdit"'
 alias cdl='cd $(ls -t | head -1)'
 alias cdlr='hut; cd hyperopt/$(ls -t hyperopt | head -1)'
 alias to-git='~/git/scripts/small-scripts/cp_scripts.py -m to-git'
