@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ $1 == 'p3' ]
+then
+	set -- "python3" "${@:2}"
+fi
+
+(google-chrome 'https://www.google.de/search?q='"$*"&) > /dev/null 2>&1
