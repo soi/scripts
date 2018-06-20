@@ -1,6 +1,6 @@
 # uni
 alias ph='cd ~/git/phd'
-alias phj='cd ~/git/phd/journal_club'
+alias phc='cd ~/git/phd/coursera/course1/'
 
 alias mkt='mklatex ~/git/hu/text arbeit'
 alias mkto='mklatex ~/git/hu/text arbeit; okular arbeit.pdf&'
