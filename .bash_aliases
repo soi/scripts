@@ -1,6 +1,7 @@
 # uni
 alias ph='cd ~/git/phd'
-alias phc='cd ~/git/phd/coursera/course1/'
+alias phc='cd ~/git/phd/coursera/course2/'
+alias cpdata='cp $(ls -t ~/Downloads/dataset* | head -1) tmp'
 
 alias mkt='mklatex ~/git/hu/text arbeit'
 alias mkto='mklatex ~/git/hu/text arbeit; okular arbeit.pdf&'
