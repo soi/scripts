@@ -168,6 +168,7 @@ set listchars=eol:$,tab:\|-,trail:~,extends:>,precedes:<
 " setting the status line format
 set statusline=%<%f\ [%Y%R%M]%h%w\ %n%=%l,%v\ \ %p%%\
 
+set runtimepath^=~/.vim/ctrlp.vim
 " settings for command-T
 let g:CommandTMaxHeight=20
 let g:CommandTAlwaysShowDotFiles=1
