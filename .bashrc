@@ -99,6 +99,9 @@ fi
 # path extension for pip installs
 export PATH=/home/felix/.local/bin${PATH:+:${PATH}}
 
+# for bazel
+export PATH="$PATH:$HOME/bin"
+
 # cuda env
 # export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/cudnn/lib64:$LD_LIBRARY_PATH
