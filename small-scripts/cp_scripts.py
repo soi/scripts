@@ -1,4 +1,4 @@
-#! /usr/bin/env python2
+#! /usr/bin/env python3
 import sys, os
 import filecmp
 import shutil
@@ -18,25 +18,25 @@ parser.add_argument("-dr", "--dry-run", action="store_true")
 args = parser.parse_args()
 
 if args.mode == 'invalid':
-    print 'Usage: -m [to-git, from-git] [--dry-run]'
+    print('Usage: -m [to-git, from-git] [--dry-run]')
 else:
     changed_flag = False
     if args.dry_run:
-        print "dry run"
+        print("dry run")
     for file in files:
-        if not filecmp.cmp(file[0], file[1]):
+        if not os.path.isfile(file[0]) or not filecmp.cmp(file[0], file[1]):
             changed_flag = True
             if args.mode == "to-git":
                 if not args.dry_run:
                     shutil.copyfile(file[0], file[1])
-                print file[0].split("/")[-1]
+                print (file[0].split("/")[-1])
             if args.mode == "from-git":
                 if not args.dry_run:
                     shutil.copyfile(file[1], file[0])
-                print file[0].split("/")[-1]
+                print (file[0].split("/")[-1])
 
     if changed_flag:
         exit(1)
     else:
-        print "everything up-to-date"
+        print("everything up-to-date")
         exit(0)
