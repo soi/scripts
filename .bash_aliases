@@ -32,6 +32,7 @@ alias ke='cd ~/git/keras'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias pinstall='pip3 install --user'
 alias goo='~/git/scripts/small-scripts/goo'
 alias pdfe='/usr/share/playonlinux/playonlinux --run "PDFXEdit"'
 alias cdl='cd $(ls -t | head -1)'
