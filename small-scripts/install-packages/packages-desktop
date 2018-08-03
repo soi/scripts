@@ -3,6 +3,7 @@ tree
 htop
 meld
 build-essential
+virtualenv
 ipython3
 gnome-tweak-tool
 libgnome2-bin

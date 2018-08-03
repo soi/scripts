@@ -34,7 +34,7 @@ do
 			echo "Skipped."
 		else
 			if [ $ok == "y" -o $ok == "Y" ]; then
-				apt-get -q install $package 
+				apt-get -q install --yes $package 
 			else
 				echo "Skipped."
 			fi
