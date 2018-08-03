@@ -23,6 +23,7 @@ alias tepi='epi; vim abstract.tex'
 
 # dir shortcuts
 alias drop='cd ~/Dropbox'
+alias src='cd ~/src'
 alias dl='cd ~/Downloads'
 alias scr='cd ~/git/scripts'
 alias sma='cd ~/git/scripts/small-scripts'
