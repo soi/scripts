@@ -9,6 +9,8 @@ alias mkto='mklatex ~/git/hu/text arbeit; okular arbeit.pdf&'
 alias mke='mklatex ~/git/epirob-2017-self-workshop/abstract abstract'
 alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
+alias sshhpc='ssh festi100@hpc.rz.uni-duesseldorf.de'
+
 mklatex() {
 	name="$2"
 	cd "$1"
