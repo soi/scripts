@@ -53,7 +53,7 @@ if [ "$color_prompt" = yes ]; then
     # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 	# datetime=$(date +[%d\ %b\ %H:%M])
     # PS1='\D{[%d %b %H:%M]} \[\033[01;34m\]\w\[\033[00m\] > '
-    PS1='\[\033[01;34m\]\w\[\033[00m\] > '
+	PS1='\[\033[0;31m\](HPC)\[\033[01;34m\] \w\[\033[00m\] > '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -103,11 +103,6 @@ export PATH=/home/felix/.local/bin${PATH:+:${PATH}}
 # for bazel
 export PATH="$PATH:$HOME/bin"
 
-# cuda env
-export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda-9.2/bin:/usr/local/cudnn/lib64:/usr/local/cuda-9.2/lib64:$LD_LIBRARY_PATH
-export CUDA_HOME=/usr/local/cuda
-
 # standard editor
 export EDITOR=vim
 export VISUAL=vim
@@ -115,6 +110,3 @@ export VISUAL=vim
 # additional bash options
 set -o vi
 shopt -s autocd
-
-# HPC
-HPC=festi100@hpc.rz.uni-duesseldorf.de
