@@ -169,9 +169,12 @@ set listchars=eol:$,tab:\|-,trail:~,extends:>,precedes:<
 set statusline=%<%f\ [%Y%R%M]%h%w\ %n%=%l,%v\ \ %p%%\
 
 set runtimepath^=~/.vim/ctrlp.vim
-
 " settings for command-T
-" let g:CommandTMaxHeight=20
-" let g:CommandTAlwaysShowDotFiles=1
-" let g:CommandTRefreshMap='<C-r>'
-" let g:CommandTAcceptSelectionSplitMap='<C-f>'
+let g:CommandTMaxHeight=20
+let g:CommandTAlwaysShowDotFiles=1
+let g:CommandTRefreshMap='<C-r>'
+let g:CommandTAcceptSelectionSplitMap='<C-f>'
+
+" settings for snipmate
+autocmd FileType python set ft=python.django
+autocmd FileType htmldjango set ft=htmldjango.html
