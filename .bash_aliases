@@ -34,7 +34,6 @@ alias tmp='cd /tmp/'
 alias gi='cd ~/git'
 alias ke='cd ~/git/keras'
 alias misc='cd ~/git/misc'
-alias mhc='cd ~/git/PairwiseMHCRanking'
 
 # program shortcuts/enhancements
 alias pinstall='pip3 install --user'

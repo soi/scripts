@@ -115,6 +115,3 @@ export VISUAL=vim
 # additional bash options
 set -o vi
 shopt -s autocd
-
-# HPC
-HPC=festi100@hpc.rz.uni-duesseldorf.de
