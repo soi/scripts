@@ -1,0 +1,96 @@
+# dir shortcuts
+
+# program shortcuts/enhancements
+alias cdl='cd $(ls -t | head -1)'
+alias his='history | tail -50'
+alias ipy='ipython3 --TerminalInteractiveShell.editing_mode=vi'
+alias doch='sudo $(history -p !-1)'
+alias ll='ls -lAh --color=auto'
+alias llg='ll | egrep '
+alias cp='cp -v'
+alias findg='find . | egrep '
+alias brc='vim ~/.bash_aliases'
+alias barc='vim ~/.bashrc'
+alias vrc='vim ~/.vimrc'
+alias brst='. ~/.bashrc'
+alias cl='clear'
+alias rgrep='grep -rni'
+alias mv='mv -v'
+alias rm='rm -v'
+alias tarx='tar xzvf'
+alias psg='ps auxwww | grep -i'
+alias chx='chmod +x'
+alias kill9='sudo kill -9'
+alias whereami='echo "$( hostname --fqdn ) ($(hostname -i))"'
+
+manopt() { 
+	man $1 | sed 's/.\x08//g'| sed -n "/^\s\+-\+$2\b/,/^\s*$/p" | sed '$d;';
+}
+
+mcd() { 
+	mkdir -p "$1" && cd "$1"
+}
+
+# git
+alias gitl='git log --pretty=format:"%h - %an - %ar --- %s" --graph --color --branches -w'
+alias gitlong='git log --stat --color '
+alias gitd='git difftool -y'
+alias gitdh='git difftool -y HEAD'
+alias gitdhh='git difftool -y HEAD HEAD^'
+alias gitc='git commit -m'
+alias gitac='git add .; git commit -m'
+alias gitch='git checkout'
+alias gitchf='git checkout -f'
+alias gitchd='git checkout development'
+alias gitchm='git checkout master'
+alias gitcl='git clean -xn'
+alias gitclf='git clean -xf'
+alias gits='git status'
+alias gitp='git push'
+alias gitpu='git pull'
+alias gita='git add'
+alias gitr='git rebase'
+alias gitra='git rebase -i --abort'
+alias gitm='git merge'
+alias gitmt='git mergetool'
+alias gitb='git branch'
+alias gitba='git branch -a'
+alias gitg='git grep -i -I'
+alias gitst='git stash'
+alias gitstl='git stash list'
+alias gitstp='git stash pop'
+alias gitref='git reflog'
+alias gitbak='cat ~/.git-backup.log'
+alias gitsb='git show-branch --color | less -R'
+
+gitacp() {
+	if [[ $# -lt 1 ]]; then
+		echo "Need commit message"
+	else
+		git add $PWD
+		git commit -m "$1"
+		git push --all
+	fi
+}
+gitcp() {
+	if [[ $# -lt 1 ]]; then
+		echo "Need commit message"
+	else
+		git commit -m "$1"
+		git push --all
+	fi
+}
+gitgf() {
+	if [[ $# -lt 1 ]]; then
+		echo "Need filter string"
+	else
+		git grep -i -I --no-index "$1" | cut -d ":" -f1 | sort -u
+	fi
+}
+gitgfv() {
+	if [[ $# -lt 1 ]]; then
+		echo "Need filter string"
+	else
+		vim $(git grep -i -I --no-index "$1" | cut -d ":" -f1 | sort -u | tr "\n" " ")
+	fi
+}
