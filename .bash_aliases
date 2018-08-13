@@ -1,6 +1,6 @@
 # uni
 alias ph='cd ~/git/phd'
-alias pair='cd ~/git/PairwiseMHCRanking'
+alias pa='cd ~/git/PairwiseMHCRanking'
 alias phc='cd ~/git/phd/coursera/course2/'
 alias cpdata='cp $(ls -t ~/Downloads/dataset* | head -1) tmp'
 
