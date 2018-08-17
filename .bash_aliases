@@ -2,7 +2,7 @@
 alias ph='cd ~/git/phd'
 alias pa='cd ~/git/PairwiseMHCRanking'
 alias pad='cd ~/git/PairwiseMHCRanking/data_local'
-alias padr='cd ~/Dropbox/pairwise_ranking/data/curated_IEDB'
+alias padr='cd ~/Dropbox/pairwise_ranking/data'
 alias phc='cd ~/git/phd/coursera/course2/'
 alias cpdata='cp $(ls -t ~/Downloads/dataset* | head -1) tmp'
 
@@ -38,6 +38,7 @@ alias ke='cd ~/git/keras'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias rsync='rsync -v --progress'
 alias pinstall='pip3 install --user'
 alias goo='~/git/scripts/small-scripts/goo'
 alias pdfe='/usr/share/playonlinux/playonlinux --run "PDFXEdit"'
