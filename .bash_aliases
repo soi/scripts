@@ -181,7 +181,9 @@ alias gitstp='git stash pop'
 alias gitref='git reflog'
 alias gitbak='cat ~/.git-backup.log'
 alias gitsb='git show-branch --color | less -R'
-
+giti() {
+	vim `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9]*/\)'`.gitignore
+}
 gitacp() {
 	if [[ $# -lt 1 ]]; then
 		echo "Need commit message"
