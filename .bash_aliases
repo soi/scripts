@@ -2,6 +2,7 @@
 alias ph='cd ~/git/phd'
 alias pa='cd ~/git/PairwiseMHCRanking'
 alias pad='cd ~/git/PairwiseMHCRanking/data_local'
+alias pae='cd ~/git/PairwiseMHCRanking/evaluate'
 alias padr='cd ~/Dropbox/pairwise_ranking/data'
 alias phc='cd ~/git/phd/coursera/course2/'
 alias cpdata='cp $(ls -t ~/Downloads/dataset* | head -1) tmp'
