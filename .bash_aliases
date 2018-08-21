@@ -168,8 +168,6 @@ alias gits='git status'
 alias gitp='git push'
 alias gitpu='git pull'
 alias gita='git add'
-alias gitr='git rebase'
-alias gitra='git rebase -i --abort'
 alias gitm='git merge'
 alias gitmt='git mergetool'
 alias gitb='git branch'
@@ -183,6 +181,9 @@ alias gitbak='cat ~/.git-backup.log'
 alias gitsb='git show-branch --color | less -R'
 giti() {
 	vim `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9]*/\)'`.gitignore
+}
+gitr() {
+	cd `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9]*/\)'`
 }
 gitacp() {
 	if [[ $# -lt 1 ]]; then

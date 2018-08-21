@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 from pprint import pprint
 import sklearn
 import h5py
+sys.path.append('/home/felix/git/PairwiseMHCRanking')
+from CharacterTable import CharacterTable
 
 plt.interactive(True)
 
@@ -14,4 +16,8 @@ a = np.arange(10)
 b = np.arange(100)
 d = {'eins': 1, 'zwei': 2}
 
+AMINO_ACIDS = '-ACDEFGHIKLMNPQRSTVWY'
+ctable = CharacterTable(AMINO_ACIDS)
+
 f = h5py.File('/home/felix/git/PairwiseMHCRanking/data_local/HLA_A_02_01.h5', 'r')
+

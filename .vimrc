@@ -70,6 +70,8 @@ nmap <leader>r :source ~/.vim/.session.vim<CR>
 
 nmap Y y$
 nmap D d$
+nmap - }
+nmap _ {
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap > >>
