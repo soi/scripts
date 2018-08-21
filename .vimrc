@@ -141,8 +141,9 @@ nmap <leader>K <C-w>K
 nmap <leader>H <C-w>H
 nmap <leader>L <C-w>L
 
-" change working dir to the one of the current file
-nmap <leader>c :cd %:p:h<CR>
+" un/comment line
+nmap <leader>c I# <esc>j^
+nmap <leader>m ^xx<esc>j^
 
 " always strip trailing white spaces with our common file types
 autocmd BufWritePre *.{py,sh,js,html,sql,php,scala,cgi} :%s/\s\+$//e
