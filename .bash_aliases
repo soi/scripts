@@ -1,7 +1,7 @@
 # uni
 alias ph='cd ~/git/phd'
 alias pa='cd ~/git/PairwiseMHCRanking'
-alias pad='cd ~/git/PairwiseMHCRanking/data_local'
+alias pad='cd ~/git/PairwiseMHCRanking/data'
 alias pae='cd ~/git/PairwiseMHCRanking/evaluate'
 alias padr='cd ~/Dropbox/pairwise_ranking/data'
 alias phc='cd ~/git/phd/coursera/course2/'
@@ -39,6 +39,7 @@ alias ke='cd ~/git/keras'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias sql3='sqlite3 -separator "	"'
 alias rsync='rsync -v --progress'
 alias pinstall='pip3 install --user'
 alias goo='~/git/scripts/small-scripts/goo'
