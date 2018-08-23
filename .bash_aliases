@@ -184,7 +184,7 @@ giti() {
 	vim `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9]*/\)'`.gitignore
 }
 gitr() {
-	cd `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9]*/\)'`
+	cd `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9]*\)'`
 }
 gitacp() {
 	if [[ $# -lt 1 ]]; then
