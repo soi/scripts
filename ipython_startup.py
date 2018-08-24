@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from pprint import pprint
 import sklearn
 import h5py
+import random
 sys.path.append('/home/felix/git/PairwiseMHCRanking')
 from CharacterTable import CharacterTable
 
