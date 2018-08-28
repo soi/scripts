@@ -20,4 +20,5 @@ d = {'eins': 1, 'zwei': 2}
 AMINO_ACIDS = '-ACDEFGHIKLMNPQRSTVWY'
 ctable = CharacterTable(AMINO_ACIDS)
 
-f = h5py.File('/home/felix/git/PairwiseMHCRanking/data/HLA_A_02_01.h5', 'r')
+def get_file():
+    return h5py.File('/home/felix/git/PairwiseMHCRanking/data/HLA_A_02_01.h5', 'r+')
