@@ -3,7 +3,15 @@ import sys
 import numpy as np
 
 def pudb_stringifier(obj):
-    if type(obj) == type(sys):
+    def dummy():
+        pass
+    if type(obj) == type(sys) or type(obj) == type(dummy):
         return ''
     else:
-        return type(obj)
+        if len(str(obj)) < 400:
+            return obj
+        else:
+            if hasattr(obj, '__len__'):
+                return str(type(obj)).split("'")[1] + " (" + str(len(obj)) + ")"
+            else:
+                return type(obj)
