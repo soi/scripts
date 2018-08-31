@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import sys
-import numpy as np
 
 def pudb_stringifier(obj):
     def dummy():
