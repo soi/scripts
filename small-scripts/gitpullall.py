@@ -29,4 +29,4 @@ GIT_LIST = [
 ]
 
 pool = ThreadPool(8)
-dists = pool.map(pull_or_clone_git, GIT_LIST)
+pool.map(pull_or_clone_git, GIT_LIST)
