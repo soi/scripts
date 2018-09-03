@@ -98,7 +98,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # path extension for pip installs
-export PATH=/home/felix/.local/bin${PATH:+:${PATH}}
+export PATH=/home/festi100/.local/bin${PATH:+:${PATH}}
 
 # for bazel
 export PATH="$PATH:$HOME/bin"
