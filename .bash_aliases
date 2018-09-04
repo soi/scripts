@@ -41,7 +41,7 @@ alias ke='cd ~/git/keras'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
-alias sql3='sqlite3 -separator "	"'
+alias db='padr; sqlite3 -separator "	" database'
 alias rsync='rsync -v --progress'
 alias pinstall='pip3 install --user'
 alias goo='~/git/scripts/small-scripts/goo'
