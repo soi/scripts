@@ -15,6 +15,7 @@ alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go
 
 alias sshhpc='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias pullmodel='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/PairwiseMHCRanking/best_model.h5 ~/git/PairwiseMHCRanking/'
+alias senddata='rsync -Wz ~/git/PairwiseMHCRanking/data/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/PairwiseMHCRanking/data/'
 
 mklatex() {
 	name="$2"
