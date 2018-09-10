@@ -7,4 +7,4 @@ virtualenv
 ipython3
 gnome-tweak-tool
 libgnome2-bin
-okular
+python3-pip

@@ -2,3 +2,4 @@
 deb-packets/*.tar.gz
 *.swp
 small-scripts/gitpullall.log
+small-scritps/install-packages/printer/uninstall*
