@@ -42,6 +42,7 @@ alias ke='cd ~/git/keras'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias ve='virtualenv -p python3'
 alias db='padr; sqlite3 -separator "	" database'
 alias rsync='rsync -v --progress'
 alias pinstall='pip3 install --user'
