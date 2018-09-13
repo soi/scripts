@@ -1,0 +1,44 @@
+// ==UserScript==
+// @name           stackexchange hide side panels
+// @description    Hide the unrelated and hot questions which distract me
+// @version        2017-05-01
+// @namespace      aland
+// @author         aland
+// @updateURL      https://openuserjs.org/install/aland/stackexchange_hide_side_panels.user.js
+// @downloadURL    https://openuserjs.org/install/aland/stackexchange_hide_side_panels.user.js
+// @include        http*://stackoverflow.com/*
+// @include        http*://serverfault.com/*
+// @include        http*://superuser.com/*
+// @include        http*://askubuntu.com/*
+// @include        http*://*.stackexchange.com/*
+// @grant          none
+// ==/UserScript==
+
+
+function toggle_visibility(element, id) {
+	if(id) {
+		var el = document.getElementById(element);
+		if (el) {
+			el.style.display = 'none';
+		}
+	}
+	else {
+		var elements = document.getElementsByClassName(element);
+		n = elements.length;
+		if(n > 0) {
+			for (var i = 0; i < n; i++) {
+				elements[i].style.display = 'none';
+			}
+		}
+	}
+}
+
+toggle_visibility('community-bulletin', false);
+toggle_visibility('everyonelovesstackoverflow', false);
+toggle_visibility('jobs', false);
+toggle_visibility('hireme', true);
+toggle_visibility('hot-network-questions', true);
+
+
+// OTT - but works in a pinch if the above isn't catching them all
+document.getElementById('sidebar').style.display = 'none';
