@@ -91,7 +91,6 @@ nmap <leader>e :sp $MYVIMRC<CR><C-w>15+
 nmap <leader>t :call TogglePasteStyle()<CR>
 nmap <leader>n :nohl<CR>
 nmap <leader>p Oimport pudb; pudb.set_trace()<Esc>j
-nmap <leader>P :g/import pudb; pudb.set_trace\(\)/d<CR>:w<CR>:nohl<CR>
 
 fun TogglePasteStyle()
 	if &paste == 0
