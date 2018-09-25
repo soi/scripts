@@ -4,7 +4,6 @@ alias pa='cd ~/git/PairwiseMHCRanking'
 alias pad='cd ~/git/PairwiseMHCRanking/data'
 alias pae='cd ~/git/PairwiseMHCRanking/evaluate'
 alias paa='cd ~/git/PairwiseMHCRanking/analysis'
-alias paj='cd ~/git/PairwiseMHCRanking/jobs'
 alias padr='cd ~/Dropbox/pairwise_ranking/data'
 alias phc='cd ~/git/phd/coursera/course2/'
 alias cpdata='cp $(ls -t ~/Downloads/dataset* | head -1) tmp'
@@ -16,7 +15,7 @@ alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go
 
 alias sshhpc='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias pullmodel='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/PairwiseMHCRanking/best_model.h5 ~/git/PairwiseMHCRanking/'
-alias senddata='rsync -Wz ~/git/PairwiseMHCRanking/data/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/PairwiseMHCRanking/data/'
+alias senddata='rsync -Wz ~/git/PairwiseMHCRanking/data/ba/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/PairwiseMHCRanking/data/ba/'
 
 mklatex() {
 	name="$2"
