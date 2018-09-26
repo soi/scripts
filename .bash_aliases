@@ -14,7 +14,7 @@ alias mke='mklatex ~/git/epirob-2017-self-workshop/abstract abstract'
 alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
 alias sshhpc='ssh festi100@hpc.rz.uni-duesseldorf.de'
-alias pullmodel='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/PairwiseMHCRanking/best_model.h5 ~/git/PairwiseMHCRanking/'
+alias getmodel='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/PairwiseMHCRanking/best_model.h5 ~/git/PairwiseMHCRanking/'
 alias senddata='rsync -Wz ~/git/PairwiseMHCRanking/data/ba/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/PairwiseMHCRanking/data/ba/'
 
 mklatex() {
