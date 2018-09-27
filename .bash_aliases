@@ -1,7 +1,7 @@
 # uni
 alias ph='cd ~/git/phd'
 alias pa='cd ~/git/PairwiseMHCRanking'
-alias pad='cd ~/git/PairwiseMHCRanking/data'
+alias pad='cd ~/git/PairwiseMHCRanking/data/ba'
 alias pae='cd ~/git/PairwiseMHCRanking/evaluate'
 alias paa='cd ~/git/PairwiseMHCRanking/analysis'
 alias padr='cd ~/Dropbox/pairwise_ranking/data'
@@ -13,7 +13,7 @@ alias mkto='mklatex ~/git/hu/text arbeit; okular arbeit.pdf&'
 alias mke='mklatex ~/git/epirob-2017-self-workshop/abstract abstract'
 alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
-alias sshhpc='ssh festi100@hpc.rz.uni-duesseldorf.de'
+alias hpc='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias getmodel='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/PairwiseMHCRanking/best_model.h5 ~/git/PairwiseMHCRanking/'
 alias senddata='rsync -Wz ~/git/PairwiseMHCRanking/data/ba/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/PairwiseMHCRanking/data/ba/'
 
