@@ -4,7 +4,7 @@ alias pa='cd ~/git/MHCPredictions'
 alias pad='cd ~/git/MHCPredictions/data'
 alias pae='cd ~/git/MHCPredictions/evaluate'
 alias paa='cd ~/git/MHCPredictions/analysis'
-alias padr='cd ~/Dropbox/pairwise_ranking/data'
+alias padr='cd ~/Dropbox/MHC-Prediction-Data'
 alias phc='cd ~/git/phd/coursera/course2/'
 alias cpdata='cp $(ls -t ~/Downloads/dataset* | head -1) tmp'
 
