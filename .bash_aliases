@@ -90,6 +90,13 @@ alias whereami='echo "$( hostname --fqdn ) ($(hostname -i))"'
 alias mountc='mount | column -t'
 alias wgethtml='wget -E -H -k -K -p -nd'
 
+runn() {
+	for run in {1..$1}
+	do
+		$2
+	done
+}
+
 sdown() {
 	shutdown_sequence() {
 		echo ''
