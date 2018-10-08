@@ -7,6 +7,7 @@ alias paa='cd ~/git/MHCPredictions/analysis'
 alias padr='cd ~/Dropbox/MHC-Prediction-Data'
 alias phc='cd ~/git/phd/coursera/course2/'
 alias cpdata='cp $(ls -t ~/Downloads/dataset* | head -1) tmp'
+alias ke='cd ~/src/keras/examples'
 
 alias mkt='mklatex ~/git/hu/text arbeit'
 alias mkto='mklatex ~/git/hu/text arbeit; okular arbeit.pdf&'
@@ -39,7 +40,6 @@ alias scr='cd ~/git/scripts'
 alias sma='cd ~/git/scripts/small-scripts'
 alias tmp='cd /tmp/'
 alias gi='cd ~/git'
-alias ke='cd ~/git/keras'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
