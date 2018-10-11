@@ -1,9 +1,10 @@
 # uni
 alias ph='cd ~/git/phd'
-alias pa='cd ~/git/MHCPredictions'
-alias pad='cd ~/git/MHCPredictions/data'
-alias pae='cd ~/git/MHCPredictions/evaluate'
-alias paa='cd ~/git/MHCPredictions/analysis'
+project="PairwiseMHCRanking"
+alias pa='cd ~/git/'$project
+alias pad='cd ~/git/'$project'/data'
+alias pae='cd ~/git/'$project'/evaluate'
+alias paa='cd ~/git/'$project'/analysis'
 alias padr='cd ~/Dropbox/MHC-Prediction-Data'
 alias phc='cd ~/git/phd/coursera/course2/'
 alias cpdata='cp $(ls -t ~/Downloads/dataset* | head -1) tmp'
@@ -16,9 +17,9 @@ alias mke='mklatex ~/git/epirob-2017-self-workshop/abstract abstract'
 alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
 alias hpc='ssh festi100@hpc.rz.uni-duesseldorf.de'
-alias getmodel='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/MHCPredictions/best_model.h5 ~/git/MHCPredictions/'
-alias getpred='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/MHCPredictions/predictions ~/git/MHCPredictions/'
-alias senddata='rsync -Wz ~/git/MHCPredictions/data/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/MHCPredictions/data/'
+alias getmodel='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/best_model.h5 ~/git/'$project'/'
+alias getpred='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/predictions ~/git/'$project'/'
+alias senddata='rsync -Wz ~/git/'$project'/data/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/data/'
 
 mklatex() {
 	name="$2"
