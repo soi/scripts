@@ -24,6 +24,7 @@ GIT_HOME_DIR = '/home/' + USER + '/git/'
 GIT_LIST = [
     (GIT_HOME_DIR + 'phd', 'git@github.com:soi/phd.git'),
     (GIT_HOME_DIR + 'MHCPredictions', 'git@github.com:DiltheyLab/MHCPredictions.git'),
+    (GIT_HOME_DIR + 'PairwiseMHCRanking', 'git@github.com:DiltheyLab/PairwiseMHCRanking.git'),
     (GIT_HOME_DIR + 'scripts', 'git@github.com:soi/scripts.git'),
     (GIT_HOME_DIR + 'misc', 'git@github.com:soi/misc.git')
 ]
