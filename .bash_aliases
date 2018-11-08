@@ -10,7 +10,7 @@ alias phc='cd ~/git/phd/coursera/course2/'
 alias cpdata='cp $(ls -t ~/Downloads/dataset* | head -1) tmp'
 alias ke='cd ~/src/keras/examples'
 alias gitchp='git checkout pairwise'
-alias mhcf='pae; cd mhcflurry'
+alias paef='pae; cd mhcflurry'
 alias mhcfd='cd ~/.local/share/mhcflurry/4/1.2.0/data_curated'
 
 alias mkt='mklatex ~/git/hu/text arbeit'
