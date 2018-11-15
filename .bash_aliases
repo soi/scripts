@@ -12,6 +12,7 @@ alias ke='cd ~/src/keras/examples'
 alias gitchp='git checkout pairwise'
 alias paef='pae; cd mhcflurry'
 alias mhcfd='cd ~/.local/share/mhcflurry/4/1.2.0/data_curated'
+alias phpc='ping hpc.rz.uni-duesseldorf.de'
 
 alias mkt='mklatex ~/git/hu/text arbeit'
 alias mkto='mklatex ~/git/hu/text arbeit; okular arbeit.pdf&'
