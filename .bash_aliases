@@ -25,7 +25,7 @@ alias getpred='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/pred
 # alias senddata='rsync -Wz ~/git/'$project'/data/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/data/'
 
 senddata() {
-	rsync -Wzv ~/git/$project/data/$1 festi100@hpc.rz.uni-duesseldorf.de:~/git/$project/data/$1
+	rsync -WzvP ~/git/$project/data/$1 festi100@hpc.rz.uni-duesseldorf.de:~/git/$project/data/$1
 }
 
 mklatex() {
