@@ -52,6 +52,7 @@ alias gi='cd ~/git'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias watch='watch '
 alias ve='virtualenv -p python3'
 alias db='padr; sqlite3 -separator "	" database'
 alias rsync='rsync -v --progress'
