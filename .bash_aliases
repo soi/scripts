@@ -1,7 +1,6 @@
 # uni
-project="PairwiseMHCRanking"
-
 alias ph='cd ~/git/phd'
+project="PairwiseMHCRanking"
 alias pa='cd ~/git/'$project
 alias pad='cd ~/git/'$project'/data'
 alias pae='cd ~/git/'$project'/evaluate'
@@ -53,6 +52,7 @@ alias gi='cd ~/git'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias golast='go "$(ls -t -1 | head -1)"'
 alias watch='watch '
 alias ve='virtualenv -p python3'
 alias db='padr; sqlite3 -separator "	" database'
