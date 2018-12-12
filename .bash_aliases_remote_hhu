@@ -11,6 +11,7 @@ alias p8='ping 8.8.8.8'
 alias wl='watch ls'
 alias gpu='~/git/gpu.sh'
 alias cpu='~/git/cpu.sh'
+alias py36='module load Python/3.6.5'
 
 # dir shortcuts
 project="PairwiseMHCRanking"
@@ -19,9 +20,12 @@ alias pad='cd ~/git/'$project'/data'
 alias pae='cd ~/git/'$project'/evaluate'
 alias paa='cd ~/git/'$project'/analysis'
 alias paj='cd ~/git/'$project'/jobs'
+alias paef='pae; cd mhcflurry'
 alias gi='cd ~/git'
+alias sc='cd /scratch_gs/festi100'
 
 # program shortcuts/enhancements
+alias watch='watch '
 alias cdl='cd $(ls -t | head -1)'
 alias his='history | tail -50'
 alias ipy='ipython3 --TerminalInteractiveShell.editing_mode=vi'
