@@ -149,6 +149,9 @@ nmap <leader>L <C-w>L
 nmap <leader>c I# <esc>j^
 nmap <leader>m ^xx<esc>j^
 
+" define R to so an output in a new window
+:command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
+
 " always strip trailing white spaces with our common file types
 autocmd BufWritePre *.{py,sh,js,html,sql,php,scala,cgi} :%s/\s\+$//e
 
