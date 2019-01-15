@@ -1,6 +1,6 @@
 # uni
 alias ph='cd ~/git/phd'
-project="PairwiseMHCRanking"
+project="MHCPredictions"
 alias pa='cd ~/git/'$project
 alias pad='cd ~/git/'$project'/data'
 alias pae='cd ~/git/'$project'/evaluate'
