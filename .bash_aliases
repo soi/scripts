@@ -24,11 +24,11 @@ alias ali='ssh felix-stiehler@134.99.200.63'
 alias getmodel='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/best_model.h5 ~/git/'$project'/'
 alias getmodel0='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/best_model.h50 ~/git/'$project'/best_model.h5'
 alias getpred='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/predictions ~/git/'$project'/'
-# alias senddata='rsync -Wz ~/git/'$project'/data/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/data/'
+alias senddata='rsync -Wz ~/git/'$project'/data/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/data/'
 
-senddata() {
-	rsync -WzvP ~/git/$project/data/$1 festi100@hpc.rz.uni-duesseldorf.de:~/git/$project/data/$1
-}
+# senddata() {
+	# rsync -WzvP ~/git/$project/data/$1 festi100@hpc.rz.uni-duesseldorf.de:~/git/$project/data/$1
+# }
 
 mklatex() {
 	name="$2"
