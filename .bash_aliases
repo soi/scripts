@@ -102,6 +102,7 @@ alias clswp='sudo rm -v /home/felix/.vim/swap/*.sw? /var/tmp/*.sw? /var/tmp/.*.s
 alias whereami='echo "$( hostname --fqdn ) ($(hostname -i))"'
 alias mountc='mount | column -t'
 alias wgethtml='wget -E -H -k -K -p -nd'
+alias mountntfs='sudo mount -o uid=1000,umask=0022 /dev/sdc5 /media/felix/ntfs-hdd'
 
 runn() {
 	for run in {1..$1}
