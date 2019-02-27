@@ -5,6 +5,7 @@ alias pa='cd ~/git/'$project
 alias pad='cd ~/git/'$project'/data'
 alias pae='cd ~/git/'$project'/evaluate'
 alias paa='cd ~/git/'$project'/analysis'
+alias paj='cd ~/git/'$project'/jobs'
 alias padr='cd ~/Dropbox/MHC-Prediction-Data'
 alias phc='cd ~/git/phd/coursera/course2/'
 alias cpdata='cp $(ls -t ~/Downloads/dataset* | head -1) tmp'
