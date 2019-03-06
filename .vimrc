@@ -80,8 +80,8 @@ nnoremap <leader>b q:
 nnoremap <leader>: @:
 nmap <C-j> <C-d>
 nmap <C-k> <C-u>
-nmap <F10> :call CommentLine()<CR>
-nmap <C-F10> :call UnCommentLine()<CR>j0
+" nmap <F10> :call CommentLine()<CR>
+" nmap <C-F10> :call UnCommentLine()<CR>j0
 nmap <F5> :set invnumber<CR>
 nmap <F6> :call TogglePasteStyle()<CR>
 nmap <F8> :set invlist<CR>
@@ -162,7 +162,7 @@ if exists("+colorcolumn")
 endif
 
 " automaticly reload .vimrc
-au! BufWritePost .vimrc source ~/.vimrc 
+" au! BufWritePost .vimrc source ~/.vimrc 
 
 " set json filetype to javascript
 au BufRead,BufNewFile *.json set filetype=javascript
