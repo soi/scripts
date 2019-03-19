@@ -5,39 +5,39 @@ import shutil
 import argparse
 from subprocess import call
 
-git_scripts_home = "/home/felix/git/scripts/"
-files = [["/home/felix/.bash_aliases", git_scripts_home + ".bash_aliases"],
-         ["/home/felix/.bashrc", git_scripts_home + ".bashrc"],
-         ["/home/felix/.vimrc", git_scripts_home + ".vimrc"],
-         ["/home/felix/.sqliterc", git_scripts_home + ".sqliterc"],
-         ["/home/felix/.ipython/profile_default/ipython_config.py", git_scripts_home + "ipython_config.py"],
-         ["/home/felix/.ipython/profile_default/startup/ipython_startup.py", git_scripts_home + "ipython_startup.py"]]
+git_scripts_home = '/home/felix/git/scripts/'
+files = [['/home/felix/.bash_aliases', git_scripts_home + '.bash_aliases'],
+         ['/home/felix/.bashrc', git_scripts_home + '.bashrc'],
+         ['/home/felix/.vimrc', git_scripts_home + '.vimrc'],
+         ['/home/felix/.sqliterc', git_scripts_home + '.sqliterc'],
+         ['/home/felix/.ipython/profile_default/ipython_config.py', git_scripts_home + 'ipython_config.py'],
+         ['/home/felix/.ipython/profile_default/startup/ipython_startup.py', git_scripts_home + 'ipython_startup.py']]
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-m", "--mode", default="invalid")
-parser.add_argument("-dr", "--dry-run", action="store_true")
+parser.add_argument('-m', '--mode', default='invalid')
+parser.add_argument('-dr', '--dry-run', action='store_true')
 args = parser.parse_args()
 
-if args.mode == 'invalid':
-    print('Usage: -m [to-git, from-git] [--dry-run]')
-else:
-    changed_flag = False
-    if args.dry_run:
-        print("dry run")
-    for file in files:
-        if not os.path.isfile(file[0]) or not filecmp.cmp(file[0], file[1]):
-            changed_flag = True
-            if args.mode == "to-git":
-                if not args.dry_run:
-                    shutil.copyfile(file[0], file[1])
-                print (file[0].split("/")[-1])
-            if args.mode == "from-git":
-                if not args.dry_run:
-                    shutil.copyfile(file[1], file[0])
-                print (file[0].split("/")[-1])
+assert args.mode in ['to-git', 'from-git'], 'Usage: -m [to-git, from-git] [--dry-run]'
 
-    if changed_flag:
-        exit(1)
+changed_flag = False
+if args.dry_run:
+    print('**dry run**')
+for file_pair in files:
+    if args.mode == 'to-git':
+        source_file, dest_file = file_pair[0], file_pair[1]
     else:
-        print("everything up-to-date")
-        exit(0)
+        source_file, dest_file = file_pair[1], file_pair[0]
+
+    if not os.path.isfile(source_file):
+        print(os.path.basename(source_file), 'does not exist at the source. Skipping.')
+        continue
+
+    if not os.path.isfile(dest_file) or not filecmp.cmp(source_file, dest_file):
+        changed_flag = True
+        if not args.dry_run:
+            shutil.copyfile(source_file, dest_file)
+        print(os.path.basename(source_file))
+
+if not changed_flag:
+    print('everything up-to-date')
