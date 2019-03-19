@@ -9,6 +9,7 @@ git_scripts_home = "/home/felix/git/scripts/"
 files = [["/home/felix/.bash_aliases", git_scripts_home + ".bash_aliases"],
          ["/home/felix/.bashrc", git_scripts_home + ".bashrc"],
          ["/home/felix/.vimrc", git_scripts_home + ".vimrc"],
+         ["/home/felix/.sqliterc", git_scripts_home + ".sqliterc"],
          ["/home/felix/.ipython/profile_default/ipython_config.py", git_scripts_home + "ipython_config.py"],
          ["/home/felix/.ipython/profile_default/startup/ipython_startup.py", git_scripts_home + "ipython_startup.py"]]
 
