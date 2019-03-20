@@ -86,7 +86,8 @@ nmap <F5> :set invnumber<CR>
 nmap <F6> :call TogglePasteStyle()<CR>
 nmap <F8> :set invlist<CR>
 nmap <F9> :noh<CR>:echo ""<CR>
-nmap <leader>e :sp $MYVIMRC<CR><C-w>15+
+"nmap <leader>e :sp $MYVIMRC<CR><C-w>15+
+nmap <leader>e :e!<CR>
 "nmap <leader>t :call ToggleNumberStyle()<CR>
 nmap <leader>n :nohl<CR>
 nmap <leader>p Oimport pudb; pudb.set_trace()<Esc>j

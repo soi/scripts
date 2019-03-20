@@ -1,5 +1,6 @@
 # uni
-alias ge='cd ~/src/GeenuFF/geenuff/'
+alias ge='cd ~/git/GeenuFF/geenuff/'
+alias he='cd ~/git/HelixerPrep/helixerprep'
 alias geenv='. ~/env/geenuff/bin/activate'
 alias db='cd ~/git/misc/geenuff; sqlite3 test.db'
 
