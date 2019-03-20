@@ -1,4 +1,8 @@
 # uni
+alias ge='cd ~/src/GeenuFF/geenuff/'
+alias geenv='. ~/env/geenuff/bin/activate'
+alias db='cd ~/git/misc/geenuff; sqlite3 test.db'
+
 alias ph='cd ~/git/phd'
 project="MHCPredictions"
 alias pa='cd ~/git/'$project
@@ -59,7 +63,6 @@ alias misc='cd ~/git/misc'
 alias golast='go "$(ls -t -1 | head -1)"'
 alias watch='watch '
 alias ve='virtualenv -p python3'
-alias db='padr; sqlite3 database'
 alias rsync='rsync -v --progress'
 alias pinstall='pip3 install --user'
 alias goo='~/git/scripts/small-scripts/goo'
