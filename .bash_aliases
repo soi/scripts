@@ -1,6 +1,8 @@
 # uni
 alias ge='cd ~/git/GeenuFF/geenuff/'
+alias ged='cd ~/git/GeenuFF/geenuff/testdata'
 alias he='cd ~/git/HelixerPrep/helixerprep'
+alias hed='cd ~/git/HelixerPrep/helixerprep/testdata'
 alias geenv='. ~/env/geenuff/bin/activate'
 alias db='cd ~/git/misc/geenuff; sqlite3 test.db'
 
@@ -54,6 +56,7 @@ alias tepi='epi; vim abstract.tex'
 alias drop='cd ~/Dropbox'
 alias src='cd ~/src'
 alias dl='cd ~/Downloads'
+alias de='cd ~/Desktop'
 alias scr='cd ~/git/scripts'
 alias sma='cd ~/git/scripts/small-scripts'
 alias tmp='cd /tmp/'
