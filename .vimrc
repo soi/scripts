@@ -68,6 +68,18 @@ set ssop-=folds
 nmap <leader>s :mksession! ~/.vim/.session.vim<CR>
 nmap <leader>r :source ~/.vim/.session.vim<CR>
 
+" tags
+set tags=./tags;/  " upwards search for tags file
+nmap <C-B> <C-T> " C-T opens a new terminal tab
+nmap <C-V> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+nmap <C-X> <C-W><C-]>
+nmap <C-t> :!tree -I *.pyc -I __pycache__<CR>
+
+" taglist plugin
+let Tlist_WinWidth = 40
+nmap <F9> :TlistToggle<CR>
+nmap <F12> :TlistOpen<CR>  " open taglist and jump to it
+
 nmap Y y$
 nmap D d$
 nmap - }
@@ -85,7 +97,6 @@ nmap <C-k> <C-u>
 nmap <F5> :set invnumber<CR>
 nmap <F6> :call TogglePasteStyle()<CR>
 nmap <F8> :set invlist<CR>
-nmap <F9> :noh<CR>:echo ""<CR>
 "nmap <leader>e :sp $MYVIMRC<CR><C-w>15+
 nmap <leader>e :e!<CR>
 "nmap <leader>t :call ToggleNumberStyle()<CR>
