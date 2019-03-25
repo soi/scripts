@@ -76,7 +76,7 @@ nmap <C-X> <C-W><C-]>
 nmap <C-t> :!tree -I *.pyc -I __pycache__<CR>
 
 " taglist plugin
-let Tlist_WinWidth = 40
+let Tlist_WinWidth = 50
 nmap <F9> :TlistToggle<CR>
 nmap <F12> :TlistOpen<CR>  " open taglist and jump to it
 
@@ -108,7 +108,20 @@ nmap <leader>T :.s/test/train/g<CR>:nohl<CR>
 nmap <leader>1 :.s/2/1/g<CR>:nohl<CR>
 nmap <leader>2 :.s/1/2/g<CR>:nohl<CR>
 
-fun TogglePasteStyle()
+fun! CloseHiddenBuffers()
+    let i = 0
+    let n = bufnr('$')
+    while i < n
+        let i = i + 1
+        if bufloaded(i) && bufwinnr(i) < 0
+          exe 'bd ' . i
+        endif
+    endwhile
+endf
+
+command! Chd :call CloseHiddenBuffers()
+
+fun! TogglePasteStyle()
 	if &paste == 0
 		let &paste = 1
 	else
@@ -116,7 +129,7 @@ fun TogglePasteStyle()
 	endif
 endf
 
-fun ToggleNumberStyle()
+fun! ToggleNumberStyle()
 	if &number == 1
 		let &relativenumber = 1
 		let &number = 0
@@ -128,7 +141,7 @@ endf
 
 nmap <leader>q :call ToggleSyntax()<CR>
 
-fun ToggleSyntax()
+fun! ToggleSyntax()
 	if exists('g:syntax_on')
 		syntax off
 	else
