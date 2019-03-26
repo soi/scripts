@@ -145,10 +145,12 @@ sdown() {
 	flag=0
 	for git_dir in "/home/felix/git"/*
 	do
-		git -C "$git_dir" diff-index --quiet HEAD --
-		if [ $? -ne 0 ]; then
-			echo "Uncommited stuff in $git_dir"
-			flag=1
+		if [ "$git_dir" != "/home/felix/git/tags" ]; then
+			git -C "$git_dir" diff-index --quiet HEAD --
+			if [ $? -ne 0 ]; then
+				echo "Uncommited stuff in $git_dir"
+				flag=1
+			fi
 		fi
 	done
 

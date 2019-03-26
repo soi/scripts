@@ -70,7 +70,6 @@ nmap <leader>r :source ~/.vim/.session.vim<CR>
 
 " tags
 set tags=./tags;/  " upwards search for tags file
-nmap <C-B> <C-T> " C-T opens a new terminal tab
 nmap <C-V> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <C-X> <C-W><C-]>
 nmap <C-t> :!tree -I *.pyc -I __pycache__<CR>
