@@ -111,6 +111,13 @@ alias mountc='mount | column -t'
 alias wgethtml='wget -E -H -k -K -p -nd'
 alias mountntfs='sudo mount -o uid=1000,umask=0022 /dev/sdc5 /media/felix/ntfs-hdd'
 
+setupve() {
+	cd ~/env
+	virtualenv -p python3 $1
+	. ./$1/bin/activate
+	cd -
+}
+
 runn() {
 	for run in {1..$1}
 	do

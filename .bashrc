@@ -2,6 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc) 
 # for examples 
 # If not running interactively, don't do anything [ -z "$PS1" ] && return
+export PYTHONPATH="${PYTHONPATH}:/home/felix/env/geenuff/lib/python3.6/site-packages/geenuff-0.1-py3.6.egg/geenuff/applications"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
