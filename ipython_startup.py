@@ -5,7 +5,6 @@ from pprint import pprint
 import sklearn
 import h5py
 import random
-sys.path.append('/home/felix/git/PairwiseMHCRanking')
 from CharacterTable import CharacterTable
 
 plt.interactive(True)
@@ -19,6 +18,3 @@ d = {'eins': 1, 'zwei': 2}
 
 AMINO_ACIDS = '-ACDEFGHIKLMNPQRSTVWY'
 ctable = CharacterTable(AMINO_ACIDS)
-
-def get_file():
-    return h5py.File('/home/felix/git/PairwiseMHCRanking/data/HLA_A_02_01.h5', 'r+')
