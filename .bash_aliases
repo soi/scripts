@@ -222,12 +222,15 @@ alias gitstp='git stash pop'
 alias gitref='git reflog'
 alias gitbak='cat ~/.git-backup.log'
 alias gitsb='git show-branch --color | less -R'
+
 giti() {
 	vim `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9]*/\)'`.gitignore
 }
+
 gitr() {
 	cd `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9]*\)'`
 }
+
 gitacp() {
 	if [[ $# -lt 1 ]]; then
 		echo "Need commit message"
@@ -237,6 +240,7 @@ gitacp() {
 		git push --all
 	fi
 }
+
 gitcp() {
 	if [[ $# -lt 1 ]]; then
 		echo "Need commit message"
@@ -245,6 +249,7 @@ gitcp() {
 		git push --all
 	fi
 }
+
 gitgf() {
 	if [[ $# -lt 1 ]]; then
 		echo "Need filter string"
@@ -252,6 +257,7 @@ gitgf() {
 		git grep -i -I --no-index "$1" | cut -d ":" -f1 | sort -u
 	fi
 }
+
 gitgfv() {
 	if [[ $# -lt 1 ]]; then
 		echo "Need filter string"
