@@ -215,7 +215,7 @@ alias gitm='git merge'
 alias gitmt='git mergetool'
 alias gitb='git branch'
 alias gitba='git branch -a'
-alias gitg='git grep -i -I'
+alias gitg='git grep -I -n -E -p -2 --break'
 alias gitst='git stash'
 alias gitstl='git stash list'
 alias gitstp='git stash pop'
@@ -247,21 +247,5 @@ gitcp() {
 	else
 		git commit -m "$1"
 		git push --all
-	fi
-}
-
-gitgf() {
-	if [[ $# -lt 1 ]]; then
-		echo "Need filter string"
-	else
-		git grep -i -I --no-index "$1" | cut -d ":" -f1 | sort -u
-	fi
-}
-
-gitgfv() {
-	if [[ $# -lt 1 ]]; then
-		echo "Need filter string"
-	else
-		vim $(git grep -i -I --no-index "$1" | cut -d ":" -f1 | sort -u | tr "\n" " ")
 	fi
 }
