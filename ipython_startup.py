@@ -5,7 +5,6 @@ from pprint import pprint
 import sklearn
 import h5py
 import random
-from CharacterTable import CharacterTable
 
 plt.interactive(True)
 
