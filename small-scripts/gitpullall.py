@@ -15,7 +15,7 @@ def pull_or_clone_git(git):
         args = shlex.split('git clone ' + git[1] + ' ' + git[0])
         Popen(args).communicate()
 
-if len(sys.argv) < 2e:
+if len(sys.argv) < 2:
     USER = getpass.getuser()
 else:
     USER = sys.argv[1]
