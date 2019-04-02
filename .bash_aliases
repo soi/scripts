@@ -65,6 +65,8 @@ alias gi='cd ~/git'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias python='python3'
+alias pt='py.test --cache-clear -v'
 alias tree='tree -h'
 alias golast='go "$(ls -t -1 | head -1)"'
 alias watch='watch '
@@ -82,7 +84,7 @@ alias commit-scr='cp_scr_out=$(to-git); scr; gitacp "$cp_scr_out"; cd - > /dev/n
 alias pull-scr='scr; git pull; from-git; cd - > /dev/null; source ~/.bash_aliases'
 alias his='history | tail -50'
 alias pudb='python -m pudb.run'
-alias ipy='ipython --TerminalInteractiveShell.editing_mode=vi'
+alias ipy='ipython3 --TerminalInteractiveShell.editing_mode=vi'
 alias ipyrc='vim ~/.ipython/profile_default/startup/ipython_startup.py'
 alias doch='sudo $(history -p !-1)'
 alias bitc='~/bitcoin-qt/bitcoin-qt --datadir=/media/felix/Volume/Bitcoin'
@@ -222,6 +224,12 @@ alias gitstp='git stash pop'
 alias gitref='git reflog'
 alias gitbak='cat ~/.git-backup.log'
 alias gitsb='git show-branch --color | less -R'
+
+gittrack() {
+	for i in `git branch -a | grep remote | grep -v HEAD`; do 
+		git branch --track ${i#remotes/origin/} $i; 
+	done
+}
 
 giti() {
 	vim `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9]*/\)'`.gitignore

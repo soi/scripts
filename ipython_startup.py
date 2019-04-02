@@ -2,8 +2,6 @@ import sys, os
 import numpy as np
 import matplotlib.pyplot as plt
 from pprint import pprint
-import sklearn
-import h5py
 import random
 
 plt.interactive(True)
