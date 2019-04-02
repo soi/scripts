@@ -66,7 +66,7 @@ alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
 alias python='python3'
-alias pt='py.test --cache-clear -v'
+alias pt='py.test --cache-clear --disable-warnings -v'
 alias tree='tree -h'
 alias golast='go "$(ls -t -1 | head -1)"'
 alias watch='watch '
@@ -205,7 +205,7 @@ alias gitc='git commit -m'
 alias gitac='git add .; git commit -m'
 alias gitch='git checkout'
 alias gitchf='git checkout -f'
-alias gitchd='git checkout development'
+alias gitchd='git checkout dev'
 alias gitchm='git checkout master'
 alias gitcl='git clean -xn'
 alias gitclf='git clean -xf'
@@ -225,10 +225,15 @@ alias gitref='git reflog'
 alias gitbak='cat ~/.git-backup.log'
 alias gitsb='git show-branch --color | less -R'
 
-gittrack() {
+gittrackall() {
 	for i in `git branch -a | grep remote | grep -v HEAD`; do 
 		git branch --track ${i#remotes/origin/} $i; 
 	done
+}
+
+gitbp() {
+	git checkout -b $1
+	git push -u
 }
 
 giti() {
@@ -245,7 +250,7 @@ gitacp() {
 	else
 		git add $PWD
 		git commit -m "$1"
-		git push --all
+		git push
 	fi
 }
 
@@ -254,6 +259,6 @@ gitcp() {
 		echo "Need commit message"
 	else
 		git commit -m "$1"
-		git push --all
+		git push 
 	fi
 }
