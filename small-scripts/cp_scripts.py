@@ -31,7 +31,7 @@ for file_pair in files:
         source_file, dest_file = file_pair[1], file_pair[0]
 
     if not os.path.isfile(source_file):
-        print(os.path.basename(source_file), 'does not exist at the source. Skipping.')
+        print('\n', os.path.basename(source_file), 'does not exist at the source. Skipping.')
         continue
 
     if not os.path.isfile(dest_file) or not filecmp.cmp(source_file, dest_file):
