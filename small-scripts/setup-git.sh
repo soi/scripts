@@ -1,8 +1,7 @@
 #! /bin/bash
 
 sudo apt-get install git-core
-git config --global user.email "felix.stiehler87@gmail.com"
-git config --global user.name "Felix Stiehler"
+./setup-git-config.sh
 
 # ssh-keygen
 cat ~/.ssh/id_rsa.pub
