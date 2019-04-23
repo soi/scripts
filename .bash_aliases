@@ -231,9 +231,14 @@ gittrackall() {
 	done
 }
 
+gitdbp() {
+	git push --delete origin $1
+	git branch -d $1
+}
+
 gitbp() {
 	git checkout -b $1
-	git push -u
+	git push --set-upstream origin $1
 }
 
 giti() {
