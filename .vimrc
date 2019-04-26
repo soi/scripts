@@ -203,6 +203,7 @@ set listchars=eol:$,tab:\|-,trail:~,extends:>,precedes:<
 set statusline=%<%f\ [%Y%R%M]%h%w\ %n%=%l,%v\ \ %p%%\
 
 set runtimepath^=~/src/ctrlp.vim
+let g:ctrlp_working_path_mode = ''
 
 " settings for command-T
 let g:CommandTMaxHeight=20
