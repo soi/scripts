@@ -9,11 +9,13 @@ from multiprocessing.dummy import Pool as ThreadPool
 def pull_or_clone_git(git):
     print('Checking ' + git[0])
     if os.path.exists(git[0]):
-        Popen(['git', 'pull'], cwd=(git[0])).communicate()
+        Popen(['git', 'pull', '--all'], cwd=(git[0])).communicate()
         print('')
     else:
         args = shlex.split('git clone ' + git[1] + ' ' + git[0])
         Popen(args).communicate()
+        # now track all remote branches
+        # git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
 
 if len(sys.argv) < 2:
     USER = getpass.getuser()
