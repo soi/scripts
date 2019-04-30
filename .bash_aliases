@@ -131,9 +131,19 @@ runn() {
 sdown() {
 	shutdown_sequence() {
 		echo ''
-		echo 'will shut down'
-		pkill chrome 
-		sudo shutdown now
+		if [ "$1" = "-l" ]; then
+			echo 'will logout'
+			pkill chrome 
+			sudo gnome-session-quit
+		elif [ "$1" = "-r" ]; then
+			echo 'will restart'
+			pkill chrome 
+			sudo shutdown -r now
+		else
+			echo 'will shut down'
+			pkill chrome 
+			sudo shutdown now
+		fi
 	}
 
 	to-git-dry > /dev/null
@@ -168,13 +178,13 @@ sdown() {
 			echo "Aborted."
 		else
 			if [ $ok == "y" -o $ok == "Y" ]; then
-				shutdown_sequence
+				shutdown_sequence $1
 			else
 				echo "Aborted."
 			fi
 		fi
 	else
-		shutdown_sequence
+		shutdown_sequence $1
 	fi
 }
 
