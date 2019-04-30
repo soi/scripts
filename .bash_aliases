@@ -6,6 +6,7 @@ alias hed='cd ~/git/HelixerPrep/helixerprep/testdata'
 alias geenv='. ~/env/geenuff/bin/activate'
 alias gem='cd ~/git/misc/geenuff' 
 alias db='gem; sqlite3 test.db'
+alias rmout='rm -r tmp/*/output'
 
 alias ph='cd ~/git/phd'
 project="MHCPredictions"
