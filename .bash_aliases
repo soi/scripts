@@ -133,8 +133,7 @@ sdown() {
 		echo ''
 		if [ "$1" = "-l" ]; then
 			echo 'will logout'
-			pkill chrome 
-			sudo gnome-session-quit
+			gnome-session-quit --no-prompt
 		elif [ "$1" = "-r" ]; then
 			echo 'will restart'
 			pkill chrome 
@@ -173,7 +172,7 @@ sdown() {
 	done
 
 	if [ $flag -eq 1 ]; then
-		read -p $'\n'"The are still things to commit. Still shut down? [y/N]" ok	
+		read -p $'\n'"The are still things to commit. Still continue? [y/N]" ok	
 		if [ -z $ok ]; then
 			echo "Aborted."
 		else
