@@ -42,3 +42,7 @@ toggle_visibility('hot-network-questions', true);
 
 // OTT - but works in a pinch if the above isn't catching them all
 document.getElementById('sidebar').style.display = 'none';
+toggle_visibility('post-signature', false)
+toggle_visibility('post-menu', false)
+toggle_visibility('left-sidebar', false)
+//document.getElementById('google_image_div').style.display = 'none';
