@@ -68,6 +68,7 @@ alias misc='cd ~/git/misc'
 # program shortcuts/enhancements
 alias python='python3'
 alias pt='py.test --cache-clear --disable-warnings -v'
+alias pts='py.test --cache-clear --disable-warnings -v --tb=line'
 alias tree='tree -h -I __pycache__'
 alias golast='go "$(ls -t -1 | head -1)"'
 alias watch='watch '
