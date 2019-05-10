@@ -204,6 +204,11 @@ set statusline=%<%f\ [%Y%R%M]%h%w\ %n%=%l,%v\ \ %p%%\
 
 set runtimepath^=~/src/ctrlp.vim
 let g:ctrlp_working_path_mode = ''
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/](\.git|misc|scripts)$',
+	\ 'file': '\v\.(pyc|so|dll)$',
+	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+	\ }
 
 " settings for command-T
 let g:CommandTMaxHeight=20
