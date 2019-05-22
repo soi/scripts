@@ -9,6 +9,10 @@ colorscheme peachpuff
 " our choosen leader
 :let mapleader = ","
 
+" for plugins in pack folder (>= vim 8.0)
+packloadall
+silent! helptags ALL
+
 " general
 set ruler
 set history=50
@@ -83,6 +87,8 @@ nmap Y y$
 nmap D d$
 nmap - }
 nmap _ {
+vmap - }
+vmap _ {
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap > >>
@@ -162,8 +168,6 @@ nmap <leader>> <C-w>20>
 nmap <leader>_ <C-w>_
 
 " window changin + resizing
-nmap <leader>f <Esc><C-w><down><C-w>_
-nmap <leader>d <Esc><C-w><up><C-w>_
 nmap <leader>J <C-w>J
 nmap <leader>K <C-w>K
 nmap <leader>H <C-w>H
@@ -202,6 +206,7 @@ set listchars=eol:$,tab:\|-,trail:~,extends:>,precedes:<
 " setting the status line format
 set statusline=%<%f\ [%Y%R%M]%h%w\ %n%=%l,%v\ \ %p%%\
 
+" ctrl-p
 set runtimepath^=~/src/ctrlp.vim
 let g:ctrlp_working_path_mode = ''
 let g:ctrlp_custom_ignore = {
@@ -210,12 +215,17 @@ let g:ctrlp_custom_ignore = {
 	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	\ }
 
-" settings for command-T
-let g:CommandTMaxHeight=20
-let g:CommandTAlwaysShowDotFiles=1
-let g:CommandTRefreshMap='<C-r>'
-let g:CommandTAcceptSelectionSplitMap='<C-f>'
+" file browsing
+let g:netrw_banner=0
+" let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+let g:netrw_list_hide=netrw_gitignore#Hide()
 
-" settings for snipmate
-autocmd FileType python set ft=python.django
-autocmd FileType htmldjango set ft=htmldjango.html
+" ALE
+let g:ale_enabled = 0
+let g:ale_python_flake8_executable = 'flake8'
+let g:ale_python_flake8_options = '--max-line-length=100'
+nmap <leader>a :ALEToggle<CR>
+nmap <leader>f :ALENextWrap<CR>
+nmap <leader>d :ALEPreviousWrap<CR>
