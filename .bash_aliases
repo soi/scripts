@@ -1,7 +1,9 @@
 # uni
 alias ge='cd ~/git/GeenuFF'
+alias geg='cd ~/git/GeenuFF/geenuff'
 alias ged='cd ~/git/GeenuFF/geenuff/testdata'
 alias he='cd ~/git/HelixerPrep'
+alias heh='cd ~/git/HelixerPrep/helixerprep'
 alias hed='cd ~/git/HelixerPrep/helixerprep/testdata'
 alias geenv='. ~/env/geenuff/bin/activate'
 alias gem='cd ~/git/misc/geenuff' 
