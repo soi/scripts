@@ -177,6 +177,10 @@ nmap <leader>L <C-w>L
 nmap <leader>c I# <esc>j^
 nmap <leader>m ^xx<esc>j^
 
+" close all buffer but the current one
+command! BufOnly silent! execute "%bd|e#|bd#"
+nmap <leader>z :BufOnly<CR>
+
 " define R to so an output in a new window
 :command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 
