@@ -67,10 +67,13 @@ autocmd FileType sql setl list
 autocmd FileType python setl expandtab smarttab
 
 " session save options
-set ssop-=options
-set ssop-=folds
-nmap <leader>s :mksession! ~/.vim/.session.vim<CR>
-nmap <leader>r :source ~/.vim/.session.vim<CR>
+" set ssop-=options
+" set ssop-=folds
+" nmap <leader>s :mksession! ~/.vim/.session.vim<CR>
+" nmap <leader>r :source ~/.vim/.session.vim<CR>
+
+" don't resize on closing windows
+set noequalalways
 
 " tags
 set tags=./tags;/  " upwards search for tags file
@@ -96,6 +99,8 @@ nnoremap < <<
 nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 nmap <leader>W :wq<CR>
+nmap <leader>v :vs<CR>
+nmap <leader>s :sp<CR>
 map q: :q
 " nnoremap <leader>b q:
 " repeat last command
