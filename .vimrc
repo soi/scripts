@@ -21,7 +21,7 @@ set splitbelow
 set splitright
 set hidden
 set encoding=utf8
-set number
+set nonumber
 set backspace=indent,eol,start
 " set nofoldenable
 " set foldmethod=indent
@@ -242,7 +242,7 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 " ALE
 let g:ale_enabled = 0
 let g:ale_python_flake8_executable = 'flake8'
-let g:ale_python_flake8_options = '--max-line-length=100'
+let g:ale_python_flake8_options = '--max-line-length=102'
 nmap <leader>a :ALEToggle<CR>
 nmap <leader>f :ALENextWrap<CR>
 nmap <leader>d :ALEPreviousWrap<CR>
