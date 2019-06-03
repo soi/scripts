@@ -93,12 +93,16 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap > >>
 nnoremap < <<
-nnoremap <leader>b q:
+nmap <leader>w :w<CR>
+nmap <leader>q :q<CR>
+nmap <leader>W :wq<CR>
+map q: :q
+" nnoremap <leader>b q:
+" repeat last command
 nnoremap <leader>: @:
+nmap <leader><leader> V
 nmap <C-j> <C-d>
 nmap <C-k> <C-u>
-" nmap <F10> :call CommentLine()<CR>
-" nmap <C-F10> :call UnCommentLine()<CR>j0
 nmap <F5> :set invnumber<CR>
 nmap <F6> :call TogglePasteStyle()<CR>
 nmap <F8> :set invlist<CR>
@@ -144,7 +148,7 @@ fun! ToggleNumberStyle()
 	endif
 endf
 
-nmap <leader>q :call ToggleSyntax()<CR>
+" nmap <leader>q :call ToggleSyntax()<CR>
 
 fun! ToggleSyntax()
 	if exists('g:syntax_on')
@@ -218,6 +222,10 @@ let g:ctrlp_custom_ignore = {
 	\ 'file': '\v\.(pyc|sqlite3|sqlitedb|so|dll)$',
 	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	\ }
+
+" vim-expand
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 " file browsing
 let g:netrw_banner=0
