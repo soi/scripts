@@ -97,13 +97,13 @@ nnoremap N nzz
 nnoremap # #N
 nnoremap > >>
 nnoremap < <<
-nmap <leader>w :w<CR>
-nmap <leader>q :q<CR>
-nmap <leader>W :wq<CR>
-nmap <leader>v :vs<CR>
-nmap <leader>s :sp<CR>
+nmap <silent> <leader>w :w<CR>
+nmap <silent> <leader>q :q<CR>
+nmap <silent> <leader>W :wq<CR>
+nmap <silent> <leader>v :vs<CR>
+nmap <silent> <leader>s :sp<CR>
 map q: :q
-" nnoremap <leader>b q:
+nnoremap <leader>b ^
 " repeat last command
 nnoremap <leader>: @:
 nmap <leader><leader> V
