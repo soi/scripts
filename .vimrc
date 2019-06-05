@@ -92,8 +92,9 @@ nmap - }
 nmap _ {
 vmap - }
 vmap _ {
-nnoremap n nzz
-nnoremap N Nzz
+nnoremap n Nzz
+nnoremap N nzz
+nnoremap # #N
 nnoremap > >>
 nnoremap < <<
 nmap <leader>w :w<CR>
@@ -183,8 +184,8 @@ nmap <leader>H <C-w>H
 nmap <leader>L <C-w>L
 
 " un/comment line
-nmap <leader>c I# <esc>j^
-nmap <leader>m ^xx<esc>j^
+nmap <leader>c I# <esc>:w<CR>j^
+nmap <leader>m ^xx<esc>:w<CR>j^
 
 " close all buffer but the current one
 command! BufOnly silent! execute "%bd|e#|bd#"
@@ -242,7 +243,7 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 " ALE
 let g:ale_enabled = 0
 let g:ale_python_flake8_executable = 'flake8'
-let g:ale_python_flake8_options = '--max-line-length=102'
+let g:ale_python_flake8_options = '--max-line-length=102 --ignore=E266,W503'
 nmap <leader>a :ALEToggle<CR>
 nmap <leader>f :ALENextWrap<CR>
 nmap <leader>d :ALEPreviousWrap<CR>
