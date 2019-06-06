@@ -247,3 +247,4 @@ let g:ale_python_flake8_options = '--max-line-length=102 --ignore=E266,W503'
 nmap <leader>a :ALEToggle<CR>
 nmap <leader>f :ALENextWrap<CR>
 nmap <leader>d :ALEPreviousWrap<CR>
+nmap <leader>y :ALEFix yapf<CR>

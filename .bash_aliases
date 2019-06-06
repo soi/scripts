@@ -135,8 +135,8 @@ sdown() {
 	shutdown_sequence() {
 		echo ''
 		if [ "$1" = "-l" ]; then
-			echo 'will logout'
-			gnome-session-quit --no-prompt
+			echo 'will log screen'
+			gnome-screensaver-command -l
 		elif [ "$1" = "-r" ]; then
 			echo 'will restart'
 			pkill chrome 
