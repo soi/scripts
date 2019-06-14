@@ -50,11 +50,13 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# check if we are at work from ssh
 if [ "$color_prompt" = yes ]; then
-    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-	# datetime=$(date +[%d\ %b\ %H:%M])
-    # PS1='\D{[%d %b %H:%M]} \[\033[01;34m\]\w\[\033[00m\] > '
-    PS1='\[\033[01;34m\]\w\[\033[00m\] > '
+	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && [ $(hostname --fqdn) == 'troodon' ]; then
+		PS1='\[\033[0;33m\](WORK)\[\033[01;34m\] \w\[\033[00m\] > '
+	else
+		PS1='\[\033[01;34m\]\w\[\033[00m\] > '
+	fi
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi

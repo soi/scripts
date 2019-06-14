@@ -42,7 +42,7 @@ alias getplots='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/'*'
 alias senddata='rsync -Wz ~/git/'$project'/data/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/data/'
 
 setprompt() {
-	PS1='\[\033[0;32m\](WORK)\[\033[01;34m\] \w\[\033[00m\] > '
+	PS1='\[\033[0;33m\](WORK)\[\033[01;34m\] \w\[\033[00m\] > '
 }
 
 rsyncwork () {
