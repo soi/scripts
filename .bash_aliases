@@ -41,6 +41,10 @@ alias getpred='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/pred
 alias getplots='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/'*'.png ~/git/'$project'/'
 alias senddata='rsync -Wz ~/git/'$project'/data/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/data/'
 
+setprompt() {
+	PS1='\[\033[0;32m\](WORK)\[\033[01;34m\] \w\[\033[00m\] > '
+}
+
 rsyncwork () {
 	if [ $# -gt 1 ]; then
 		rsync -rvz --progress -e 'ssh -A -o "ProxyJump felix@134.99.224.62"' felix@134.99.224.58:$1 $2
