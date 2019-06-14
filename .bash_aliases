@@ -31,17 +31,23 @@ alias mkto='mklatex ~/git/hu/text arbeit; okular arbeit.pdf&'
 alias mke='mklatex ~/git/epirob-2017-self-workshop/abstract abstract'
 alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
-alias hpc='ssh festi100@hpc.rz.uni-duesseldorf.de'
-alias ali='ssh felix-stiehler@134.99.200.63'
+# alias hpc='ssh festi100@hpc.rz.uni-duesseldorf.de'
+alias hpc='ssh felix-stiehler@134.99.200.63'
+alias ali='ssh felix@134.99.224.62'
+alias workpc='ssh -A -o "ProxyJump felix@134.99.224.62" felix@134.99.224.58'
 alias getmodel='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/best_model.h5 ~/git/'$project'/'
 alias getmodel0='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/best_model.h50 ~/git/'$project'/best_model.h5'
 alias getpred='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/predictions ~/git/'$project'/'
 alias getplots='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/'*'.png ~/git/'$project'/'
 alias senddata='rsync -Wz ~/git/'$project'/data/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/data/'
 
-# senddata() {
-	# rsync -WzvP ~/git/$project/data/$1 festi100@hpc.rz.uni-duesseldorf.de:~/git/$project/data/$1
-# }
+rsyncwork () {
+	if [ $# -gt 1 ]; then
+		rsync -rvz --progress -e 'ssh -A -o "ProxyJump felix@134.99.224.62"' felix@134.99.224.58:$1 $2
+	else
+		rsync -rvz --progress -e 'ssh -A -o "ProxyJump felix@134.99.224.62"' felix@134.99.224.58:$1 .
+	fi
+}
 
 mklatex() {
 	name="$2"

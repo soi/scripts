@@ -118,8 +118,8 @@ nmap <leader>e :e!<CR>
 nmap <leader>n :nohl<CR>
 nmap <leader>p Oimport pudb; pudb.set_trace()<Esc>j:w<CR>
 nmap <leader>P :g/import pudb; pudb.set_trace\(\)/d<CR>:w<CR>:nohl<CR>
-nmap <leader>t :.s/train/test/g<CR>:nohl<CR>
-nmap <leader>T :.s/test/train/g<CR>:nohl<CR>
+nmap <leader>t :.s/train/dev/g<CR>:nohl<CR>
+nmap <leader>T :.s/dev/train/g<CR>:nohl<CR>
 nmap <leader>1 :.s/2/1/g<CR>:nohl<CR>
 nmap <leader>2 :.s/1/2/g<CR>:nohl<CR>
 
