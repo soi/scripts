@@ -14,15 +14,16 @@ alias cpu='~/git/cpu.sh'
 alias py36='module load Python/3.6.5'
 
 # dir shortcuts
-project="PairwiseMHCRanking"
-alias pa='cd ~/git/'$project
-alias pad='cd ~/git/'$project'/data'
-alias pae='cd ~/git/'$project'/evaluate'
-alias paa='cd ~/git/'$project'/analysis'
-alias paj='cd ~/git/'$project'/jobs'
-alias paef='pae; cd mhcflurry'
 alias gi='cd ~/git'
-alias sc='cd /scratch_gs/festi100'
+alias ge='cd ~/git/GeenuFF'
+alias geg='cd ~/git/GeenuFF/geenuff'
+alias ged='cd ~/git/GeenuFF/geenuff/testdata'
+alias he='cd ~/git/HelixerPrep'
+alias heh='cd ~/git/HelixerPrep/helixerprep'
+alias hed='cd ~/git/HelixerPrep/helixerprep/testdata'
+alias hep='cd ~/git/HelixerPrep/helixerprep/prediction'
+alias venv='. ~/venv/bin/activate'
+alias rmout='rm -r tmp/*/output'
 
 # program shortcuts/enhancements
 alias watch='watch '
