@@ -10,8 +10,9 @@ colorscheme peachpuff
 :let mapleader = ","
 
 " for plugins in pack folder (>= vim 8.0)
-packloadall
-silent! helptags ALL
+if v:version > 800:
+	packloadall
+	silent! helptags ALL
 
 " general
 set ruler
@@ -238,7 +239,8 @@ let g:netrw_banner=0
 " let g:netrw_browse_split=4
 let g:netrw_altv=1
 let g:netrw_liststyle=3
-let g:netrw_list_hide=netrw_gitignore#Hide()
+if v:version > 800:
+	let g:netrw_list_hide=netrw_gitignore#Hide()
 
 " ALE
 let g:ale_enabled = 0
