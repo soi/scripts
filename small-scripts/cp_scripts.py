@@ -42,3 +42,7 @@ for file_pair in files:
 
 if not changed_flag:
     print('everything up-to-date')
+    exit(0)
+else:
+    # exit code needed for downstream scripts
+    exit(1)

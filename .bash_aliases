@@ -7,7 +7,25 @@ alias heh='cd ~/git/HelixerPrep/helixerprep'
 alias hed='cd ~/git/HelixerPrep/helixerprep/testdata'
 alias hep='cd ~/git/HelixerPrep/helixerprep/prediction'
 alias geenv='. ~/env/geenuff/bin/activate'
+alias gem='cd ~/git/misc/geenuff' 
+alias db='gem; sqlite3 test.db'
 alias rmout='rm -r tmp/*/output'
+
+alias ph='cd ~/git/phd'
+project="MHCPredictions"
+alias pa='cd ~/git/'$project
+alias pad='cd ~/git/'$project'/data'
+alias pae='cd ~/git/'$project'/evaluate'
+alias paa='cd ~/git/'$project'/analysis'
+alias paj='cd ~/git/'$project'/jobs'
+alias padr='cd ~/Dropbox/MHC-Prediction-Data'
+alias phc='cd ~/git/phd/coursera/course2/'
+alias cpdata='cp $(ls -t ~/Downloads/dataset* | head -1) tmp'
+alias ke='cd ~/src/keras/examples'
+alias gitchp='git checkout pairwise'
+alias paef='pae; cd mhcflurry'
+alias mhcfd='cd ~/.local/share/mhcflurry/4/1.2.0/data_curated'
+alias phpc='ping hpc.rz.uni-duesseldorf.de'
 
 alias mkt='mklatex ~/git/hu/text arbeit'
 alias mkto='mklatex ~/git/hu/text arbeit; okular arbeit.pdf&'
@@ -16,7 +34,7 @@ alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go
 
 # alias hpc='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias hpc='ssh felix-stiehler@134.99.200.63'
-alias hpctunnel='ssh -L 8889:localhost:8080 felix-stiehler@134.99.200.63'
+alias hpctunnel='ssh -L 8889:localhost:8081 felix-stiehler@134.99.200.63'
 alias ali='ssh felix@134.99.224.62'
 alias workpc='ssh -A -o "ProxyJump felix@134.99.224.62" felix@134.99.224.58'
 alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump felix@134.99.224.62" felix@134.99.224.58'
@@ -63,6 +81,7 @@ alias gi='cd ~/git'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias chr='wmctrl -r Chrome -b remove,maximized_vert; wmctrl -r Chrome -b remove,maximized_horz; wmctrl -r Chrome -e 0,0,250,1080,1670'
 alias python='python3'
 alias pt='py.test --cache-clear --disable-warnings -v'
 alias pts='py.test --cache-clear --disable-warnings -v --tb=line'
