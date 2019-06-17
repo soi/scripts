@@ -13,6 +13,7 @@ colorscheme peachpuff
 if v:version > 800:
 	packloadall
 	silent! helptags ALL
+endif
 
 " general
 set ruler
@@ -241,6 +242,7 @@ let g:netrw_altv=1
 let g:netrw_liststyle=3
 if v:version > 800:
 	let g:netrw_list_hide=netrw_gitignore#Hide()
+endif
 
 " ALE
 let g:ale_enabled = 0
