@@ -81,6 +81,7 @@ alias gi='cd ~/git'
 alias misc='cd ~/git/misc'
 
 # program shortcuts/enhancements
+alias nv='nvidia-smi'
 alias chr='wmctrl -r Chrome -b remove,maximized_vert; wmctrl -r Chrome -b remove,maximized_horz; wmctrl -r Chrome -e 0,0,250,1080,1670'
 alias python='python3'
 alias pt='py.test --cache-clear --disable-warnings -v'
