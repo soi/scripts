@@ -3,6 +3,7 @@
 # for examples 
 # If not running interactively, don't do anything [ -z "$PS1" ] && return
 export PYTHONPATH="${PYTHONPATH}:/home/felix/git/GeenuFF"
+# export PYTHONPATH="${PYTHONPATH}:/home/felix/git/GeenuFF:/home/felix/src/keras"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
