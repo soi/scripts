@@ -8,42 +8,15 @@ alias hed='cd ~/git/HelixerPrep/helixerprep/testdata'
 alias hep='cd ~/git/HelixerPrep/helixerprep/prediction'
 alias hev='cd ~/git/HelixerPrep/helixerprep/visualization'
 alias geenv='. ~/env/geenuff/bin/activate'
-alias gem='cd ~/git/misc/geenuff' 
-alias db='gem; sqlite3 test.db'
+alias db='de; sqlite3 full_geenuff.sqlite3'
 alias rmout='rm -r tmp/*/output'
 
-alias ph='cd ~/git/phd'
-project="MHCPredictions"
-alias pa='cd ~/git/'$project
-alias pad='cd ~/git/'$project'/data'
-alias pae='cd ~/git/'$project'/evaluate'
-alias paa='cd ~/git/'$project'/analysis'
-alias paj='cd ~/git/'$project'/jobs'
-alias padr='cd ~/Dropbox/MHC-Prediction-Data'
-alias phc='cd ~/git/phd/coursera/course2/'
-alias cpdata='cp $(ls -t ~/Downloads/dataset* | head -1) tmp'
-alias ke='cd ~/src/keras/examples'
-alias gitchp='git checkout pairwise'
-alias paef='pae; cd mhcflurry'
-alias mhcfd='cd ~/.local/share/mhcflurry/4/1.2.0/data_curated'
-alias phpc='ping hpc.rz.uni-duesseldorf.de'
-
-alias mkt='mklatex ~/git/hu/text arbeit'
-alias mkto='mklatex ~/git/hu/text arbeit; okular arbeit.pdf&'
-alias mke='mklatex ~/git/epirob-2017-self-workshop/abstract abstract'
-alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
-
-# alias hpc='ssh festi100@hpc.rz.uni-duesseldorf.de'
+alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias hpc='ssh felix-stiehler@134.99.200.63'
 alias hpctunnel='ssh -L 8889:localhost:8081 felix-stiehler@134.99.200.63'
 alias ali='ssh felix@134.99.224.62'
 alias workpc='ssh -A -o "ProxyJump felix@134.99.224.62" felix@134.99.224.58'
 alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump felix@134.99.224.62" felix@134.99.224.58'
-alias getmodel='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/best_model.h5 ~/git/'$project'/'
-alias getmodel0='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/best_model.h50 ~/git/'$project'/best_model.h5'
-alias getpred='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/predictions ~/git/'$project'/'
-alias getplots='rsync -W festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/'*'.png ~/git/'$project'/'
-alias senddata='rsync -Wz ~/git/'$project'/data/data.h5 festi100@hpc.rz.uni-duesseldorf.de:~/git/'$project'/data/'
 
 setprompt() {
 	PS1='\[\033[0;33m\](WORK)\[\033[01;34m\] \w\[\033[00m\] > '
@@ -66,9 +39,10 @@ mklatex() {
 	pdflatex "$name".tex 
 }
 
-alias te='hue; vim arbeit.tex'
-alias pe='hup; vim poster.tex'
-alias tepi='epi; vim abstract.tex'
+alias mkt='mklatex ~/git/hu/text arbeit'
+alias mkto='mklatex ~/git/hu/text arbeit; okular arbeit.pdf&'
+alias mke='mklatex ~/git/epirob-2017-self-workshop/abstract abstract'
+alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
 # dir shortcuts
 alias drop='cd ~/Dropbox'
@@ -80,6 +54,7 @@ alias sma='cd ~/git/scripts/small-scripts'
 alias tmp='cd /tmp/'
 alias gi='cd ~/git'
 alias misc='cd ~/git/misc'
+alias ke='cd ~/src/keras'
 
 # program shortcuts/enhancements
 alias nv='nvidia-smi'
