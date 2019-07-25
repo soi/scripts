@@ -63,7 +63,7 @@ alias chr='wmctrl -r Chrome -b remove,maximized_vert; wmctrl -r Chrome -b remove
 alias python='python3'
 alias pt='py.test --cache-clear --disable-warnings -v'
 alias pts='py.test --cache-clear --disable-warnings -v --tb=line'
-alias tree='tree -h -I __pycache__'
+alias tree='tree -C -h -I __pycache__'
 alias golast='go "$(ls -t -1 | head -1)"'
 alias watch='watch '
 alias ve='virtualenv -p python3'
