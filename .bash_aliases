@@ -10,6 +10,7 @@ alias hev='cd ~/git/HelixerPrep/helixerprep/visualization'
 alias geenv='. ~/env/geenuff/bin/activate'
 alias db='de; sqlite3 full_geenuff.sqlite3'
 alias rmout='rm -r tmp/*/output'
+alias ds='cd ~/Desktop/data'
 
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias hpc='ssh felix-stiehler@134.99.200.63'

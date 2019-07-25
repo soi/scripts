@@ -108,6 +108,7 @@ map q: :q
 nnoremap <leader>b ^
 " repeat last command
 nnoremap <leader>: @:
+nnoremap <leader>r :e<CR>G
 nmap <leader><leader> V
 nmap <C-j> <C-d>
 nmap <C-k> <C-u>
