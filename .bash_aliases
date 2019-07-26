@@ -58,6 +58,8 @@ alias misc='cd ~/git/misc'
 alias ke='cd ~/src/keras'
 
 # program shortcuts/enhancements
+alias du='du -h'
+alias df='df -h'
 alias nv='nvidia-smi'
 alias chr='wmctrl -r Chrome -b remove,maximized_vert; wmctrl -r Chrome -b remove,maximized_horz; wmctrl -r Chrome -e 0,0,250,1080,1670'
 alias python='python3'
