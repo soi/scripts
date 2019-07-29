@@ -61,6 +61,7 @@ alias ke='cd ~/src/keras'
 # program shortcuts/enhancements
 alias lsw='ls -1 | wc -l'
 alias du='du -h'
+alias du1='du -h -d 1'
 alias df='df -h'
 alias nv='nvidia-smi'
 alias chr='wmctrl -r Chrome -b remove,maximized_vert; wmctrl -r Chrome -b remove,maximized_horz; wmctrl -r Chrome -e 0,0,250,1080,1670'
