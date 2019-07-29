@@ -11,6 +11,7 @@ alias geenv='. ~/env/geenuff/bin/activate'
 alias db='de; sqlite3 full_geenuff.sqlite3'
 alias rmout='rm -r tmp/*/output'
 alias ds='cd ~/Desktop/data'
+alias di='cd ~/Desktop/data_insight'
 
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias hpc='ssh felix-stiehler@134.99.200.63'
@@ -58,6 +59,7 @@ alias misc='cd ~/git/misc'
 alias ke='cd ~/src/keras'
 
 # program shortcuts/enhancements
+alias lsw='ls -1 | wc -l'
 alias nv='nvidia-smi'
 alias chr='wmctrl -r Chrome -b remove,maximized_vert; wmctrl -r Chrome -b remove,maximized_horz; wmctrl -r Chrome -e 0,0,250,1080,1670'
 alias python='python3'
