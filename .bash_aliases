@@ -13,13 +13,15 @@ alias db='de; sqlite3 full_geenuff.sqlite3'
 alias rmout='rm -r tmp/*/output'
 alias ds='cd ~/Desktop/data'
 alias di='cd ~/Desktop/data_insight'
+alias nn='he; cd nni'
+alias ne='cd ~/nni/experiments'
 
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias hpc='ssh felix-stiehler@134.99.200.63'
 alias hpctunnel='ssh -L 8889:localhost:8081 felix-stiehler@134.99.200.63'
-alias ali='ssh felix@134.99.224.62'
 alias workpc='ssh -A -o "ProxyJump felix@134.99.224.62" felix@134.99.224.58'
 alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump felix@134.99.224.62" felix@134.99.224.58'
+alias ali='ssh felix@134.99.224.62'
 
 setprompt() {
 	PS1='\[\033[0;33m\](WORK)\[\033[01;34m\] \w\[\033[00m\] > '
