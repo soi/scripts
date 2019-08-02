@@ -14,6 +14,7 @@ alias rmout='rm -r tmp/*/output'
 alias ds='cd ~/Desktop/data'
 alias di='cd ~/Desktop/data_insight'
 alias nn='he; cd nni'
+alias nnl='cd ~/.local/nnictl'
 alias ne='cd ~/nni/experiments'
 
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
@@ -22,6 +23,20 @@ alias hpctunnel='ssh -L 8889:localhost:8081 felix-stiehler@134.99.200.63'
 alias workpc='ssh -A -o "ProxyJump felix@134.99.224.62" felix@134.99.224.58'
 alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump felix@134.99.224.62" felix@134.99.224.58'
 alias ali='ssh felix@134.99.224.62'
+
+nnidl() {
+	if [ $# -lt 2 ]; then
+		echo "Usage: nnidl cluster|hpc nni_id"
+	else
+		if [ $1 == "cluster" ]; then
+			rsync -rvz --progress festi100@hpc.rz.uni-duesseldorf.de:/home/festi100/nni/experiments/"$2" ~/nni/experiments/
+		elif [ $1 == "hpc" ]; then
+			rsync -rvz --progress felix-stiehler@134.99.200.63:/home/felix-stiehler/nni/experiments/"$2" ~/nni/experiments/
+		else
+			echo "unknown source"
+		fi
+	fi
+}
 
 setprompt() {
 	PS1='\[\033[0;33m\](WORK)\[\033[01;34m\] \w\[\033[00m\] > '
