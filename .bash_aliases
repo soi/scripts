@@ -44,9 +44,9 @@ nnidl() {
 		echo "Usage: nnidl cluster|hpc nni_id"
 	else
 		if [ $1 == "cluster" ]; then
-			rsync -rvz --progress festi100@hpc.rz.uni-duesseldorf.de:/home/festi100/nni/experiments/"$2" ~/nni/experiments/
+			rsync -rvz --ignore-existing --progress festi100@hpc.rz.uni-duesseldorf.de:/home/festi100/nni/experiments/"$2" ~/nni/experiments/
 		elif [ $1 == "hpc" ]; then
-			rsync -rvz --progress felix-stiehler@134.99.200.63:/home/felix-stiehler/nni/experiments/"$2" ~/nni/experiments/
+			rsync -rvz --ignore-existing --progress felix-stiehler@134.99.200.63:/home/felix-stiehler/nni/experiments/"$2" ~/nni/experiments/
 		else
 			echo "unknown source"
 		fi
@@ -124,6 +124,7 @@ alias ipyrc='vim ~/.ipython/profile_default/startup/ipython_startup.py'
 alias doch='sudo $(history -p !-1)'
 alias bitc='~/bitcoin-qt/bitcoin-qt --datadir=/media/felix/Volume/Bitcoin'
 alias ll='ls -lAh --color=auto'
+alias llt='ll -t'
 alias llg='ll | egrep '
 alias cp='cp -v'
 alias findg='find . | egrep '
