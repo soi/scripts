@@ -16,6 +16,7 @@ alias di='cd ~/Desktop/data_insight'
 alias nn='he; cd nni'
 alias nnl='cd ~/.local/nnictl'
 alias ne='cd ~/nni/experiments'
+alias me='cd /mnt/data/experiments_backup'
 
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias hpc='ssh felix-stiehler@134.99.200.63'
