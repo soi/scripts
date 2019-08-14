@@ -17,6 +17,7 @@ alias nn='he; cd nni'
 alias nnl='cd ~/.local/nnictl'
 alias ne='cd ~/nni/experiments'
 alias me='cd /mnt/data/experiments_backup'
+alias meta='cd /mnt/data/ali/share/phytozome_organized/ready/train'
 
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias hpc='ssh felix-stiehler@134.99.200.63'
@@ -279,7 +280,7 @@ gittrackall() {
 
 gitdbp() {
 	git push --delete origin $1
-	git branch -d $1
+	git branch -D $1
 }
 
 gitbp() {
