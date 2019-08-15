@@ -67,8 +67,6 @@ set cmdheight=2
 
 autocmd FileType sql setl list
 autocmd FileType python setl expandtab smarttab
-" do not indent after typing a ':'
-setlocal indentkeys-=:
 
 " session save options
 " set ssop-=options
