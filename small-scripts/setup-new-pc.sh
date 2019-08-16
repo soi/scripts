@@ -9,5 +9,8 @@ sudo apt-get autoremove
 
 ./cp_scripts.py -m from-git
 
-echo "sudo apt-get remove firefox thunderbird rhythmbox"
+dconf write /org/gnome/terminal/legacy/keybindings/next-tab "'<Shift>Right'"
+dconf write /org/gnome/terminal/legacy/keybindings/prev-tab "'<Shift>Left'"
+
+echo "maybe also run sudo apt-get remove firefox thunderbird rhythmbox"
 echo "have fun:)"
