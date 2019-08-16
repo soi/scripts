@@ -2,11 +2,12 @@
 
 ./setup-git-config.sh
 ./gitpullall.py
-install-packages/install_packages desktop
+sudo install-packages/install_packages desktop
+sudo apt-get autoremove
 ./pip_install
 ./setup-vim.sh
 
-./cp_scripts from-git
+./cp_scripts.py -m from-git
 
-echo "sudo apt-get remove firefox thunderbird"
+echo "sudo apt-get remove firefox thunderbird rhythmbox"
 echo "have fun:)"
