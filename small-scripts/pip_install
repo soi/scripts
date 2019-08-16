@@ -2,4 +2,4 @@
 
 sudo apt-get install python3-pip python3-tk
 # sudo pip3 install --upgrade pip
-pip3 install --user numpy scipy matplotlib ipython jupyter pandas sympy nose sklearn line-profiler h5py terminaltables hyperopt deepdish pudb pytest-pudb yapf flake8 seaborn terminaltables
+pip3 install --user numpy scipy matplotlib ipython jupyter pandas sympy nose sklearn h5py terminaltables hyperopt deepdish pudb pytest-pudb yapf flake8 seaborn terminaltables

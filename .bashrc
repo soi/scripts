@@ -108,9 +108,12 @@ export PATH=/home/felix/.local/bin${PATH:+:${PATH}}
 export PATH="$PATH:$HOME/bin"
 
 # cuda env
-export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda-9.2/bin:/usr/local/cudnn/lib64:/usr/local/cuda-9.2/lib64:$LD_LIBRARY_PATH
-export CUDA_HOME=/usr/local/cuda
+# export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
+# export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda-9.2/bin:/usr/local/cudnn/lib64:/usr/local/cuda-9.2/lib64:$LD_LIBRARY_PATH
+# export CUDA_HOME=/usr/local/cuda
+export PATH=$PATH:/usr/local/cuda/bin
+export CUDADIR=/usr/local/cuda
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.1/lib64
 
 # standard editor
 export EDITOR=vim
