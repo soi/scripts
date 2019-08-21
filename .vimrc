@@ -227,7 +227,7 @@ set statusline=%<%f\ [%Y%R%M]%h%w\ %n%=%l,%v\ \ %p%%\
 set runtimepath^=~/src/ctrlp.vim
 let g:ctrlp_working_path_mode = ''
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\v[\/](\.git|misc|scripts|tmp)$',
+	\ 'dir':  '\v[\/](\.git|misc|tmp)$',
 	\ 'file': '\v\.(pyc|sqlite3|sqlitedb|so|dll)$',
 	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	\ }
