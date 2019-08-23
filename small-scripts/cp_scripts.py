@@ -7,7 +7,7 @@ from subprocess import call
 
 git_scripts_home = '/home/felix/git/scripts/'
 files = [['/home/felix/.bash_aliases', git_scripts_home + '.bash_aliases'],
-         ['/home/felix/.bashrc', git_scripts_home + '.bashrc'],
+         # ['/home/felix/.bashrc', git_scripts_home + '.bashrc'],
          ['/home/felix/.vimrc', git_scripts_home + '.vimrc'],
          ['/home/felix/.inputrc', git_scripts_home + '.inputrc'],
          ['/home/felix/.sqliterc', git_scripts_home + '.sqliterc'],
