@@ -1,3 +1,4 @@
 .header on
 .mode column
 .separator "	"
+.width 20 20 20 20 20
