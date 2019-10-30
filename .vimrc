@@ -94,8 +94,8 @@ nmap - }
 nmap _ {
 vmap - }
 vmap _ {
-nnoremap n nzz
-nnoremap N Nzz
+nnoremap n Nzz
+nnoremap N nzz
 nnoremap # #N
 nnoremap > >>
 nnoremap < <<
