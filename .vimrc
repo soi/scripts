@@ -106,6 +106,7 @@ nmap <silent> <leader>v :vs<CR>
 nmap <silent> <leader>s :sp<CR>
 map q: :q
 nnoremap <leader>b ^
+nnoremap <leader>g :set wrap!<CR>
 " repeat last command
 nnoremap <leader>: @:
 nnoremap <leader>r :e<CR>G
