@@ -54,9 +54,9 @@ fi
 # check if we are at work from ssh
 if [ "$color_prompt" = yes ]; then
 	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && [ $(hostname --fqdn) == 'troodon' ]; then
-		PS1='\[\033[0;33m\](WORK)\[\033[01;34m\] \w\[\033[00m\] > '
+		PS1='\$(__git_ps1 '(%s)') \[\033[0;33m\](WORK)\[\033[01;34m\] \w\[\033[00m\] > '
 	else
-		PS1='\[\033[01;34m\]\w\[\033[00m\] > '
+		PS1='\$(__git_ps1 '(%s)') \[\033[01;34m\]\w\[\033[00m\] > '
 	fi
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
