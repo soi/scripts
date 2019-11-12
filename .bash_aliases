@@ -30,6 +30,7 @@ alias hpctunnel='ssh -L 8889:localhost:8081 felix-stiehler@134.99.200.63'
 alias workpc='ssh -A -o "ProxyJump felix@134.99.224.62" felix@134.99.224.58'
 alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump felix@134.99.224.62" felix@134.99.224.58'
 alias ali='ssh felix@134.99.224.62'
+alias chris='ssh felix@134.99.224.57'
 
 last_trial() {
     last_exp=$(ls -1t ~/nni/experiments/ | head -1)
