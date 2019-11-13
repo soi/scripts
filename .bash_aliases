@@ -284,6 +284,10 @@ gittrackall() {
 	done
 }
 
+gitgall() {
+	git grep $1 $(git rev-list --all -- $2) -- $2
+}
+
 gitdbp() {
 	git push --delete origin $1
 	git branch -D $1
