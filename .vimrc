@@ -97,7 +97,7 @@ vmap _ {
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap # *N
-nnoremap * #N
+nnoremap <expr> * ':%s/'.expand('<cword>').'//gn<CR>``'
 nnoremap > >>
 nnoremap < <<
 nmap <silent> <leader>w :w<CR>
