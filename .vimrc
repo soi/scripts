@@ -96,15 +96,16 @@ vmap - }
 vmap _ {
 nnoremap n nzz
 nnoremap N Nzz
-nnoremap # #N
+nnoremap # *N
+nnoremap * #N
 nnoremap > >>
 nnoremap < <<
 nmap <silent> <leader>w :w<CR>
 nmap <silent> <leader>q :q<CR>
 nmap <silent> <leader>W :wq<CR>
 nmap <silent> <leader>v :vs<CR>
-nmap <silent> <leader>s :sp<CR>
 map q: :q
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 nnoremap <leader>b ^
 nnoremap <leader>g :set wrap!<CR>
 " repeat last command
