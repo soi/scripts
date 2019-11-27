@@ -37,6 +37,7 @@ alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump felix@134.99.224.6
 alias ali='ssh felix@134.99.224.62'
 alias chris='ssh felix@134.99.224.57'
 
+alias trials='cd ~/nni/experiments/$(ls -1t ~/nni/experiments/ | head -1)/trials/'
 last_trial() {
     last_exp=$(ls -1t ~/nni/experiments/ | head -1)
     last_trial=$(ls -1t ~/nni/experiments/$last_exp/trials/ | head -1)
@@ -46,7 +47,9 @@ alias lt='cd $(last_trial)'
 alias le='cd ~/nni/experiments/$(ls -1t ~/nni/experiments/ | head -1)/trials'
 alias vlt='vim $(last_trial)/trial.log'
 alias wlt='watch -n 1 $(last_trial)/trial.log'
+alias nnistop='nnictl stop; pkill -u $(whoami) python3; rm -r -v /tmp/nni'
 alias nnidel='nnictl experiment delete $(ls -1 -t ~/nni/experiments/ | head -1)'
+alias nnistopdel='nnistop && nnidel'
 
 valg() {
     cat $1 | grep val_loss: | cut -d " " -f10-23; cat $1 | grep val_loss: | cut -d " " -f25-;
