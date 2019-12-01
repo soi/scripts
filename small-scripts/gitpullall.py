@@ -30,7 +30,8 @@ GIT_LIST = [
     (GIT_HOME_DIR + 'HelixerPrep', 'git@github.com:alisandra/HelixerPrep.git'),
     (GIT_HOME_DIR + 'GeenuFF', 'git@github.com:weberlab-hhu/GeenuFF.git'),
     (GIT_HOME_DIR + 'scripts', 'git@github.com:soi/scripts.git'),
-    (GIT_HOME_DIR + 'misc', 'git@github.com:soi/misc.git')
+    (GIT_HOME_DIR + 'misc', 'git@github.com:soi/misc.git'),
+    (GIT_HOME_DIR + 'helixer_scratch', 'git@github.com:weberlab-hhu/helixer_scratch.git')
 ]
 
 pool = ThreadPool(8)
