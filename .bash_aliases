@@ -110,7 +110,7 @@ alias misc='cd ~/git/misc'
 alias ke='cd ~/src/keras'
 
 # program shortcuts/enhancements
-alias lsd='ls -1 -d $PWD/*'
+alias lsf='ls -1 -d $PWD/*'
 alias lsw='ls -1 | wc -l'
 alias lsS='ll -S'
 alias du='du -h'
