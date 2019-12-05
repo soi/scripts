@@ -15,6 +15,9 @@ if v:version > 800
 	silent! helptags ALL
 endif
 
+" python
+autocmd FileType python setl expandtab smarttab
+
 " general
 set ruler
 set history=50
@@ -65,8 +68,6 @@ set laststatus=2
 set confirm
 set cmdheight=2
 
-autocmd FileType sql setl list
-autocmd FileType python setl expandtab smarttab
 
 " session save options
 " set ssop-=options
