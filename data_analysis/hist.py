@@ -32,15 +32,15 @@ def get_data_from_iter(iterator):
                 n_cutoff += 1
     cutoff_perc = n_cutoff/n_total * 100
     print(f'cut off {n_cutoff}/{n_total} values ({cutoff_perc:.4f}%)')
-    return values
+    return values, cutoff_perc
 
 if args.dataset:
-    values = get_data_from_iter(open(args.dataset))
+    values, cutoff_perc = get_data_from_iter(open(args.dataset))
 else:
-    values = get_data_from_iter(sys.stdin)
+    values, cutoff_perc = get_data_from_iter(sys.stdin)
 
 plt.hist(values, args.bars)
-plt.title(f'{args.title} (cutoff: {cutoff_perc}%)')
+plt.title(f'{args.title} (cutoff: {cutoff_perc:.4f}%)')
 if args.log:
     plt.xscale('log')
 
