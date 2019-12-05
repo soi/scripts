@@ -8,7 +8,9 @@ from pprint import pprint
 parser = argparse.ArgumentParser()
 parser.add_argument('-d', '--dataset', type=str, default='')
 parser.add_argument('-b', '--bars', type=int, default=100)
-parser.add_argument('-co', '--cutoff', type=int, default=10**9)
+parser.add_argument('-co-start', '--cutoff-start', type=float, default=np.NINF)
+parser.add_argument('-co-end', '--cutoff-end', type=float, default=np.Inf)
+parser.add_argument('-title', '--title', type=str, default='')
 parser.add_argument('-l', '--log', action='store_true')
 parser.add_argument('-s', '--save', type=str, default='')
 args = parser.parse_args()
@@ -24,11 +26,12 @@ def get_data_from_iter(iterator):
         if line.strip():
             n_total += 1
             value = float(line.strip())
-            if value <= args.cutoff:
+            if value >= args.cutoff_start and value <= args.cutoff_end:
                 values.append(value)
             else:
                 n_cutoff += 1
-    print('cut off {}/{} values ({:.4f}%)'.format(n_cutoff, n_total, n_cutoff/n_total * 100))
+    cutoff_perc = n_cutoff/n_total * 100
+    print(f'cut off {n_cutoff}/{n_total} values ({cutoff_perc:.4f}%)')
     return values
 
 if args.dataset:
@@ -37,6 +40,7 @@ else:
     values = get_data_from_iter(sys.stdin)
 
 plt.hist(values, args.bars)
+plt.title(f'{args.title} (cutoff: {cutoff_perc}%)')
 if args.log:
     plt.xscale('log')
 
