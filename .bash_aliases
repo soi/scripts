@@ -102,7 +102,7 @@ mklatex() {
 }
 
 alias mkt='mklatex ~/git/helixer_scratch/paper main'
-alias mkto='mklatex ~/git/helixer_scratch/paper main; okular arbeit.pdf&'
+alias mkto='mklatex ~/git/helixer_scratch/paper main; okular ~/git/helixer_scratch/paper/main.pdf&'
 alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
 # dir shortcuts
@@ -319,11 +319,11 @@ gitbp() {
 }
 
 giti() {
-	vim `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9]*/\)'`.gitignore
+	vim `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9_]*/\)'`.gitignore
 }
 
 gitr() {
-	cd `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9]*\)'`
+	cd `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9_]*\)'`
 }
 
 gitacp() {
