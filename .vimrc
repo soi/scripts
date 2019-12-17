@@ -68,7 +68,6 @@ set laststatus=2
 set confirm
 set cmdheight=2
 
-
 " session save options
 " set ssop-=options
 " set ssop-=folds

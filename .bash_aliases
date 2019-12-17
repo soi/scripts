@@ -16,6 +16,7 @@ alias dep='cd ~/Desktop/predictions'
 alias dem='cd ~/Desktop/models'
 alias dsc='hsc; cd data_generation_insert'
 alias di='hsc; cd data_insight'
+alias gs='vim ~/git/helixer_scratch/data_insight/plants/genome_sizes_fragments'
 alias nn='he; cd nni'
 alias nnl='cd ~/.local/nnictl'
 alias ne='cd ~/nni/experiments'
@@ -23,12 +24,12 @@ alias me='cd /mnt/data/experiments_backup'
 alias md='cd /mnt/data/felix'
 alias meh='cd /mnt/data/experiments_backup/nni_clc_server/nni/experiments'
 alias meta='cd /mnt/data/ali/share/phytozome_organized/ready/train'
-alias gs='vim ~/Desktop/data_insight/genome_sizes'
 alias sg='ds; cd single_genomes'
 alias mo='de; cd models'
 alias pe='de; cd predictions'
 alias ani='cd /mnt/data/ali/share/ensembl_nosplit/'
 alias hsc='cd ~/git/helixer_scratch'
+alias fg='vim  ~/git/helixer_scratch/sql_commands/features_of_genome.sql'
 
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias hpc='ssh felix-stiehler@134.99.200.63'
@@ -52,8 +53,15 @@ alias nnistop='nnictl stop; pkill -u $(whoami) python3; rm -r -v /tmp/nni'
 alias nnidel='nnictl experiment delete $(ls -1 -t ~/nni/experiments/ | head -1)'
 alias nnistopdel='nnistop && nnidel'
 
+valgp() {
+    echo "normal"
+    cat trial.log | grep "| genic" | sed -n '1~2p'
+    echo "canary"
+    cat trial.log | grep "| genic" | sed -n '2~2p'
+}
+
 valg() {
-    cat $1 | grep val_loss: | cut -d " " -f10-23; cat $1 | grep val_loss: | cut -d " " -f25-;
+    cat trial.log | grep "| genic"
 }
 
 nnidl() {
