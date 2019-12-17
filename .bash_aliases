@@ -30,6 +30,7 @@ alias pe='de; cd predictions'
 alias ani='cd /mnt/data/ali/share/ensembl_nosplit/'
 alias hsc='cd ~/git/helixer_scratch'
 alias fg='vim  ~/git/helixer_scratch/sql_commands/features_of_genome.sql'
+alias pa='hsc; cd paper'
 
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias hpc='ssh felix-stiehler@134.99.200.63'
@@ -100,9 +101,8 @@ mklatex() {
 	pdflatex "$name".tex 
 }
 
-alias mkt='mklatex ~/git/hu/text arbeit'
-alias mkto='mklatex ~/git/hu/text arbeit; okular arbeit.pdf&'
-alias mke='mklatex ~/git/epirob-2017-self-workshop/abstract abstract'
+alias mkt='mklatex ~/git/helixer_scratch/paper main'
+alias mkto='mklatex ~/git/helixer_scratch/paper main; okular arbeit.pdf&'
 alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
 # dir shortcuts
