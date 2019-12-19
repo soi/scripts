@@ -31,6 +31,7 @@ alias ani='cd /mnt/data/ali/share/ensembl_nosplit/'
 alias hsc='cd ~/git/helixer_scratch'
 alias fg='vim  ~/git/helixer_scratch/sql_commands/features_of_genome.sql'
 alias pa='hsc; cd paper'
+alias pam='hsc; cd paper; vim main.tex'
 
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias hpc='ssh felix-stiehler@134.99.200.63'
@@ -95,14 +96,11 @@ rsyncwork () {
 mklatex() {
 	name="$2"
 	cd "$1"
-	pdflatex "$name".tex 
-	bibtex "$name" 
-	pdflatex "$name".tex 
-	pdflatex "$name".tex 
+	pdflatex "$name".tex && bibtex "$name" && pdflatex "$name".tex && pdflatex "$name".tex 
 }
 
 alias mkt='mklatex ~/git/helixer_scratch/paper main'
-alias mkto='mklatex ~/git/helixer_scratch/paper main; okular ~/git/helixer_scratch/paper/main.pdf&'
+alias mkto='mklatex ~/git/helixer_scratch/paper main; okular ~/git/helixer_scratch/paper/main.pdf &> /dev/null &'
 alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
 # dir shortcuts
@@ -118,6 +116,11 @@ alias misc='cd ~/git/misc'
 alias ke='cd ~/src/keras'
 
 # program shortcuts/enhancements
+alias du='du -h'
+alias df='df -h'
+alias free='free -h'
+alias du1='du -h -d 1'
+alias du2='du -h -d 2'
 alias lsf='ls -1 -d $PWD/*'
 alias lsw='ls -1 | wc -l'
 alias lsS='ll -S'
