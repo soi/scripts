@@ -31,7 +31,7 @@ def get_data_from_iter(iterator):
             else:
                 n_cutoff += 1
     cutoff_perc = n_cutoff/n_total * 100
-    print(f'cut off {n_cutoff}/{n_total} values ({cutoff_perc:.4f}%)')
+    print(f'cut off {n_cutoff}/{n_total} values ({cutoff_perc:.4f}%, mean:{np.mean(values):.4f})')
     return values, cutoff_perc
 
 if args.dataset:
