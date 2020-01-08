@@ -23,6 +23,9 @@ HISTTIMEFORMAT="%F %T "
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# match hidden files with * and */
+shopt -s dotglob
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -54,9 +57,13 @@ fi
 
 # check if we are at work from ssh
 if [ "$color_prompt" = yes ]; then
-	PS1="\$(__git_ps1 '(%s) ')\[\033[01;34m\]\w\[\033[00m\] > "
+	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] && [ $(hostname --fqdn) == 'troodon' ]; then
+		PS1="\$(__git_ps1 '(%s) ')\[\033[0;33m\](WORK)\[\033[01;34m\] \w\[\033[00m\] > "
+	else
+		PS1="\$(__git_ps1 '(%s) ')\[\033[01;34m\]\w\[\033[00m\] > "
+	fi
 else
-    PS1="\$(__git_ps1 '(%s) ')${debian_chroot:+($debian_chroot)}\u@\h:\w\$ "
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -105,12 +112,10 @@ export PATH=/home/felix/.local/bin${PATH:+:${PATH}}
 export PATH="$PATH:$HOME/bin"
 
 # cuda env
-# export PATH=/usr/local/cuda-9.2/bin${PATH:+:${PATH}}
-# export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:/usr/local/cuda-9.2/bin:/usr/local/cudnn/lib64:/usr/local/cuda-9.2/lib64:$LD_LIBRARY_PATH
-# export CUDA_HOME=/usr/local/cuda
-export PATH=$PATH:/usr/local/cuda/bin
-export CUDADIR=/usr/local/cuda
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.1/lib64
+export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.1/extras/CUPTI/lib64:/usr/local/cuda-10.1/bin:/usr/local/cudnn/lib64:/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH
+export CUDA_HOME=/usr/local/cuda-10.1
+export CUDA_VISIBLE_DEVICES=0,1
 
 # standard editor
 export EDITOR=vim
