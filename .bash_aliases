@@ -32,6 +32,7 @@ alias hsc='cd ~/git/helixer_scratch'
 alias fg='vim  ~/git/helixer_scratch/sql_commands/features_of_genome.sql'
 alias pa='hsc; cd paper'
 alias pam='hsc; cd paper; vim main.tex'
+alias cpmo='rsync --progress /home/felix/Desktop/models/* felix-stiehler@134.99.200.63:/home/felix-stiehler/Desktop/models/; rsync --progress /home/felix/Desktop/models/* festi100@hpc.rz.uni-duesseldorf.de:/gpfs/project/festi100/models/'
 
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias hpc='ssh felix-stiehler@134.99.200.63'
