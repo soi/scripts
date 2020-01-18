@@ -26,6 +26,9 @@ shopt -s checkwinsize
 # match hidden files with * and */
 shopt -s dotglob
 
+# enables !() and other operator when matching globs
+shopt -s extglob
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
