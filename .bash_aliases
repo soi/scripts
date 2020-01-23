@@ -272,7 +272,7 @@ alias aupgrade='sudo apt-get upgrade'
 alias autoremove='sudo apt-get autoremove'
 alias ainfo='apt-cache showpkg'
 alias aremove='sudo apt-get remove'
-alias dpkgg='dpkg -l | g'
+alias dpkgg='dpkg -l | grep'
 
 # git
 alias gitpua='~/git/scripts/small-scripts/gitpullall.py; '
