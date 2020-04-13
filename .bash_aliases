@@ -124,6 +124,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # program shortcuts/enhancements
+alias jn='jupyter-notebook'
 alias cdl='cd $(ls -t | head -1)'
 alias df='df -h'
 alias free='free -h'
