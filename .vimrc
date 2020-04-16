@@ -20,7 +20,7 @@ autocmd FileType python setl expandtab smarttab
 
 " general
 set ruler
-set history=50
+set history=10000
 set autoread
 set splitbelow
 set splitright
