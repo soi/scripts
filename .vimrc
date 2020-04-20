@@ -214,6 +214,9 @@ endif
 " set json filetype to javascript
 au BufRead,BufNewFile *.json set filetype=javascript
 
+" don't indent TEX
+autocmd FileType tex setl noai nocin nosi inde=
+
 " Add the current file's directory to the path if not already present.
 au BufRead *
 	\ let s:tempPath=escape(escape(expand("%:p:h"), ' '), '\ ') |
