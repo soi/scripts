@@ -107,6 +107,8 @@ mklatex() {
 
 alias mkt='mklatex ~/git/helixer_scratch/paper main'
 alias mkto='mklatex ~/git/helixer_scratch/paper main; okular ~/git/helixer_scratch/paper/main.pdf &> /dev/null &'
+alias sup='mklatex ~/git/helixer_scratch/paper supplements'
+alias supo='mklatex ~/git/helixer_scratch/paper supplements; okular ~/git/helixer_scratch/paper/supplements.pdf &> /dev/null &'
 alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
 # dir shortcuts
