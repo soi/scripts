@@ -1,4 +1,5 @@
 # work
+alias ji='cd ~/git/misc/job_interview'
 alias ge='cd ~/git/GeenuFF'
 alias geg='cd ~/git/GeenuFF/geenuff'
 alias ged='cd ~/git/GeenuFF/geenuff/testdata'
