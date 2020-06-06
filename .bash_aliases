@@ -110,8 +110,9 @@ alias mkt='mklatex ~/git/helixer_scratch/paper main'
 alias mkto='mklatex ~/git/helixer_scratch/paper main; okular ~/git/helixer_scratch/paper/main.pdf &> /dev/null &'
 alias sup='mklatex ~/git/helixer_scratch/paper supplements'
 alias supo='mklatex ~/git/helixer_scratch/paper supplements; okular ~/git/helixer_scratch/paper/supplements.pdf &> /dev/null &'
-alias cv='cd /home/felix/Desktop/bewerbungen/inovex; vim lebenslauf.tex'
-alias mkcv='mklatex /home/felix/Desktop/bewerbungen/inovex lebenslauf'
+cv="SCOPE"
+alias cv='cd /home/felix/Desktop/bewerbungen/'$cv'; vim lebenslauf.tex'
+alias mkcv='mklatex /home/felix/Desktop/bewerbungen/'$cv' lebenslauf'
 alias mkcvo='mkcv; okular lebenslauf.pdf &> /dev/null &'
 alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
