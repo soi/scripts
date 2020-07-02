@@ -3,6 +3,7 @@ import os
 import sys
 import getpass
 import shlex
+import argparse
 from subprocess import Popen
 from multiprocessing.dummy import Pool as ThreadPool
 
@@ -17,22 +18,33 @@ def pull_or_clone_git(git):
         # now track all remote branches
         # git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
 
-if len(sys.argv) < 2:
-    USER = getpass.getuser()
-else:
-    USER = sys.argv[1]
+parser = argparse.ArgumentParser()
+parser.add_argument('--user', default='felix')
+parser.add_argument('--work', action='store_true')
+parser.add_argument('--helixer', action='store_true')
+args = parser.parse_args()
 
-GIT_HOME_DIR = '/home/' + USER + '/git/'
-GIT_LIST = [
-    # (GIT_HOME_DIR + 'phd', 'git@github.com:soi/phd.git'),
-    # (GIT_HOME_DIR + 'MHCPredictions', 'git@github.com:DiltheyLab/MHCPredictions.git'),
-    # (GIT_HOME_DIR + 'PairwiseMHCRanking', 'git@github.com:DiltheyLab/PairwiseMHCRanking.git'),
-    (GIT_HOME_DIR + 'HelixerPrep', 'git@github.com:alisandra/HelixerPrep.git'),
-    (GIT_HOME_DIR + 'GeenuFF', 'git@github.com:weberlab-hhu/GeenuFF.git'),
-    (GIT_HOME_DIR + 'scripts', 'git@github.com:soi/scripts.git'),
-    (GIT_HOME_DIR + 'misc', 'git@github.com:soi/misc.git'),
-    (GIT_HOME_DIR + 'helixer_scratch', 'git@github.com:weberlab-hhu/helixer_scratch.git')
+git_home_dir = '/home/' + args.user + '/git/'
+repos = [
+    (git_home_dir + 'scripts', 'git@github.com:soi/scripts.git'),
+    (git_home_dir + 'misc', 'git@github.com:soi/misc.git'),
 ]
 
+if args.helixer:
+    repos += [
+        (git_home_dir + 'HelixerPrep', 'git@github.com:alisandra/HelixerPrep.git'),
+        (git_home_dir + 'GeenuFF', 'git@github.com:weberlab-hhu/GeenuFF.git'),
+        (git_home_dir + 'helixer_scratch', 'git@github.com:weberlab-hhu/helixer_scratch.git')
+    ]
+
+if args.work:
+    repos += [
+        (git_home_dir + '2020-03-gfz-remote-sensing', 'git@gitlab.dkrz.de:aim/2020-03-gfz-remote-sensing.git'),
+        (git_home_dir + '2020-05-geomar-feature-selection', 'git@gitlab.dkrz.de:aim/2020-05-geomar-feature-selection.git'),
+        (git_home_dir + 'dynamic-data-loader', 'git@gitlab.dkrz.de:aim/dynamic-data-loader.git'),
+        (git_home_dir + 'ml-notebook-collection', 'git@gitlab.dkrz.de:aim/ml-notebook-collection.git'),
+    ]
+
+
 pool = ThreadPool(8)
-pool.map(pull_or_clone_git, GIT_LIST)
+pool.map(pull_or_clone_git, repos)
