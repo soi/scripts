@@ -1,4 +1,5 @@
 # work
+alias gfz='cd ~/git/2020-03-gfz-remote-sensing'
 alias ji='cd ~/git/misc/job_interview'
 alias ge='cd ~/git/GeenuFF'
 alias geg='cd ~/git/GeenuFF/geenuff'
@@ -39,7 +40,7 @@ alias cpmo='rsync --progress -r /home/felix/Desktop/models/* felix-stiehler@134.
 alias alis='cd /mnt/data/ali/share'
 alias hscp='cd ~/git/helixer_scratch/plots/phylogenetic_trees/ggtree'
 
-alias mis='ssh k202142@mistral06.dkrz.de'
+alias mis='ssh k202142@mistral.dkrz.de'
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias clc='ssh felix-stiehler@134.99.200.63'
 alias denbi='ssh -A -o "ProxyJump felixst@denbi-jumphost-01.denbi.dkfz-heidelberg.de" ubuntu@10.133.255.241'
