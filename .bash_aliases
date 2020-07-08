@@ -1,4 +1,6 @@
 # work
+alias pre='gfz; cd preprocessing'
+alias train='gfz; cd training'
 alias gfz='cd ~/git/2020-03-gfz-remote-sensing'
 alias ji='cd ~/git/misc/job_interview'
 alias ge='cd ~/git/GeenuFF'
