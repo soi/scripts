@@ -1,4 +1,7 @@
 # work
+alias coa='conda activate'
+alias cod='conda deactivate'
+alias coat='conda activate torch'
 alias pre='gfz; cd preprocessing'
 alias train='gfz; cd training'
 alias gfz='cd ~/git/2020-03-gfz-remote-sensing'
