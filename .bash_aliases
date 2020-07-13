@@ -361,9 +361,7 @@ gitacp() {
 	if [[ $# -lt 1 ]]; then
 		echo "Need commit message"
 	else
-		git add $PWD
-		git commit -m "$1"
-		git push
+		git pull && git add $PWD && git commit -m "$1" && git push
 	fi
 }
 
