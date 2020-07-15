@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from pprint import pprint
 import random
 import math
+import h5py
 
 plt.interactive(True)
 
