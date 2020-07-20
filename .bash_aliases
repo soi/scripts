@@ -141,6 +141,7 @@ alias ....='cd ../../..'
 
 # program shortcuts/enhancements
 alias jn='jupyter-notebook'
+alias jl='jupyter-lab'
 alias cdl='cd $(ls -t | head -1)'
 alias df='df -h'
 alias free='free -h'
@@ -350,7 +351,7 @@ gitbp() {
 }
 
 giti() {
-	vim `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9_]*/\)'`.gitignore
+	vim `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9_-]*/\)'`.gitignore
 }
 
 gitr() {
