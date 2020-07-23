@@ -1,5 +1,6 @@
 # work
-alias jou='vim ~/git/misc/dkrz_journal/journal'
+alias jou='misc; vim dkrz_journal/journal'
+alias gitj='git add dkrz_journal/journal; gitcp "journal"'
 alias coa='conda activate'
 alias cod='conda deactivate'
 alias coat='conda activate torch'
