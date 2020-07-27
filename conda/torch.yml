@@ -9,10 +9,10 @@ dependencies:
   - scikit-learn
   - dask
   - matplotlib
-  - pudb
-  - ipython
   - h5py
   - seaborn
   - pytest
   - pip
+  - pip:
     - nni
+    - pudb
