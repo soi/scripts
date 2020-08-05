@@ -66,6 +66,12 @@ last_trial() {
     last_trial=$(ls -1t ~/nni/experiments/$last_exp/trials/ | head -1)
     echo -n ~/nni/experiments/$last_exp/trials/$last_trial
 }
+trial_err(){
+    last_exp=$(ls -1t ~/nni/experiments/ | head -1)
+    first_trial=$(ls -1t ~/nni/experiments/$last_exp/trials/ | tail -1)
+    cat ~/nni/experiments/$last_exp/trials/$first_trial/stderr
+}
+alias te='trial_err'
 alias lt='cd $(last_trial)'
 alias le='cd ~/nni/experiments/$(ls -1t ~/nni/experiments/ | head -1)/trials'
 alias vlt='vim $(last_trial)/trial.log'
