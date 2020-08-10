@@ -1,4 +1,5 @@
 # work
+alias ba='~/backup/backup_nni.sh'
 alias jou='misc; vim dkrz_journal/journal'
 alias gitj='git add dkrz_journal/journal; gitcp "journal"'
 alias coa='conda activate'
@@ -30,7 +31,7 @@ alias gs='vim ~/git/helixer_scratch/data_insight/plants/genome_sizes_fragments'
 alias nn='gfz; cd ../nni'
 alias neb='cd /home/felix/backup/nni_mistral/nni/experiments'
 alias nnl='cd ~/.local/nnictl'
-alias ne='cd ~/nni/experiments'
+alias ne='cd ~/backup/nni_mistral/nni/experiments'
 alias me='cd /mnt/data/experiments_backup'
 alias mea='cd /mnt/data/ali/share'
 alias mef='cd /mnt/data/felix'
@@ -91,32 +92,6 @@ valg() {
     cat trial.log | grep "| genic"
 }
 
-nnidl() {
-	if [ $# -lt 2 ]; then
-		echo "Usage: nnidl cluster|hpc nni_id"
-	else
-		if [ $1 == "cluster" ]; then
-			rsync -rvz --ignore-existing --progress festi100@hpc.rz.uni-duesseldorf.de:/home/festi100/nni/experiments/"$2" ~/nni/experiments/
-		elif [ $1 == "hpc" ]; then
-			rsync -rvz --ignore-existing --progress felix-stiehler@134.99.200.63:/home/felix-stiehler/nni/experiments/"$2" ~/nni/experiments/
-		else
-			echo "unknown source"
-		fi
-	fi
-}
-
-setprompt() {
-	PS1='\[\033[0;33m\](WORK)\[\033[01;34m\] \w\[\033[00m\] > '
-}
-
-rsyncwork () {
-	if [ $# -gt 1 ]; then
-		rsync -rvz --progress -e 'ssh -A -o "ProxyJump felix@134.99.224.62"' felix@134.99.224.58:$1 $2
-	else
-		rsync -rvz --progress -e 'ssh -A -o "ProxyJump felix@134.99.224.62"' felix@134.99.224.58:$1 .
-	fi
-}
-
 # LaTeX
 mklatex() {
 	name="$2"
@@ -175,7 +150,7 @@ alias tree='tree -a -C -h -I __pycache__'
 alias golast='go "$(ls -t -1 | head -1)"'
 alias watch='watch '
 alias ve='virtualenv -p python3'
-alias rsync='rsync -v --progress'
+alias rsync='rsync -v -h --progress'
 alias pinstall='pip3 install --user'
 alias goo='~/git/scripts/small-scripts/goo'
 alias pdfe='/usr/share/playonlinux/playonlinux --run "PDFXEdit"'
