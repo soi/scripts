@@ -1,2 +1,3 @@
 set editing-mode vi
 Control-k: "cd ..\n"
+Control-x: glob-expand-word
