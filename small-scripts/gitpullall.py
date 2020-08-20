@@ -46,6 +46,7 @@ if args.work:
         (git_home_dir + 'ml-notebook-collection', 'git@gitlab.dkrz.de:aim/ml-notebook-collection.git'),
         (git_home_dir + 'cookiecutter-voucher', 'git@gitlab.dkrz.de:aim/cookiecutter-voucher.git'),
         (git_home_dir + '2020-99-hzg-new-voucher', 'git@gitlab.dkrz.de:aim/2020-99-hzg-new-voucher.git'),
+        (git_home_dir + 'AIMTorch', 'git@gitlab.dkrz.de:aim/aimtorch.git'),
     ]
 
 

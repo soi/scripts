@@ -1,4 +1,5 @@
 # work
+alias at='cd /home/felix/git/AIMTorch'
 alias kit='cd /home/felix/git/2020-06-kit-atmospheric-chemistry.git/kit202006'
 alias ba='~/backup/backup_nni.sh'
 alias jou='misc; vim dkrz_journal/journal'
