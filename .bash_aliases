@@ -82,6 +82,7 @@ alias vlt='vim $(last_trial)/trial.log'
 alias wlt='watch -n 1 $(last_trial)/trial.log'
 alias nnistop='nnictl stop; pkill -u $(whoami) python3; rm -r -v /tmp/nni'
 alias nnidel='nnictl experiment delete $(ls -1 -t ~/nni/experiments/ | head -1)'
+alias nniview='nnictl view $(ls -1 -t ~/nni/experiments/ | head -1)'
 alias nnistopdel='nnistop && nnidel'
 
 valgp() {
