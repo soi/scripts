@@ -40,7 +40,7 @@ if args.work:
     repos += [
         (git_home_dir + '2020-03-gfz-remote-sensing', 'git@gitlab.dkrz.de:aim/2020-03-gfz-remote-sensing.git'),
         (git_home_dir + '2020-05-geomar-feature-selection', 'git@gitlab.dkrz.de:aim/2020-05-geomar-feature-selection.git'),
-        (git_home_dir + '2020-06-kit-atmospheric-chemistry.git', 'git@gitlab.dkrz.de:aim/2020-06-kit-atmospheric-chemistry.git'),
+        (git_home_dir + '2020-06-kit-atmospheric-chemistry', 'git@gitlab.dkrz.de:aim/2020-06-kit-atmospheric-chemistry.git'),
         (git_home_dir + 'dynamic-data-loader', 'git@gitlab.dkrz.de:aim/dynamic-data-loader.git'),
         (git_home_dir + 'ml-notebook-collection', 'git@gitlab.dkrz.de:aim/ml-notebook-collection.git'),
         (git_home_dir + 'cookiecutter-voucher', 'git@gitlab.dkrz.de:aim/cookiecutter-voucher.git'),
