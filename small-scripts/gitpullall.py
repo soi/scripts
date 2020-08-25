@@ -1,7 +1,6 @@
 #! /usr/bin/env python3
 import os
 import sys
-import getpass
 import shlex
 import argparse
 from subprocess import Popen
