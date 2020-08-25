@@ -45,10 +45,9 @@ if args.work:
         (git_home_dir + 'dynamic-data-loader', 'git@gitlab.dkrz.de:aim/dynamic-data-loader.git'),
         (git_home_dir + 'ml-notebook-collection', 'git@gitlab.dkrz.de:aim/ml-notebook-collection.git'),
         (git_home_dir + 'cookiecutter-voucher', 'git@gitlab.dkrz.de:aim/cookiecutter-voucher.git'),
-        (git_home_dir + '2020-99-hzg-new-voucher', 'git@gitlab.dkrz.de:aim/2020-99-hzg-new-voucher.git'),
         (git_home_dir + 'AIMTorch', 'git@gitlab.dkrz.de:aim/aimtorch.git'),
     ]
 
 
-pool = ThreadPool(8)
+pool = ThreadPool(40)
 pool.map(pull_or_clone_git, repos)
