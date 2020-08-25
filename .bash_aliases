@@ -340,7 +340,7 @@ gitbp() {
 }
 
 giti() {
-	vim `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9_-.]*/\)'`.gitignore
+	vim `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9_-]*/\)'`.gitignore
 }
 
 gitr() {
