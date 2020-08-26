@@ -128,6 +128,11 @@ nmap <leader>T :.s/val/train/g<CR>:nohl<CR>
 nmap <leader>1 :.s/2/1/g<CR>:nohl<CR>
 nmap <leader>2 :.s/1/2/g<CR>:nohl<CR>
 
+fun! NNI()
+    :%s/_/-/g
+    :%s/:/ /g
+endf
+
 fun! CloseHiddenBuffers()
     let i = 0
     let n = bufnr('$')
