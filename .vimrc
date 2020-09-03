@@ -255,11 +255,5 @@ if v:version > 800
 	let g:netrw_list_hide=netrw_gitignore#Hide()
 endif
 
-" ALE
-let g:ale_enabled = 0
-let g:ale_python_flake8_executable = 'flake8'
-let g:ale_python_flake8_options = '--max-line-length=102 --ignore=E266,W503'
-nmap <leader>a :ALEToggle<CR>
-nmap <leader>f :ALENextWrap<CR>
-nmap <leader>d :ALEPreviousWrap<CR>
-nmap <leader>y :ALEFix yapf<CR>
+" project specific
+nmap <leader>a :sp ~/git/AIMTorch/aimtorch/model.py<CR>
