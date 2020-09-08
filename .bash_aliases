@@ -55,7 +55,7 @@ alias cpmo='rsync --progress -r /home/felix/Desktop/models/* felix-stiehler@134.
 alias alis='cd /mnt/data/ali/share'
 alias hscp='cd ~/git/helixer_scratch/plots/phylogenetic_trees/ggtree'
 
-alias mis='ssh k202142@mistral.dkrz.de'
+alias mis='ssh -i ~/.ssh/id_rsa_mistral k202142@mistral.dkrz.de'
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias clc='ssh felix-stiehler@134.99.200.63'
 alias denbi='ssh -A -o "ProxyJump felixst@denbi-jumphost-01.denbi.dkfz-heidelberg.de" ubuntu@10.133.255.241'
