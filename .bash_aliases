@@ -354,12 +354,17 @@ gitacp() {
 	if [[ $# -lt 1 ]]; then
 		echo "Need commit message"
 	else
-		git grep "import pudb; pudb.set_trace()"
-		if [[ $? -eq 1 ]]; then
-			git pull && git add $PWD && git commit -m "$1" && git push
-		else
-			echo "pudb debugging found"
+		if [[ $(pwd) != *scripts ]]; then  # don't check for pudb when in the scripts git
+			git grep "import pudb; pudb.set_trace()"
+			if [[ $? -eq 0 ]]; then
+				read -p $'\n'"pudb debugging found. Still continue? [y/N]" ok	
+				if [[ -z $ok ]] || [[ $ok != "y" && $ok != "Y" ]]; then
+					echo "Aborted."
+					return 0
+				fi
+			fi
 		fi
+		git pull && git add $PWD && git commit -m "$1" && git push
 	fi
 }
 
