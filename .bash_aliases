@@ -9,7 +9,7 @@ alias coa='conda activate'
 alias cod='conda deactivate'
 alias coat='conda activate torch'
 alias coaj='conda activate jupyter'
-alias pre='gfz; cd preprocessing'
+alias pre='kitt; cd ../preprocessing'
 alias train='gfz; cd training'
 alias no='gfz; cd ../notebooks'
 alias nok='kit; cd ../notebooks'
@@ -354,7 +354,12 @@ gitacp() {
 	if [[ $# -lt 1 ]]; then
 		echo "Need commit message"
 	else
-		git pull && git add $PWD && git commit -m "$1" && git push
+		git grep "import pudb; pudb.set_trace()"
+		if [[ $? -eq 1 ]]; then
+			git pull && git add $PWD && git commit -m "$1" && git push
+		else
+			echo "pudb debugging found"
+		fi
 	fi
 }
 
