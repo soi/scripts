@@ -18,6 +18,7 @@ def pull_or_clone_git(git):
         # git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
 
 import pudb; pudb.set_trace()
+import pudb; pudb.set_trace()
 parser = argparse.ArgumentParser()
 parser.add_argument('--user', default='felix')
 parser.add_argument('--work', action='store_true')
