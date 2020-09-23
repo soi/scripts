@@ -66,15 +66,22 @@ alias gitsb='git show-branch --color | less -R'
 giti() {
 	vim `expr match "$(pwd)" '\(/home/festi100/git/[a-zA-Z0-9]*/\)'`.gitignore
 }
-
 gitacp() {
-	if [[ $# -lt 1 ]]; then
-		echo "Need commit message"
-	else
-		git add $PWD
-		git commit -m "$1"
-		git push --all
-	fi
+    if [[ $# -lt 1 ]]; then
+        echo "Need commit message"
+    else
+        if [[ $(pwd) != *scripts ]]; then  # don't check for pudb when in the scripts git
+            git grep "import pudb; pudb.set_trace()"
+            if [[ $? -eq 0 ]]; then
+                read -p $'\n'"pudb debugging found. Still continue? [y/N]" ok
+                if [[ -z $ok ]] || [[ $ok != "y" && $ok != "Y" ]]; then
+                    echo "Aborted."
+                    return 0
+                fi
+            fi
+        fi
+        git pull && git add $PWD && git commit -m "$1" && git push
+    fi
 }
 gitcp() {
 	if [[ $# -lt 1 ]]; then
