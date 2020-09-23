@@ -1,6 +1,7 @@
 # work
 alias at='cd /home/felix/git/AIMTorch'
-alias kit='cd /home/felix/git/2020-06-kit-atmospheric-chemistry/kit202006'
+alias kit='cd /home/felix/git/2020-06-kit-atmospheric-chemistry/'
+alias kitd='cd /home/felix/git/2020-06-kit-atmospheric-chemistry/dev_data'
 alias kitt='cd /home/felix/git/2020-06-kit-atmospheric-chemistry/kit202006/training'
 alias ba='~/backup/backup_nni.sh'
 alias jou='misc; vim dkrz_journal/journal'
