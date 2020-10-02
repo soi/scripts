@@ -1,6 +1,7 @@
 # dir shortcuts
 
 # program shortcuts/enhancements
+alias tree='tree -a -C -h -I __pycache__'
 alias cdl='cd $(ls -t | head -1)'
 alias his='history | tail -50'
 alias ipy='ipython3 --TerminalInteractiveShell.editing_mode=vi'
