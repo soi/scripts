@@ -107,10 +107,10 @@ mklatex() {
 	pdflatex "$name".tex && bibtex "$name" && pdflatex "$name".tex && pdflatex "$name".tex 
 }
 
-alias mkt='mklatex ~/git/helixer_scratch/paper main'
-alias mkto='mklatex ~/git/helixer_scratch/paper main; okular ~/git/helixer_scratch/paper/main.pdf &> /dev/null &'
-alias sup='mklatex ~/git/helixer_scratch/paper supplements'
-alias supo='mklatex ~/git/helixer_scratch/paper supplements; okular ~/git/helixer_scratch/paper/supplements.pdf &> /dev/null &'
+alias mkt='mklatex ~/git/helixer_paper_from_review/paper main'
+alias mkto='mklatex ~/git/helixer_paper_from_review/paper main; okular ~/git/helixer_scratch/paper/main.pdf &> /dev/null &'
+alias sup='mklatex ~/git/helixer_paper_from_review/paper supplements'
+alias supo='mklatex ~/git/helixer_paper_from_review/paper supplements; okular ~/git/helixer_scratch/paper/supplements.pdf &> /dev/null &'
 alias cpcv='cp -r ~/Desktop/bewerbungen/* /media/felix/Volume/Medien/Dokumente/Bewerbungen/'
 cv="DKRZ_kurz"
 alias cv='cd /home/felix/Desktop/bewerbungen/'$cv'; vim lebenslauf.tex'
