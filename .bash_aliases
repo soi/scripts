@@ -133,6 +133,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # program shortcuts/enhancements
+alias volumeup='pactl set-sink-volume @DEFAULT_SINK@ 150%'
 alias jn='jupyter-notebook'
 alias jl='jupyter-lab'
 alias cdl='cd $(ls -t | head -1)'
