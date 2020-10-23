@@ -134,6 +134,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # program shortcuts/enhancements
+alias ssh='ssh -oStrictHostKeyChecking=no'
 alias lsxargsl='ls -1 * | xargs -L 1 -I %'
 alias xargsl='xargs -L 1 -I %'
 alias volumeup='pactl set-sink-volume @DEFAULT_SINK@ 150%'
