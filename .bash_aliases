@@ -64,8 +64,8 @@ alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
 alias clc='ssh felix-stiehler@134.99.200.63'
 alias denbi='ssh -A -o "ProxyJump felixst@denbi-jumphost-01.denbi.dkfz-heidelberg.de" ubuntu@10.133.255.241'
 alias clctunnel='ssh -L 8889:localhost:8081 felix-stiehler@134.99.200.63'
-alias workpc='ssh -A -o "ProxyJump felix@134.99.224.62" felix@134.99.224.58'
-alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump felix@134.99.224.62" felix@134.99.224.58'
+alias workpc='ssh -A -o "ProxyJump felix@134.99.224.59" felix@134.99.224.58'
+alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump felix@134.99.224.59" felix@134.99.224.58'
 alias ali='ssh felix@134.99.224.62'
 alias chris='ssh felix@134.99.224.57'
 
@@ -108,10 +108,11 @@ mklatex() {
 	pdflatex "$name".tex && bibtex "$name" && pdflatex "$name".tex && pdflatex "$name".tex 
 }
 
-alias mkt='mklatex ~/git/helixer_paper_from_review/paper main'
-alias mkto='mklatex ~/git/helixer_paper_from_review/paper main; okular ~/git/helixer_scratch/paper/main.pdf &> /dev/null &'
-alias sup='mklatex ~/git/helixer_paper_from_review/paper supplements'
-alias supo='mklatex ~/git/helixer_paper_from_review/paper supplements; okular ~/git/helixer_scratch/paper/supplements.pdf &> /dev/null &'
+paper_folder="~/git/helixer_paper_from_review/paper" 
+alias mkt='mklatex '$paper_folder' main'
+alias mkto='mklatex '$paper_folder' main; okular '$paper_folder'/main.pdf &> /dev/null &'
+alias sup='mklatex '$paper_folder' supplements'
+alias supo='mklatex '$paper_folder' supplements; okular '$paper_folder'/supplements.pdf &> /dev/null &'
 alias cpcv='cp -r ~/Desktop/bewerbungen/* /media/felix/Volume/Medien/Dokumente/Bewerbungen/'
 cv="DKRZ_kurz"
 alias cv='cd /home/felix/Desktop/bewerbungen/'$cv'; vim lebenslauf.tex'
