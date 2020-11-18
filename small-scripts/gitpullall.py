@@ -31,9 +31,9 @@ repos = [
 
 if args.helixer:
     repos += [
-        # (git_home_dir + 'HelixerPrep', 'git@github.com:alisandra/HelixerPrep.git'),
-        # (git_home_dir + 'GeenuFF', 'git@github.com:weberlab-hhu/GeenuFF.git'),
-        # (git_home_dir + 'helixer_scratch', 'git@github.com:weberlab-hhu/helixer_scratch.git')
+        (git_home_dir + 'HelixerPrep', 'git@github.com:alisandra/HelixerPrep.git'),
+        (git_home_dir + 'GeenuFF', 'git@github.com:weberlab-hhu/GeenuFF.git'),
+        (git_home_dir + 'helixer_scratch', 'git@github.com:weberlab-hhu/helixer_scratch.git'),
         (git_home_dir + 'helixer_paper_from_review', 'git@github.com:alisandra/helixer_paper_from_review.git'),
     ]
 
