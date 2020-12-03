@@ -1,6 +1,6 @@
 # work
 alias keygenmistral='ssh-keygen -f /home/felix/.ssh/id_rsa_mistral'
-alias at='cd /home/felix/git/AIMTorch'
+alias at='cd /home/felix/git/AIMTorch/aimtorch; vim model.py'
 alias kit='cd /home/felix/git/2020-06-kit-atmospheric-chemistry/'
 alias kitd='cd /home/felix/git/2020-06-kit-atmospheric-chemistry/dev_data'
 alias kitt='cd /home/felix/git/2020-06-kit-atmospheric-chemistry/kit202006/training'
