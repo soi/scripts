@@ -35,19 +35,6 @@ alias dem='cd ~/Desktop/models'
 alias di='hsc; cd data_insight'
 alias gs='vim ~/git/helixer_scratch/data_insight/plants/genome_sizes_fragments'
 alias nn='gfz; cd ../nni'
-alias neb='cd /home/felix/backup/nni_mistral/nni/experiments'
-alias nnl='cd ~/.local/nnictl'
-alias ne='cd ~/backup/nni_mistral/nni/experiments'
-alias me='cd /mnt/data/experiments_backup'
-alias mea='cd /mnt/data/ali/share'
-alias mef='cd /mnt/data/felix'
-alias md='cd /mnt/data/felix'
-alias meh='cd /mnt/data/experiments_backup/nni_clc_server/nni/experiments'
-alias meta='cd /mnt/data/ali/share/phytozome_organized/ready/train'
-alias sg='ds; cd single_genomes'
-alias mo='de; cd models'
-alias pe='de; cd predictions'
-alias ani='cd /mnt/data/ali/share/ensembl_nosplit/'
 alias hsc='cd ~/git/helixer_scratch'
 alias hscd='cd ~/git/helixer_scratch/data_scripts'
 alias fg='vim  ~/git/helixer_scratch/sql_commands/features_of_genome.sql'
@@ -69,25 +56,26 @@ alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump felix@134.99.224.5
 alias ali='ssh felix@134.99.224.62'
 alias chris='ssh felix@134.99.224.57'
 
-alias trials='cd ~/nni/experiments/$(ls -1t ~/nni/experiments/ | head -1)/trials/'
+alias ne='cd ~/nni-experiments'
+alias trials='cd ~/nni-experiments/$(ls -1t ~/nni-experiments/ | head -1)/trials/'
 last_trial() {
-    last_exp=$(ls -1t ~/nni/experiments/ | head -1)
-    last_trial=$(ls -1t ~/nni/experiments/$last_exp/trials/ | head -1)
-    echo -n ~/nni/experiments/$last_exp/trials/$last_trial
+    last_exp=$(ls -1t ~/nni-experiments/ | head -1)
+    last_trial=$(ls -1t ~/nni-experiments/$last_exp/trials/ | head -1)
+    echo -n ~/nni-experiments/$last_exp/trials/$last_trial
 }
 trial_err(){
-    last_exp=$(ls -1t ~/nni/experiments/ | head -1)
-    first_trial=$(ls -1t ~/nni/experiments/$last_exp/trials/ | tail -1)
-    cat ~/nni/experiments/$last_exp/trials/$first_trial/stderr
+    last_exp=$(ls -1t ~/nni-experiments/ | head -1)
+    first_trial=$(ls -1t ~/nni-experiments/$last_exp/trials/ | tail -1)
+    cat ~/nni-experiments/$last_exp/trials/$first_trial/stderr
 }
 alias te='trial_err'
 alias lt='cd $(last_trial)'
-alias le='cd ~/nni/experiments/$(ls -1t ~/nni/experiments/ | head -1)/trials'
+alias le='cd ~/nni-experiments/$(ls -1t ~/nni-experiments/ | head -1)/trials'
 alias vlt='vim $(last_trial)/trial.log'
 alias wlt='watch -n 1 $(last_trial)/trial.log'
 alias nnistop='nnictl stop; pkill -u $(whoami) python3; rm -r -v /tmp/nni'
-alias nnidel='nnictl experiment delete $(ls -1 -t ~/nni/experiments/ | head -1)'
-alias nniview='nnictl view $(ls -1 -t ~/nni/experiments/ | head -1)'
+alias nnidel='nnictl experiment delete $(ls -1 -t ~/nni-experiments/ | head -1)'
+alias nniview='nnictl view $(ls -1 -t ~/nni-experiments/ | head -1)'
 alias nnistopdel='nnistop && nnidel'
 
 valgp() {
@@ -135,6 +123,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # program shortcuts/enhancements
+alias watchnv='watch -n 0.1 nvidia-smi'
 alias fs='stat --file-system --format=%T .'
 alias ssh='ssh -oStrictHostKeyChecking=no'
 alias lsxargsl='ls -1 * | xargs -L 1 -I %'
