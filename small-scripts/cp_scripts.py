@@ -11,6 +11,7 @@ files = [['/home/felix/.bash_aliases', git_scripts_home + '.bash_aliases'],
          ['/home/felix/.vimrc', git_scripts_home + '.vimrc'],
          ['/home/felix/.inputrc', git_scripts_home + '.inputrc'],
          ['/home/felix/.sqliterc', git_scripts_home + '.sqliterc'],
+         ['/home/felix/.ssh/config', git_scripts_home + 'ssh/config'],
          ['/home/felix/.ipython/profile_default/ipython_config.py', git_scripts_home + 'ipython_config.py'],
          ['/home/felix/.ipython/profile_default/startup/ipython_startup.py', git_scripts_home + 'ipython_startup.py']]
 
@@ -31,7 +32,10 @@ for file_pair in files:
         source_file, dest_file = file_pair[1], file_pair[0]
 
     if not os.path.isfile(source_file):
-        print('\n', os.path.basename(source_file), 'does not exist at the source. Skipping.')
+        print(os.path.basename(source_file), 'does not exist at the source. Skipping.')
+        continue
+    if not os.path.exists(os.path.dirname(dest_file)):
+        print('destination folder of', os.path.basename(dest_file), 'does not exist. Skipping.')
         continue
 
     if not os.path.isfile(dest_file) or not filecmp.cmp(source_file, dest_file):

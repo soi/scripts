@@ -3,7 +3,6 @@
 # for examples 
 # If not running interactively, don't do anything [ -z "$PS1" ] && return
 # export PYTHONPATH="${PYTHONPATH}:/home/felix/git/GeenuFF"
-export PYTHONPATH="${PYTHONPATH}:/home/felix/git/2020-03-gfz-remote-sensing"
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -110,12 +109,6 @@ export PATH=/home/felix/.local/bin${PATH:+:${PATH}}
 # for bazel
 export PATH="$PATH:$HOME/bin"
 
-# cuda env
-export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-10.1/extras/CUPTI/lib64:/usr/local/cuda-10.1/bin:/usr/local/cudnn/lib64:/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH
-export CUDA_HOME=/usr/local/cuda-10.1
-export CUDA_VISIBLE_DEVICES=0,1
-
 # standard editor
 export EDITOR=vim
 export VISUAL=vim
@@ -123,19 +116,3 @@ export VISUAL=vim
 # additional bash options
 set -o vi
 shopt -s autocd
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/felix/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/felix/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/felix/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/felix/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-

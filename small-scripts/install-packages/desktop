@@ -3,11 +3,10 @@ tree
 htop
 meld
 build-essential
-virtualenv
 gnome-tweak-tool
 python3-pip
 ctags
 wipe
-wmctrl
 gthumb
 net-tools
+ipython3
