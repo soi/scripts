@@ -56,6 +56,10 @@ alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump felix@134.99.224.5
 alias ali='ssh felix@134.99.224.62'
 alias chris='ssh felix@134.99.224.57'
 
+mis_tunnel() {
+	ssh -i ~/.ssh/id_rsa_mistral -A -L 8889:localhost:8787 -o "ProxyJump k202142@mistral.dkrz.de" k202142@$1
+}
+
 alias ne='cd ~/nni-experiments'
 alias trials='cd ~/nni-experiments/$(ls -1t ~/nni-experiments/ | head -1)/trials/'
 last_trial() {
