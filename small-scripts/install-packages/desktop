@@ -4,9 +4,7 @@ htop
 meld
 build-essential
 gnome-tweak-tool
-python3-pip
 ctags
 wipe
 gthumb
 net-tools
-ipython3
