@@ -171,7 +171,7 @@ alias commit-scr='cp_scr_out=$(to-git | grep -v Skipping | grep -v everything); 
 alias pull-scr='scr; git pull; from-git; cd - > /dev/null; source ~/.bash_aliases'
 alias his='history | tail -50'
 alias pudb='python -m pudb.run'
-alias ipy='ipython3 --TerminalInteractiveShell.editing_mode=vi'
+alias ipy='ipython --TerminalInteractiveShell.editing_mode=vi'
 alias ipyrc='vim ~/.ipython/profile_default/startup/ipython_startup.py'
 alias doch='sudo $(history -p !-1)'
 alias bitc='~/bitcoin-qt/bitcoin-qt --datadir=/media/felix/Volume/Bitcoin'
