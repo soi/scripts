@@ -45,7 +45,7 @@ if args.work:
         (git_home_dir + 'dynamic-data-loader', 'git@gitlab.dkrz.de:aim/dynamic-data-loader.git'),
         (git_home_dir + 'ml-notebook-collection', 'git@gitlab.dkrz.de:aim/ml-notebook-collection.git'),
         (git_home_dir + 'cookiecutter-voucher', 'git@gitlab.dkrz.de:aim/cookiecutter-voucher.git'),
-        (git_home_dir + 'AIMTorch', 'git@gitlab.dkrz.de:aim/aimtorch.git'),
+        (git_home_dir + 'aimtorch', 'git@gitlab.dkrz.de:aim/aimtorch.git'),
     ]
 
 
