@@ -127,6 +127,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # program shortcuts/enhancements
+alias rmj='rm log.{o,e}+([0-9])'
 alias watchnv='watch -n 0.1 nvidia-smi'
 alias fs='stat --file-system --format=%T .'
 alias ssh='ssh -oStrictHostKeyChecking=no'
