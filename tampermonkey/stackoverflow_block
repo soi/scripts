@@ -1,50 +1,29 @@
-// ==UserScript==
-// @name           stackexchange hide side panels
-// @description    Hide the unrelated and hot questions which distract me
-// @version        2017-05-01
-// @namespace      aland
-// @author         aland
-// @updateURL      https://openuserjs.org/install/aland/stackexchange_hide_side_panels.user.js
-// @downloadURL    https://openuserjs.org/install/aland/stackexchange_hide_side_panels.user.js
-// @include        http*://stackoverflow.com/*
-// @include        http*://serverfault.com/*
-// @include        http*://superuser.com/*
-// @include        http*://askubuntu.com/*
-// @include        http*://*.stackexchange.com/*
-// @grant          none
-// ==/UserScript==
-
-
-function toggle_visibility(element, id) {
-	if(id) {
-		var el = document.getElementById(element);
+function toggle_visibility_id(element) {
+		let el = document.getElementById(element);
 		if (el) {
 			el.style.display = 'none';
 		}
-	}
-	else {
-		var elements = document.getElementsByClassName(element);
-		n = elements.length;
-		if(n > 0) {
-			for (var i = 0; i < n; i++) {
-				elements[i].style.display = 'none';
-			}
+}
+
+function toggle_visibility_class(element) {
+	let elements = document.getElementsByClassName(element);
+	let n = elements.length;
+	if(n > 0) {
+		for (var i = 0; i < n; i++) {
+			elements[i].style.display = 'none';
 		}
 	}
 }
 
-toggle_visibility('community-bulletin', false);
-toggle_visibility('everyonelovesstackoverflow', false);
-toggle_visibility('jobs', false);
-toggle_visibility('hireme', true);
-toggle_visibility('hot-network-questions', true);
 
-
-// OTT - but works in a pinch if the above isn't catching them all
-document.getElementById('sidebar').style.display = 'none';
-//toggle_visibility('post-signature', false)
-toggle_visibility('gravatar-wrapper-32', false)
-toggle_visibility('-flair', false)
-toggle_visibility('post-menu', false)
-toggle_visibility('left-sidebar', false)
-//document.getElementById('google_image_div').style.display = 'none';
+toggle_visibility_class('community-bulletin', false);
+toggle_visibility_class('everyonelovesstackoverflow', false);
+toggle_visibility_class('jobs', false);
+toggle_visibility_id('hireme', true);
+toggle_visibility_id('hot-network-questions', true);
+toggle_visibility_id('sidebar', true);
+toggle_visibility_class('mb16', false);
+toggle_visibility_class('user-gravatar32', false);
+toggle_visibility_class('-flair', false);
+toggle_visibility_id('left-sidebar', true);
+toggle_visibility_class('ml12', false);
