@@ -45,6 +45,7 @@ alias alis='cd /mnt/data/ali/share'
 alias hscp='cd ~/git/helixer_scratch/plots/phylogenetic_trees/ggtree'
 
 alias mis='ssh -i ~/.ssh/id_rsa_mistral k202142@mistral.dkrz.de'
+alias mt='ssh -i ~/.ssh/id_rsa_mistral k202142@trial.dkrz.de'
 alias kitssh='ssh -i ~/.ssh/id_rsa_kit bd6602@fh2.scc.kit.edu'
 alias dgx='ssh -i ~/.ssh/id_rsa_kit bd6602@haicore-dgx1.scc.kit.edu'
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
