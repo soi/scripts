@@ -1,2 +1,17 @@
 Host *
   ServerAliveInterval 10
+
+Host hhu_gateway
+	 HostName 134.99.224.59
+	 User felix
+	 IdentityFile /home/felix/.ssh/id_rsa_hhu
+
+Host ali_pc
+	 HostName 134.99.224.62
+	 User felix
+	 IdentityFile /home/felix/.ssh/id_rsa_hhu
+
+Host clc
+	 HostName 134.99.200.63
+	 User felix-stiehler
+	 IdentityFile /home/felix/.ssh/id_rsa_hhu
