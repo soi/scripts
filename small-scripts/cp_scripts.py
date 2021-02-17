@@ -11,6 +11,7 @@ files = [['/home/felix/.bash_aliases', git_scripts_home + '.bash_aliases'],
          ['/home/felix/.vimrc', git_scripts_home + '.vimrc'],
          ['/home/felix/.inputrc', git_scripts_home + '.inputrc'],
          ['/home/felix/.sqliterc', git_scripts_home + '.sqliterc'],
+         ['/home/felix/.config/htop/htoprc', git_scripts_home + 'htoprc'],
          ['/home/felix/.ssh/config', git_scripts_home + 'ssh/config'],
          ['/home/felix/.ipython/profile_default/ipython_config.py', git_scripts_home + 'ipython_config.py'],
          ['/home/felix/.ipython/profile_default/startup/ipython_startup.py', git_scripts_home + 'ipython_startup.py']]
