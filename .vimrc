@@ -255,5 +255,13 @@ if v:version > 800
 	let g:netrw_list_hide=netrw_gitignore#Hide()
 endif
 
+" no folding in vimdiff
+if &diff                             " only for diff mode/vimdiff
+  set diffopt=filler,context:1000000 " filler is default and inserts empty lines for sync
+endif
+" vimdiff jump shortcuts
+nmap <leader>j ]c
+nmap <leader>k [c
+
 " project specific
 nmap <leader>a :sp ~/git/AIMTorch/aimtorch/model.py<CR>
