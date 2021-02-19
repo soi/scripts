@@ -210,7 +210,7 @@ autocmd BufWritePre *.{py,sh,js,html,sql,php,scala,cgi} :%s/\s\+$//e
 
 " toggle and highlighting of the colorcolumn
 if exists("+colorcolumn")
-	nore <expr> <F7> ':set colorcolumn='.(&colorcolumn == "80" ? '""' : "80").'<CR>'
+	nore <expr> <F7> ':set colorcolumn='.(&colorcolumn == "100" ? '""' : "100").'<CR>'
 	hi ColorColumn ctermbg=yellow
 endif
 
