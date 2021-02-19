@@ -104,6 +104,7 @@ nmap <silent> <leader>w :w<CR>
 nmap <silent> <leader>q :q<CR>
 nmap <silent> <leader>W :wq<CR>
 nmap <silent> <leader>v :vs<CR>
+nmap <silent> <leader>x :sp<CR>
 " map q: :q
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 nnoremap <leader>b ^
