@@ -15,3 +15,9 @@ Host clc
 	 HostName 134.99.200.63
 	 User felix-stiehler
 	 IdentityFile /home/felix/.ssh/id_rsa_hhu
+
+Host mistral
+	 HostName mistral.dkrz.de
+	 User k202142
+	 IdentityFile /home/felix/.ssh/id_rsa_mistral
+
