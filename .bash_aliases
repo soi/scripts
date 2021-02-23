@@ -76,6 +76,7 @@ trial_err(){
 alias te='trial_err'
 alias lt='cd $(last_trial)'
 alias le='cd ~/nni-experiments/$(ls -1t ~/nni-experiments/ | head -1)/trials'
+alias ldb='sqlite3 ~/nni-experiments/$(ls -1t ~/nni-experiments/ | head -1)/db/nni.sqlite'
 alias vlt='vim $(last_trial)/trial.log'
 alias wlt='watch -n 1 $(last_trial)/trial.log'
 alias nnistop='nnictl stop; pkill -u $(whoami) python3; rm -r -v /tmp/nni'
