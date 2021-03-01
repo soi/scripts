@@ -264,5 +264,8 @@ endif
 nmap <leader><down> ]c
 nmap <leader><up> [c
 
+" python specific
+nmap <leader>C cf'
+
 " project specific
 nmap <leader>a :sp ~/git/AIMTorch/aimtorch/model.py<CR>
