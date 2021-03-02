@@ -268,4 +268,4 @@ nmap <leader><up> [c
 nmap <leader>C cf'
 
 " project specific
-nmap <leader>a :sp ~/git/AIMTorch/aimtorch/model.py<CR>
+nmap <leader>a :sp ~/git/aimtorch/aimtorch/model.py<CR>
