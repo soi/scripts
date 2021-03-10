@@ -47,6 +47,9 @@ alias pam='hsc; cd paper; vim main.tex'
 alias cpmo='rsync --progress -r /home/felix/Desktop/models/* felix-stiehler@134.99.200.63:/home/felix-stiehler/Desktop/models/; rsync --progress -r /home/felix/Desktop/models/* festi100@hpc.rz.uni-duesseldorf.de:/gpfs/project/festi100/models/'
 alias alis='cd /mnt/data/ali/share'
 alias hscp='cd ~/git/helixer_scratch/plots/phylogenetic_trees/ggtree'
+alias valg='cat trial.log | grep -A 25 "Validation (RMSE"'
+alias valgt='cat trial.log | grep -A 25 "Validation (RMSE" | grep total'
+alias valgh='cat trial.log | grep "| genic"'
 
 alias mis='ssh -i ~/.ssh/id_rsa_mistral k202142@mistral.dkrz.de'
 alias mt='ssh -i ~/.ssh/id_rsa_mistral k202142@trial.dkrz.de'
@@ -88,15 +91,12 @@ alias nnidel='nnictl experiment delete $(ls -1 -t ~/nni-experiments/ | head -1)'
 alias nniview='nnictl view $(ls -1 -t ~/nni-experiments/ | head -1)'
 alias nnistopdel='nnistop && nnidel'
 
-valgp() {
-    echo "normal"
-    cat trial.log | grep "| genic" | sed -n '1~2p'
-    echo "canary"
-    cat trial.log | grep "| genic" | sed -n '2~2p'
-}
-
-valg() {
-    cat trial.log | grep "| genic"
+nnidl() {
+    if [ $# -lt 2 ]; then
+        echo "Usage: nnidl host nni_id"
+    else
+        rsync -rvz --ignore-existing --exclude '*.h5' --exclude '*.pt' --progress $1:"~/nni-experiments/$2" ~/nni-experiments/
+    fi
 }
 
 # LaTeX

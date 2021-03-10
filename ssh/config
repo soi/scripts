@@ -21,3 +21,12 @@ Host mistral
 	 User k202142
 	 IdentityFile /home/felix/.ssh/id_rsa_mistral
 
+Host trial
+	 HostName trial.dkrz.de
+	 User k202142
+	 IdentityFile /home/felix/.ssh/id_rsa_mistral
+
+Host kit
+	 HostName fh2.scc.kit.edu
+	 User bd6602
+	 IdentityFile /home/felix/.ssh/id_rsa_kit
