@@ -39,6 +39,7 @@ alias dem='cd ~/Desktop/models'
 alias di='hsc; cd data_insight'
 alias gs='vim ~/git/helixer_scratch/data_insight/plants/genome_sizes_fragments'
 alias nn='he; cd nni'
+alias nn='he; cd nni'
 alias hsc='cd ~/git/helixer_scratch'
 alias hscd='cd ~/git/helixer_scratch/data_scripts'
 alias fg='vim  ~/git/helixer_scratch/sql_commands/features_of_genome.sql'
@@ -69,6 +70,7 @@ mistunnel() {
 }
 
 alias ne='cd ~/nni-experiments'
+alias nel='cd ~/.local/nnictl'
 alias trials='cd ~/nni-experiments/$(ls -1t ~/nni-experiments/ | head -1)/trials/'
 last_trial() {
     last_exp=$(ls -1t ~/nni-experiments/ | head -1)
@@ -95,7 +97,8 @@ nnidl() {
     if [ $# -lt 2 ]; then
         echo "Usage: nnidl host nni_id"
     else
-        rsync -rvz --ignore-existing --exclude '*.h5' --exclude '*.pt' --progress $1:"~/nni-experiments/$2" ~/nni-experiments/
+        rsync -rvza --ignore-existing --exclude '*.h5' --exclude '*.pt' --progress $1:"~/nni-experiments/$2" ~/nni-experiments/
+        rsync -rvza --include ".experiment" --progress $1:"~/.local/nnictl/" ~/.local/nnictl/
     fi
 }
 
@@ -301,6 +304,7 @@ alias gitpuaw='~/git/scripts/small-scripts/gitpullall.py --work;'
 alias gitpuah='~/git/scripts/small-scripts/gitpullall.py --helixer;'
 alias gitpuawh='~/git/scripts/small-scripts/gitpullall.py --work --helixer;'
 alias gitl='git log --pretty=format:"%h - %an - %ar --- %s" --graph --color --branches -w'
+alias gitsl='git shortlog --format="%ad - %h - %s" --reverse'
 alias gitlong='git log --stat --color '
 alias gitd='git difftool -y'
 alias gitds='git difftool -y --staged'
