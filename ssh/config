@@ -11,6 +11,11 @@ Host ali_pc
 	 User felix
 	 IdentityFile /home/felix/.ssh/id_rsa_hhu
 
+Host work_pc
+	 HostName 134.99.224.58
+	 User felix
+	 IdentityFile /home/felix/.ssh/id_rsa_hhu
+
 Host clc
 	 HostName 134.99.200.63
 	 User felix-stiehler
