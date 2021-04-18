@@ -91,6 +91,8 @@ alias nnistop='nnictl stop; pkill -u $(whoami) python3; rm -r -v /tmp/nni'
 alias nnidel='nnictl experiment delete $(ls -1 -t ~/nni-experiments/ | head -1)'
 alias nniview='nnictl view $(ls -1 -t ~/nni-experiments/ | head -1)'
 alias nnistopdel='nnistop && nnidel'
+alias nnierr='nnictl log stderr'
+alias nniout='nnictl log stdout'
 
 nnidl() {
     if [ $# -lt 2 ]; then
