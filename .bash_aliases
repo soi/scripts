@@ -56,13 +56,12 @@ alias mis='ssh mistral'
 alias mt='ssh trial'
 alias kitssh='ssh kit'
 alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
-alias clc='ssh -A -o "ProxyJump felix@134.99.224.59" felix-stiehler@134.99.200.63'
+alias clc='ssh -A -o "ProxyJump hhu_gateway" clc'
 alias denbi='ssh -A -o "ProxyJump felixst@denbi-jumphost-01.denbi.dkfz-heidelberg.de" ubuntu@10.133.255.241'
-alias clctunnel='ssh -L 8889:localhost:8081 -A -o "ProxyJump felix@134.99.224.59" felix-stiehler@134.99.200.63'
-alias workpc='ssh -A -o "ProxyJump felix@134.99.224.59" felix@134.99.224.58'
-alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump felix@134.99.224.59" felix@134.99.224.58'
-alias ali='ssh -A -o "ProxyJump felix@134.99.224.59" felix@134.99.224.62'
-alias chris='ssh -A -o "ProxyJump felix@134.99.224.59" felix@134.99.224.57'
+alias clctunnel='ssh -L 8889:localhost:8081 -A -o "ProxyJump hhu_gateway" clc'
+alias workpc='ssh -A -o "ProxyJump felix@134.99.224.59" work_pc'
+alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump hhu_gateway" work_pc'
+alias ali='ssh -A -o "ProxyJump hhu_gateway" ali_pc'
 
 mistunnel() {
 	ssh -i ~/.ssh/id_rsa_mistral -A -L 8889:localhost:8787 -o "ProxyJump k202142@mistral.dkrz.de" k202142@$1
