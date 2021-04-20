@@ -32,6 +32,6 @@ Host trial
 	 IdentityFile /home/felix/.ssh/id_rsa_mistral
 
 Host kit
-	 HostName fh2.scc.kit.edu
+	 HostName hk.scc.kit.edu
 	 User bd6602
-	 IdentityFile /home/felix/.ssh/id_rsa_kit
+	 IdentityFile /home/felix/.ssh/id_rsa
