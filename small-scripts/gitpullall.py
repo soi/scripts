@@ -31,22 +31,19 @@ repos = [
 
 if args.helixer:
     repos += [
-        (git_home_dir + 'HelixerPrep', 'git@github.com:alisandra/HelixerPrep.git'),
+        (git_home_dir + 'Helixer', 'git@github.com:weberlab-hhu/Helixer.git'),
         (git_home_dir + 'GeenuFF', 'git@github.com:weberlab-hhu/GeenuFF.git'),
         (git_home_dir + 'helixer_scratch', 'git@github.com:weberlab-hhu/helixer_scratch.git'),
-        (git_home_dir + 'helixer_paper_from_review', 'git@github.com:alisandra/helixer_paper_from_review.git'),
     ]
 
 if args.work:
     repos += [
-        (git_home_dir + '2020-03-gfz-remote-sensing', 'git@gitlab.dkrz.de:aim/2020-03-gfz-remote-sensing.git'),
         (git_home_dir + '2020-06-kit-atmospheric-chemistry', 'git@gitlab.dkrz.de:aim/2020-06-kit-atmospheric-chemistry.git'),
         (git_home_dir + '2020-11-hzg-rogue-waves', 'git@gitlab.dkrz.de:aim/2020-11-hzg-rogue-waves.git'),
-        (git_home_dir + 'dynamic-data-loader', 'git@gitlab.dkrz.de:aim/dynamic-data-loader.git'),
         (git_home_dir + 'ml-notebook-collection', 'git@gitlab.dkrz.de:aim/ml-notebook-collection.git'),
         (git_home_dir + 'aimtorch', 'git@gitlab.dkrz.de:aim/aimtorch.git'),
     ]
 
 
-pool = ThreadPool(40)
+pool = ThreadPool(10)
 pool.map(pull_or_clone_git, repos)
