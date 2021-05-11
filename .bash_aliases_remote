@@ -1,6 +1,18 @@
 # dir shortcuts
+alias scr='cd ~/git/scripts'
+alias sma='cd ~/git/scripts/small-scripts'
+alias tmp='cd /tmp/'
+alias gi='cd ~/git'
+alias src='cd ~/src'
+alias ge='cd ~/git/GeenuFF'
+alias geg='cd ~/git/GeenuFF/geenuff'
+alias he='cd ~/git/Helixer'
+alias heh='cd ~/git/Helixer/helixer'
+alias hep='cd ~/git/Helixer/helixer/prediction'
+alias hsc='cd ~/git/helixer_scratch'
 
 # program shortcuts/enhancements
+alias xargsl='xargs -L 1 -I %'
 alias tree='tree -a -C -h -I __pycache__'
 alias cdl='cd $(ls -t | head -1)'
 alias his='history | tail -50'

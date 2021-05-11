@@ -60,7 +60,7 @@ if [ "$color_prompt" = yes ]; then
     # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 	# datetime=$(date +[%d\ %b\ %H:%M])
     # PS1='\D{[%d %b %H:%M]} \[\033[01;34m\]\w\[\033[00m\] > '
-	PS1='\[\033[0;31m\](HPC)\[\033[01;34m\] \w\[\033[00m\] > '
+	PS1='\[\033[0;33m\](VM)\[\033[01;34m\] \w\[\033[00m\] > '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -105,7 +105,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # path extension for pip installs
-export PATH=/home/festi100/.local/bin${PATH:+:${PATH}}
+export PATH=/home/felix/.local/bin${PATH:+:${PATH}}
 
 # for bazel
 export PATH="$PATH:$HOME/bin"
