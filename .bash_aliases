@@ -52,6 +52,7 @@ alias valg='cat trial.log | grep -A 25 "Validation (RMSE"'
 alias valgt='cat trial.log | grep -A 25 "Validation (RMSE" | grep total'
 alias valgh='cat trial.log | grep "| genic"'
 
+alias vm='ssh vm'
 alias mis='ssh mistral'
 alias mt='ssh trial'
 alias kitssh='ssh kit'
