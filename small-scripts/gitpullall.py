@@ -35,6 +35,7 @@ if args.helixer:
         (git_home_dir + 'GeenuFF', 'git@github.com:weberlab-hhu/GeenuFF.git'),
         (git_home_dir + 'helixer_scratch', 'git@github.com:weberlab-hhu/helixer_scratch.git'),
         (git_home_dir + 'HelixerPost', 'git@github.com:TonyBolger/HelixerPost.git'),
+        (git_home_dir + 'HelixerWeb', 'git@github.com:soi/HelixerWeb.git'),
     ]
 
 if args.work:
