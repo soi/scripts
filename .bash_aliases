@@ -117,10 +117,10 @@ alias mkt='mklatex '$paper_folder' main'
 alias mkto='mklatex '$paper_folder' main; okular '$paper_folder'/main.pdf &> /dev/null &'
 alias sup='mklatex '$paper_folder' supplements'
 alias supo='mklatex '$paper_folder' supplements; okular '$paper_folder'/supplements.pdf &> /dev/null &'
-alias cpcv='cp -r ~/Desktop/Bewerbungen/* /media/felix/Volume/Medien/Dokumente/Bewerbungen/'
-cv="Basler"
-alias cv='cd /home/felix/Desktop/Bewerbungen/'$cv'; vim lebenslauf.tex'
-alias mkcv='mklatex /home/felix/Desktop/Bewerbungen/'$cv' lebenslauf'
+alias cpcv='cp -r ~/Desktop/bewerbungen/* /media/felix/Volume/Medien/Dokumente/Bewerbungen/'
+cv="Siemens_Gamesa"
+alias cv='cd /home/felix/Desktop/bewerbungen/'$cv'; vim lebenslauf.tex'
+alias mkcv='mklatex /home/felix/Desktop/bewerbungen/'$cv' lebenslauf'
 alias mkcvo='mkcv; okular lebenslauf.pdf &> /dev/null &'
 alias mkp='hup; latex poster; dvips poster; ps2pdf -dEmbedAllFonts poster.ps; go poster.pdf'
 
