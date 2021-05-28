@@ -40,3 +40,8 @@ Host vm
 	 HostName 144.91.109.106
 	 User felix
 	 IdentityFile /home/felix/.ssh/id_rsa
+
+Host tony
+	 HostName 134.94.33.48
+	 User felix
+	 IdentityFile /home/felix/.ssh/id_rsa_tony
