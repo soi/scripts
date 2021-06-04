@@ -42,6 +42,7 @@ if args.work:
     repos += [
         (git_home_dir + '2020-06-kit-atmospheric-chemistry', 'git@gitlab.dkrz.de:aim/2020-06-kit-atmospheric-chemistry.git'),
         (git_home_dir + '2020-11-hzg-rogue-waves', 'git@gitlab.dkrz.de:aim/2020-11-hzg-rogue-waves.git'),
+        (git_home_dir + '2021-07-gfz-marine-litter', 'git@gitlab.dkrz.de:aim/2021-07-gfz-marine-litter.git'),
         (git_home_dir + 'ml-notebook-collection', 'git@gitlab.dkrz.de:aim/ml-notebook-collection.git'),
         (git_home_dir + 'aimtorch', 'git@gitlab.dkrz.de:aim/aimtorch.git'),
     ]
