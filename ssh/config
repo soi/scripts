@@ -45,3 +45,8 @@ Host tony
 	 HostName 134.94.33.48
 	 User felix
 	 IdentityFile /home/felix/.ssh/id_rsa_tony
+
+Host juwels
+	 HostName juwels-booster.fz-juelich.de
+	 User stiehler1
+	 IdentityFile /home/felix/.ssh/id_rsa_juelich
