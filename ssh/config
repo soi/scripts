@@ -1,5 +1,6 @@
 Host *
   ServerAliveInterval 10
+  IdentitiesOnly yes
 
 Host hhu_gateway
 	 HostName 134.99.224.59
