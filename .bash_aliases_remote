@@ -11,6 +11,13 @@ alias heh='cd ~/git/Helixer/helixer'
 alias hep='cd ~/git/Helixer/helixer/prediction'
 alias hsc='cd ~/git/helixer_scratch'
 
+# conda
+alias coa='conda activate'
+alias cod='conda deactivate'
+alias condacf='conda env create -f'
+alias condac='conda create --name'
+alias condarm='conda env remove --name'
+
 # program shortcuts/enhancements
 alias xargsl='xargs -L 1 -I %'
 alias tree='tree -a -C -h -I __pycache__'
