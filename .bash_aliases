@@ -1,5 +1,5 @@
 # work
-alias keygenmistral='ssh-keygen -f /home/felix/.ssh/id_rsa_mistral; cat /home/felix/.ssh/id_rsa_mistral.pub'
+alias mistralkeygen='ssh-keygen -f /home/felix/.ssh/id_rsa_mistral; cat /home/felix/.ssh/id_rsa_mistral.pub'
 alias at='cd /home/felix/git/aimtorch/aimtorch'
 alias hzg='cd /home/felix/git/2020-11-hzg-rogue-waves'
 alias hzgt='cd /home/felix/git/2020-11-hzg-rogue-waves/hzg202011/training'
