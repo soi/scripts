@@ -11,6 +11,7 @@ alias kitp='cd /home/felix/git/2020-06-kit-atmospheric-chemistry/kit202006/prepr
 alias ml='cd /home/felix/git/2021-07-gfz-marine-litter'
 alias mlt='cd /home/felix/git/2021-07-gfz-marine-litter/gfz202107/training'
 alias mlp='cd /home/felix/git/2021-07-gfz-marine-litter/gfz202107/preprocessing'
+alias tra='cd /home/felix/git/trace.detection'
 alias ba='~/backup/backup_nni.sh'
 alias jou='misc; vim dkrz_journal/journal'
 alias gitj='git add dkrz_journal/journal; gitcp "journal"'
