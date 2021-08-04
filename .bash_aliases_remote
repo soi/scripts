@@ -120,9 +120,6 @@ gitbp() {
 giti() {
 	vim `expr match "$(pwd)" '\(/home/festi100/git/[a-zA-Z0-9]*/\)'`.gitignore
 }
-gitr() {
-    cd `expr match "$(pwd)" '\(/home/felix/git/[a-zA-Z0-9_]*\)'`
-}
 gitacp() {
     if [[ $# -lt 1 ]]; then
         echo "Need commit message"
