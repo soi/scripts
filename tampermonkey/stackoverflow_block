@@ -16,14 +16,15 @@ function toggle_visibility_class(element) {
 }
 
 
-toggle_visibility_class('community-bulletin', false);
-toggle_visibility_class('everyonelovesstackoverflow', false);
-toggle_visibility_class('jobs', false);
-toggle_visibility_id('hireme', true);
-toggle_visibility_id('hot-network-questions', true);
-toggle_visibility_id('sidebar', true);
-toggle_visibility_class('mb16', false);
-toggle_visibility_class('user-gravatar32', false);
-toggle_visibility_class('-flair', false);
-toggle_visibility_id('left-sidebar', true);
-toggle_visibility_class('ml12', false);
+toggle_visibility_class('community-bulletin');
+toggle_visibility_class('everyonelovesstackoverflow');
+toggle_visibility_class('jobs');
+toggle_visibility_id('hireme');
+toggle_visibility_id('hot-network-questions');
+toggle_visibility_id('sidebar');
+toggle_visibility_class('mb16');
+toggle_visibility_class('user-gravatar32');
+toggle_visibility_class('-flair');
+toggle_visibility_id('left-sidebar');
+toggle_visibility_class('ml12');
+toggle_visibility_class('top-bar');
