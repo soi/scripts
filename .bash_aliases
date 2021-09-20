@@ -116,7 +116,7 @@ alias mkto='mklatex '$paper_folder' main; okular '$paper_folder'/main.pdf &> /de
 alias sup='mklatex '$paper_folder' supplements'
 alias supo='mklatex '$paper_folder' supplements; okular '$paper_folder'/supplements.pdf &> /dev/null &'
 
-cv="Lichtblick"
+cv="Mindpeak"
 alias cpcv='rsync -rv ~/Desktop/Bewerbungen/* /media/felix/Volume/Medien/Dokumente/Bewerbungen/'
 alias cv='cd /home/felix/Desktop/Bewerbungen/'$cv'; vim lebenslauf.tex'
 alias mkcv='mklatex /home/felix/Desktop/Bewerbungen/'$cv' lebenslauf'
