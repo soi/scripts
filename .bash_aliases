@@ -40,8 +40,6 @@ alias ds='cd ~/Desktop/data'
 alias dep='cd ~/Desktop/predictions'
 alias dem='cd ~/Desktop/models'
 alias di='hsc; cd data_insight'
-alias gs='vim ~/git/helixer_scratch/data_insight/plants/genome_sizes_fragments'
-alias nn='he; cd nni'
 alias nn='he; cd nni'
 alias hsc='cd ~/git/helixer_scratch'
 alias hscd='cd ~/git/helixer_scratch/data_scripts'
@@ -116,7 +114,7 @@ alias mkto='mklatex '$paper_folder' main; okular '$paper_folder'/main.pdf &> /de
 alias sup='mklatex '$paper_folder' supplements'
 alias supo='mklatex '$paper_folder' supplements; okular '$paper_folder'/supplements.pdf &> /dev/null &'
 
-cv="Mindpeak"
+cv="Polizei_Lüneburg"
 alias cpcv='rsync -rv ~/Desktop/Bewerbungen/* /media/felix/Volume/Medien/Dokumente/Bewerbungen/'
 alias cv='cd /home/felix/Desktop/Bewerbungen/'$cv'; vim lebenslauf.tex'
 alias mkcv='mklatex /home/felix/Desktop/Bewerbungen/'$cv' lebenslauf'
