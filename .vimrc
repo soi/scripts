@@ -222,6 +222,9 @@ endif
 " set json filetype to javascript
 au BufRead,BufNewFile *.json set filetype=javascript
 
+" set html filetype to htmldjango
+au BufRead,BufNewFile *.html set filetype=htmldjango
+
 " don't indent TEX
 autocmd FileType tex setl noai nocin nosi inde=
 
