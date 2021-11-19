@@ -81,7 +81,7 @@ set noequalalways
 set tags=./tags;/  " upwards search for tags file
 " nmap <C-S-V> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <C-S-X> <C-W><C-]>
-nmap <C-t> :!tree -I *.pyc -I __pycache__<CR>
+nmap <C-t> :!tree -I *.pyc -I __pycache__ -I .git<CR>
 
 " taglist plugin
 let Tlist_WinWidth = 50
