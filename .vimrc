@@ -223,7 +223,7 @@ endif
 au BufRead,BufNewFile *.json set filetype=javascript
 
 " set html filetype to htmldjango
-au BufRead,BufNewFile *.html set filetype=htmldjango
+au BufRead,BufNewFile *.html set filetype=htmldjango tabstop=2 shiftwidth=2
 
 " don't indent TEX
 autocmd FileType tex setl noai nocin nosi inde=
