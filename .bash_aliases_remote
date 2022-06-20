@@ -45,7 +45,7 @@ alias nnistopdel='nnistop && nnidel'
 # program shortcuts/enhancements
 alias xargsl='xargs -L 1 -I %'
 alias tree='tree -a -C -h -I "__pycache__|.git"'
-alias cdl='cd $(ls -t | head -1)'
+alias cdl='cd "$(\ls -1dt ./*/ | head -n 1)"'
 alias his='history | tail -50'
 alias ipy='ipython3 --TerminalInteractiveShell.editing_mode=vi'
 alias doch='sudo $(history -p !-1)'
