@@ -43,20 +43,6 @@ alias valgt='cat trial.log | grep -A 25 "Validation (RMSE" | grep total'
 alias valgh='cat trial.log | grep "| genic"'
 
 alias vm='ssh vm'
-alias mis='ssh mistral'
-alias mt='ssh trial'
-alias kitssh='ssh kit'
-alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
-alias clc='ssh -A -o "ProxyJump hhu_gateway" clc'
-alias denbi='ssh -A -o "ProxyJump felixst@denbi-jumphost-01.denbi.dkfz-heidelberg.de" ubuntu@10.133.255.241'
-alias clctunnel='ssh -L 8889:localhost:8081 -A -o "ProxyJump hhu_gateway" clc'
-alias workpc='ssh -A -o "ProxyJump felix@134.99.224.59" work_pc'
-alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump hhu_gateway" work_pc'
-alias ali='ssh -A -o "ProxyJump hhu_gateway" ali_pc'
-
-mistunnel() {
-	ssh -i ~/.ssh/id_rsa_mistral -A -L 8889:localhost:8787 -o "ProxyJump k202142@mistral.dkrz.de" k202142@$1
-}
 
 alias ne='cd ~/nni-experiments'
 alias trials='cd ~/nni-experiments/$(ls -1t ~/nni-experiments/ | head -1)/trials/'
