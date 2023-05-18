@@ -1,10 +1,5 @@
 # work
 alias mvp='gi; cd mvp_paper/latex'
-alias mistralkeygen='ssh-keygen -f /home/felix/.ssh/id_rsa_mistral; cat /home/felix/.ssh/id_rsa_mistral.pub'
-alias al='cd /home/felix/git/ALFRED'
-alias ba='~/backup/backup_nni.sh'
-alias jou='misc; vim dkrz_journal/journal'
-alias gitj='git add dkrz_journal/journal; gitcp "journal"'
 alias coa='conda activate'
 alias cod='conda deactivate'
 alias condacf='conda env create -f'
@@ -35,28 +30,12 @@ alias hscd='cd ~/git/helixer_scratch/data_scripts'
 alias fg='vim  ~/git/helixer_scratch/sql_commands/features_of_genome.sql'
 alias pa='hsc; cd paper'
 alias pam='hsc; cd paper; vim main.tex'
-alias cpmo='rsync --progress -r /home/felix/Desktop/models/* felix-stiehler@134.99.200.63:/home/felix-stiehler/Desktop/models/; rsync --progress -r /home/felix/Desktop/models/* festi100@hpc.rz.uni-duesseldorf.de:/gpfs/project/festi100/models/'
-alias alis='cd /mnt/data/ali/share'
 alias hscp='cd ~/git/helixer_scratch/plots/phylogenetic_trees/ggtree'
 alias valg='cat trial.log | grep -A 25 "Validation (RMSE"'
 alias valgt='cat trial.log | grep -A 25 "Validation (RMSE" | grep total'
 alias valgh='cat trial.log | grep "| genic"'
 
 alias vm='ssh vm'
-alias mis='ssh mistral'
-alias mt='ssh trial'
-alias kitssh='ssh kit'
-alias cluster='ssh festi100@hpc.rz.uni-duesseldorf.de'
-alias clc='ssh -A -o "ProxyJump hhu_gateway" clc'
-alias denbi='ssh -A -o "ProxyJump felixst@denbi-jumphost-01.denbi.dkfz-heidelberg.de" ubuntu@10.133.255.241'
-alias clctunnel='ssh -L 8889:localhost:8081 -A -o "ProxyJump hhu_gateway" clc'
-alias workpc='ssh -A -o "ProxyJump felix@134.99.224.59" work_pc'
-alias worktunnel='ssh -A -L 8889:localhost:8080 -o "ProxyJump hhu_gateway" work_pc'
-alias ali='ssh -A -o "ProxyJump hhu_gateway" ali_pc'
-
-mistunnel() {
-	ssh -i ~/.ssh/id_rsa_mistral -A -L 8889:localhost:8787 -o "ProxyJump k202142@mistral.dkrz.de" k202142@$1
-}
 
 alias ne='cd ~/nni-experiments'
 alias trials='cd ~/nni-experiments/$(ls -1t ~/nni-experiments/ | head -1)/trials/'
