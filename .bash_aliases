@@ -1,5 +1,5 @@
 # work
-alias mvp='gi; cd mvp_paper'
+alias mvp='gi; cd mvp_paper/latex'
 alias mistralkeygen='ssh-keygen -f /home/felix/.ssh/id_rsa_mistral; cat /home/felix/.ssh/id_rsa_mistral.pub'
 alias al='cd /home/felix/git/ALFRED'
 alias ba='~/backup/backup_nni.sh'
@@ -97,7 +97,7 @@ mklatex() {
 	pdflatex "$name".tex && bibtex "$name" && pdflatex "$name".tex && pdflatex "$name".tex 
 }
 
-paper_folder="~/git/helixer_paper_from_review/paper" 
+paper_folder="~/git/mvp_paper/latex" 
 alias mkt='mklatex '$paper_folder' main'
 alias mkto='mklatex '$paper_folder' main; okular '$paper_folder'/main.pdf &> /dev/null &'
 alias sup='mklatex '$paper_folder' supplements'
