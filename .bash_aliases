@@ -1,4 +1,5 @@
 # work
+alias be='de; cd Bewerbungen'
 alias mvp='gi; cd mvp_paper/latex'
 alias coa='conda activate'
 alias cod='conda deactivate'
