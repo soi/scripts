@@ -2,52 +2,7 @@ Host *
   ServerAliveInterval 10
   IdentitiesOnly yes
 
-Host hhu_gateway
-	 HostName 134.99.224.59
-	 User felix
-	 IdentityFile /home/felix/.ssh/id_rsa_hhu
-
-Host ali_pc
-	 HostName 134.99.224.62
-	 User felix
-	 IdentityFile /home/felix/.ssh/id_rsa_hhu
-
-Host work_pc
-	 HostName 134.99.224.58
-	 User felix
-	 IdentityFile /home/felix/.ssh/id_rsa_hhu
-
-Host clc
-	 HostName 134.99.200.63
-	 User felix-stiehler
-	 IdentityFile /home/felix/.ssh/id_rsa_hhu
-
-Host mistral
-	 HostName mistral.dkrz.de
-	 User k202142
-	 IdentityFile /home/felix/.ssh/id_rsa_mistral
-
-Host trial
-	 HostName trial.dkrz.de
-	 User k202142
-	 IdentityFile /home/felix/.ssh/id_rsa_mistral
-
-Host kit
-	 HostName hk.scc.kit.edu
-	 User bd6602
-	 IdentityFile /home/felix/.ssh/id_rsa_kit
-
-Host vm
-	 HostName 144.91.109.106
-	 User felix
-	 IdentityFile /home/felix/.ssh/id_rsa
-
 Host tony
 	 HostName 134.94.33.48
 	 User felix
 	 IdentityFile /home/felix/.ssh/id_rsa_tony
-
-Host juwels
-	 HostName juwels-booster.fz-juelich.de
-	 User stiehler1
-	 IdentityFile /home/felix/.ssh/id_rsa_juelich
