@@ -3,8 +3,8 @@ tree
 htop
 meld
 build-essential
-gnome-tweak-tool
-ctags
+gnome-tweaks
+exuberant-ctags
 wipe
 gthumb
 net-tools
